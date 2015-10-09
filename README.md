@@ -1,2 +1,2 @@
-# docs-js
-Document Library for data collection forms and document rendering
+# FORMulation
+Form library for data collection
