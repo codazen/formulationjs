@@ -15,5 +15,11 @@
   "bugs": {
     "url": "https://github.com/codazen/formulationjs/issues"
   },
-  "homepage": "https://github.com/codazen/formulationjs#readme"
+  "homepage": "https://github.com/codazen/formulationjs#readme",
+  "dependencies": {
+    "react": "file:node_modules/react"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.0"
+  }
 }
