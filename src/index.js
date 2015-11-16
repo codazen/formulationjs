@@ -1,7 +1,14 @@
-var React = require('react');
-var ReactDOM = require('react-dom');
+'use strict';
+
+import React from 'react';
+import ReactDOM from 'react-dom';
+import Form from './components/Form.react';
+
+var formDef = {
+  name: 'My Form'
+};
 
 ReactDOM.render(
-  <h1>Hello World!</h1>,
+  <Form form={formDef} />,
   document.getElementById('mount')
 );
