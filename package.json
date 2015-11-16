@@ -1,0 +1,30 @@
+{
+  "name": "formulationjs",
+  "version": "1.0.0",
+  "description": "Form library for data collection",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/codazen/formulationjs.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/codazen/formulationjs/issues"
+  },
+  "homepage": "https://github.com/codazen/formulationjs#readme",
+  "dependencies": {
+    "react": "^0.14.2",
+    "react-dom": "^0.14.2"
+  },
+  "devDependencies": {
+    "babel-core": "^5.0.10",
+    "babel-loader": "^5.0.0",
+    "gulp": "^3.9.0",
+    "webpack": "^1.12.3"
+  }
+}
