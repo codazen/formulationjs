@@ -1,6 +1,7 @@
 'use strict';
 
 import React from 'react';
+import Dropdown from './Dropdown.react';
 
 class Form extends React.Component {
 
@@ -12,11 +13,7 @@ class Form extends React.Component {
     var form = this.props.form;
     return (
       <div>
-        <select>
-          <option>Option 1</option>
-          <option>Option 2</option>
-          <option>Option 3</option>
-        </select>
+        <h3>My Form</h3>
       </div>
     );
   }
