@@ -28,7 +28,8 @@ var formDef = {
         value: 'AK'
       }
     ]
-  ]
+  ],
+  textInputs: []
 };
 
 ReactDOM.render(
