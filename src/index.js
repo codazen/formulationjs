@@ -7,7 +7,28 @@ import Form from './components/Form.react';
 
 var formDef = {
   name: 'My Form',
-  dropdown: [1,2,3]
+  dropdowns: [
+    [
+      { 
+        name: 'California',
+        value: 'CA'
+      },
+      {
+        name: 'Alaska',
+        value: 'AK'
+      }
+    ],
+    [
+      { 
+        name: 'California',
+        value: 'CA'
+      },
+      {
+        name: 'Alaska',
+        value: 'AK'
+      }
+    ]
+  ]
 };
 
 ReactDOM.render(

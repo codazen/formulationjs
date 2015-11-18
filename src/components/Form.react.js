@@ -13,7 +13,15 @@ class Form extends React.Component {
     var form = this.props.form;
     return (
       <div>
-        <h3>My Form</h3>
+        <h3>{form.name}</h3>
+        {
+          form.dropdowns ? 
+          form.dropdowns.map(function(dropdown, index) {
+            return <Dropdown key={index} options={dropdown} />;
+          })
+          :
+          null
+        }
       </div>
     );
   }

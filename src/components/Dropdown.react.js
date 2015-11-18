@@ -14,12 +14,15 @@ class Dropdown extends React.Component {
   //}
 
   render() {
+    var options = this.props.options;
     return (
       <div>
         <select>
-          <option>Option 1</option>
-          <option>Option 2</option>
-          <option>Option 3</option>
+          {
+            options.map(function (option, index) {
+              return <option key={index} value={option.value}>{option.name}</option>;
+            })
+          }
         </select>
       </div>
     );
