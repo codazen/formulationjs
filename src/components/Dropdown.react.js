@@ -2,14 +2,18 @@
 
 import React from 'react';
 
-class Form extends React.Component {
+class Dropdown extends React.Component {
 
   constructor(props) {
     super(props);
   }
+  
+  
+  //getInitialState:function(){
+  //  return {selectedValue:'Option 1'}
+  //}
 
   render() {
-    var form = this.props.form;
     return (
       <div>
         <select>
@@ -22,4 +26,4 @@ class Form extends React.Component {
   }
 }
 
-export default Form;
+export default Dropdown;
