@@ -7,29 +7,20 @@ import Form from './components/Form.react';
 
 var formDef = {
   name: 'My Form',
-  checklist: [
-    [
-      { 
-        name: 'Irvine',
-        value: '92612'
-      },
-      {
-        name: 'Oxnard',
-        value: '93030'
-      }
-    ],
-    [
-      { 
-        name: 'California',
-        value: 'CA'
-      },
-      {
-        name: 'Alaska',
-        value: 'AK'
-      }
-    ]
-  ],
-  textInputs: []
+  textInputs: [
+    {
+      label: 'First Name',
+      id: 'first-name',
+      name: 'first-name',
+      value: 'Jeff'
+    },
+    {
+      label: 'Last Name',
+      id: 'last-name',
+      name: 'last-name',
+      value: 'Winger'
+    }
+  ]
 };
 
 ReactDOM.render(
