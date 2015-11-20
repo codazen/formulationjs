@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-class Dropdown extends React.Component {
+class Checkbox extends React.Component {
 
   constructor(props) {
     super(props);
@@ -29,4 +29,4 @@ class Dropdown extends React.Component {
   }
 }
 
-export default Dropdown;
+export default Checkbox;
