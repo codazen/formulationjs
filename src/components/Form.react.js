@@ -1,6 +1,7 @@
 'use strict';
 
 import React from 'react';
+import Dropdown from './Dropdown.react';
 
 class Form extends React.Component {
 
@@ -12,7 +13,15 @@ class Form extends React.Component {
     var form = this.props.form;
     return (
       <div>
-        <h1>{form.name}</h1>
+        <h3>{form.name}</h3>
+        {
+          form.dropdowns ? 
+          form.dropdowns.map(function(dropdown, index) {
+            return <Dropdown key={index} options={dropdown} />;
+          })
+          :
+          null
+        }
       </div>
     );
   }
