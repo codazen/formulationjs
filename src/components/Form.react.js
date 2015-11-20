@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Checkbox from './Checkbox.react';
+import Textbox from './Textbox.react';
 
 class Form extends React.Component {
 
@@ -15,10 +16,11 @@ class Form extends React.Component {
       <div>
         <h3>{form.name}</h3>
         {
-          form.checklist ? 
-          form.checklist.map(function(checklist, index) {
-            return <Checkbox key={index} options={checklist} />;
+          form.textInputs ?
+          form.textInputs.map(function(textInput, index) {
+            return <Textbox key={index} options={textInput} />;
           })
+          
           :
           null
         }
