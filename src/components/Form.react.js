@@ -1,7 +1,7 @@
 'use strict';
 
 import React from 'react';
-import Dropdown from './Dropdown.react';
+import Checkbox from './Checkbox.react';
 
 class Form extends React.Component {
 
@@ -15,9 +15,9 @@ class Form extends React.Component {
       <div>
         <h3>{form.name}</h3>
         {
-          form.dropdowns ? 
-          form.dropdowns.map(function(dropdown, index) {
-            return <Dropdown key={index} options={dropdown} />;
+          form.checklist ? 
+          form.checklist.map(function(checklist, index) {
+            return <Checkbox key={index} options={checklist} />;
           })
           :
           null

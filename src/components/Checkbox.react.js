@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-class Dropdown extends React.Component {
+class Checkbox extends React.Component {
 
   constructor(props) {
     super(props);
@@ -17,16 +17,16 @@ class Dropdown extends React.Component {
     var options = this.props.options;
     return (
       <div>
-        <select>
+        <label>Check Label</label>
+        <br />
           {
             options.map(function (option, index) {
-              return <option key={index} value={option.value}>{option.name}</option>;
+              return <input type="checkbox" key={index} value={option.value}>{option.name}</input>;
             })
           }
-        </select>
       </div>
     );
   }
 }
 
-export default Dropdown;
+export default Checkbox;

@@ -7,15 +7,15 @@ import Form from './components/Form.react';
 
 var formDef = {
   name: 'My Form',
-  dropdowns: [
+  checklist: [
     [
       { 
-        name: 'California',
-        value: 'CA'
+        name: 'Irvine',
+        value: '92612'
       },
       {
-        name: 'Alaska',
-        value: 'AK'
+        name: 'Oxnard',
+        value: '93030'
       }
     ],
     [
