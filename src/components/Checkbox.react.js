@@ -6,24 +6,29 @@ class Checkbox extends React.Component {
 
   constructor(props) {
     super(props);
+    this.state = {
+      checked: this.props.checkbox.value
+    }
+    this._onChange = this._onChange.bind(this);
+    this._labelClick = this._labelClick.bind(this);
+  }
+
+  _onChange() {
+    this.setState({
+      checked: !this.state.checked
+    });
+  }
+
+  _labelClick() {
+    this._onChange();
   }
   
-  
-  //getInitialState:function(){
-  //  return {selectedValue:'Option 1'}
-  //}
-
   render() {
-    var options = this.props.options;
+    var checkbox = this.props.checkbox;
     return (
       <div>
-        <label>Check Label</label>
-        <br />
-          {
-            options.map(function (option, index) {
-              return <input type="checkbox" key={index} value={option.value}>{option.name}</input>;
-            })
-          }
+        <label htmlFor={checkbox.name} onClick={this._labelClick}>{checkbox.label}</label>
+        <input type="checkbox" checked={this.state.checked} name={checkbox.name} onChange={this._onChange}/>
       </div>
     );
   }

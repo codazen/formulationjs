@@ -23,10 +23,17 @@ module.exports = {
     root: nodeModulesPath
   },
   module: {
-    loaders: [{
-      test: /\.js?$|\.jsx?$/,
-      loaders: ['babel'],
-      include: path.join(__dirname, 'src')
-    }]
+    loaders: [
+      {
+        test: /\.js?$|\.jsx?$/,
+        loaders: ['babel'],
+        include: path.join(__dirname, 'src')
+      },
+      {
+        test: /\.json?$/,
+        loaders: ['json'],
+        include: path.join(__dirname, 'dist')
+      }
+    ]
   }
 };
