@@ -8,7 +8,7 @@ class Checkbox extends React.Component {
     super(props);
     this.state = {
       checked: this.props.checkbox.value
-    }
+    };
     this._onChange = this._onChange.bind(this);
     this._labelClick = this._labelClick.bind(this);
   }
