@@ -29,4 +29,8 @@ node_modules
 #Workspaces
 *.sublime-workspace
 
+#Build folder
 dist
+
+#
+samples/*/public/*.js
