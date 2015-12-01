@@ -12,6 +12,10 @@ class Form extends React.Component {
     super(props);
   }
 
+  _handleSubmit(form) {
+    console.log(form);
+  }
+
   render() {
     var form = this.props.form;
     return (
@@ -48,7 +52,7 @@ class Form extends React.Component {
             }
           </div>
           <div>
-            <Submit style="float:right"/>
+            <input type="submit" onClick={this._handleSubmit(form)}/>
           </div>
       </div>
     );

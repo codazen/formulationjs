@@ -8,13 +8,13 @@ class Submit extends React.Component {
     super(props);
   }
 
+  _handleSubmit() {
+    console.log("Your information has been submitted.");
+  }
+
   render() {
     //var options = this.props.options;
-    return (
-      <div>
-        <input type="submit" value="Submit" />
-      </div>
-    );
+    return <input type="submit" onClick={this._handleSubmit}/>
   }
 }
 
