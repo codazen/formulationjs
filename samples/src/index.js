@@ -5,7 +5,7 @@ import ReactDOM from 'react-dom';
 import Formulation from '../../src';
 import FormFiddleWrapper from './components/FormFiddleWrapper/FormFiddleWrapper.react';
 
-export default class FormulationTest extends Formulation {
+class FormulationTest extends Formulation {
 
   constructor(formDef) {
     super(formDef);
@@ -19,3 +19,5 @@ export default class FormulationTest extends Formulation {
     );
   }
 }
+
+export default FormulationTest;

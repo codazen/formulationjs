@@ -4,8 +4,9 @@
   "description": "Form library for data collection",
   "main": "index.js",
   "scripts": {
-    "start": "webpack --watch",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node ./samples/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-sample1": "cd samples/sample1 && webpack --watch"
   },
   "repository": {
     "type": "git",

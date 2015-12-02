@@ -4,7 +4,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Form from './components/Form.react';
 
-export default class Formulation {
+class Formulation {
 
   constructor(formDef) {
     this.formDef = formDef;
@@ -19,3 +19,4 @@ export default class Formulation {
   }
 }
 
+export default Formulation;
