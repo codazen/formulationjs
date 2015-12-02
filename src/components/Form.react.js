@@ -24,29 +24,23 @@ class Form extends React.Component {
         <h3>{form.name}</h3>
           <div>
             {
-              form.textInputs ?
-              form.textInputs.map(function(textInput, index) {
-                return <Textbox key={index} options={textInput} />;
-              })
-              :
-              null
-            }
-          </div>
-          <div>
-            {
-              form.checkboxes ?
-              form.checkboxes.map(function(checkbox, index) {
-                return <Checkbox key={index} checkbox={checkbox} />;
-              })
-              :
-              null
-            }
-          </div>
-          <div>
-            {
-              form.dropdowns ?
-              form.dropdowns.map(function(dropdown, index) {
-                return <Dropdown key={index} options={dropdown} />;
+              form.elements ?
+              form.elements.map(function(element, index) {
+                var component;
+                switch (element.type.toLowerCase()) {
+                  case 'textbox':
+                    component = <Textbox key={index} textbox={element.data} />;
+                    break;
+                  case 'checkbox':
+                    component = <Checkbox key={index} checkbox={element.data} />;
+                    break;
+                  case 'dropdown':
+                    component = <Dropdown key={index} options={element.data} />;
+                    break;
+                  default:
+                    break;
+                }
+                return component;
               })
               :
               null
