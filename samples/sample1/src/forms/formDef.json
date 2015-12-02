@@ -1,11 +1,35 @@
 {
   "name": "Sample 1 Form",
-  "textInputs": [
+  "elements": [
     {
-      "id": "id",
-      "name": "Name",
-      "value": "",
-      "label": "Label"
+      "type": "textbox",
+      "data": {
+        "id": "id",
+        "name": "Name",
+        "value": "",
+        "label": "Label"
+      }
+    },
+    {
+      "type": "dropdown",
+      "data": [
+        {
+          "name": "Option 1",
+          "value": 1
+        },
+        {
+          "name": "Option 2",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "checkbox",
+      "data": {
+        "name": "name",
+        "label": "checkbox label",
+        "value": true
+      }
     }
   ]
 }
