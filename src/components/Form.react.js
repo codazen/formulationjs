@@ -9,9 +9,11 @@ class Form extends React.Component {
 
   constructor(props) {
     super(props);
+    this._handleSubmit = this._handleSubmit.bind(this);
   }
 
-  _handleSubmit() {
+  _handleSubmit(e) {
+    e.preventDefault();
     console.log(this.props.form);
   }
 
