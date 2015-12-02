@@ -4,7 +4,6 @@ import React from 'react';
 import Checkbox from './Checkbox.react';
 import Textbox from './Textbox.react';
 import Dropdown from './Dropdown.react';
-import Submit from './Submit.react';
 
 class Form extends React.Component {
 
