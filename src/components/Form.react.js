@@ -52,7 +52,7 @@ class Form extends React.Component {
             }
           </div>
           <div>
-            <input type="submit" onClick={this._handleSubmit(form)}/>
+            <input type="submit" value="Submit" />
           </div>
       </form>
     );
