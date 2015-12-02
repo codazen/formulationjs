@@ -1,15 +1,15 @@
 const path = require('path');
 const webpack = require('webpack');
 
-const nodeModulesPath = path.join(__dirname, 'node_modules');
+const nodeModulesPath = path.join(__dirname, '../..', 'node_modules');
 
 module.exports = {
   entry: [
     './src/index.js'
   ],
   output: {
-    path: path.join(__dirname, 'dist'),
-    filename: 'bundle.js',
+    path: path.join(__dirname, 'public'),
+    filename: 'sample1-bundle.js',
     publicPath: '/'
   },
   plugins: [
@@ -27,12 +27,20 @@ module.exports = {
       {
         test: /\.js?$|\.jsx?$/,
         loaders: ['babel'],
-        include: path.join(__dirname, 'src')
+        include: [
+          path.join(__dirname, 'src'),
+          path.join(__dirname, '..', 'src'),
+          path.join(__dirname, '../..', 'src')
+        ]
       },
       {
         test: /\.json?$/,
         loaders: ['json'],
-        include: path.join(__dirname, 'dist')
+        include: path.join(__dirname, 'src', 'forms')
+      },
+      {
+        test: /\.less$/,
+        loader: 'style-loader!css-loader!less-loader'
       }
     ]
   }

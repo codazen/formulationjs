@@ -29,4 +29,5 @@ node_modules
 #Workspaces
 *.sublime-workspace
 
-dist
+#Built javascript for each sample
+samples/*/public/*.js
