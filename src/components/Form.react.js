@@ -9,18 +9,34 @@ class Form extends React.Component {
 
   constructor(props) {
     super(props);
+    this._handleSubmit = this._handleSubmit.bind(this);
+  }
+
+  _handleSubmit(e) {
+    e.preventDefault();
+    console.log(this.props.form);
   }
 
   render() {
     var form = this.props.form;
     return (
-      <div>
+      <form onSubmit={this._handleSubmit}>
         <h3>{form.name}</h3>
           <div>
             {
               form.textInputs ?
               form.textInputs.map(function(textInput, index) {
                 return <Textbox key={index} options={textInput} />;
+              })
+              :
+              null
+            }
+          </div>
+          <div>
+            {
+              form.checkboxes ?
+              form.checkboxes.map(function(checkbox, index) {
+                return <Checkbox key={index} checkbox={checkbox} />;
               })
               :
               null
@@ -37,16 +53,9 @@ class Form extends React.Component {
             }
           </div>
           <div>
-            {
-              form.checkboxes ?
-              form.checkboxes.map(function(checkbox, index) {
-                return <Checkbox key={index} checkbox={checkbox} />;
-              })
-              :
-              null
-            }
+            <input type="submit" value="Submit" />
           </div>
-      </div>
+      </form>
     );
   }
 }
