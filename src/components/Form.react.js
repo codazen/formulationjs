@@ -12,14 +12,14 @@ class Form extends React.Component {
     super(props);
   }
 
-  _handleSubmit(form) {
-    console.log(form);
+  _handleSubmit() {
+    console.log(this.props.form);
   }
 
   render() {
     var form = this.props.form;
     return (
-      <div>
+      <form onSubmit={this._handleSubmit}>
         <h3>{form.name}</h3>
           <div>
             {
@@ -54,7 +54,7 @@ class Form extends React.Component {
           <div>
             <input type="submit" onClick={this._handleSubmit(form)}/>
           </div>
-      </div>
+      </form>
     );
   }
 }
