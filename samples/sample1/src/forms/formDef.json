@@ -12,16 +12,19 @@
     },
     {
       "type": "dropdown",
-      "data": [
-        {
-          "name": "Option 1",
-          "value": 1
-        },
-        {
-          "name": "Option 2",
-          "value": 2
-        }
-      ]
+      "data": {
+        "options": [
+          {
+            "name": "Option 1",
+            "value": 1
+          },
+          {
+            "name": "Option 2",
+            "value": 2
+          }
+        ],
+        "value": 1
+      }
     },
     {
       "type": "checkbox",
