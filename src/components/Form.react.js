@@ -43,33 +43,33 @@ class Form extends React.Component {
         <h1>{form.name}</h1>
         <p>{form.body}</p>
         <form onSubmit={this._handleSubmit}>
-            <div>
-              {
-                form.elements ?
+          <div>
+            {
+              form.elements ?
               form.elements.map((element, index) => {
-                  var component;
-                  switch (element.type.toLowerCase()) {
-                    case 'textbox':
-                    component = <Textbox key={index} textbox={element.data} onChange={this._handleChange.bind(this, index, 'value')} />;
-                      break;
-                    case 'checkbox':
-                    component = <Checkbox key={index} checkbox={element.data} onClick={this._handleToggle.bind(this, index)} onChange={this._handleChange.bind(this, index, 'checked')} />;
-                      break;
-                    case 'dropdown':
-                    component = <Dropdown key={index} dropdown={element.data} onChange={this._handleChange.bind(this, index, 'value')} />;
-                      break;
-                    default:
-                      break;
-                  }
-                  return component;
-                })
-                :
-                null
-              }
-            </div>
-            <div>
-              <input type="submit" value="Submit" />
-            </div>
+                var component;
+                switch (element.type.toLowerCase()) {
+                  case 'textbox':
+                  component = <Textbox key={index} textbox={element.data} onChange={this._handleChange.bind(this, index, 'value')} />;
+                    break;
+                  case 'checkbox':
+                  component = <Checkbox key={index} checkbox={element.data} onClick={this._handleToggle.bind(this, index)} onChange={this._handleChange.bind(this, index, 'checked')} />;
+                    break;
+                  case 'dropdown':
+                  component = <Dropdown key={index} dropdown={element.data} onChange={this._handleChange.bind(this, index, 'value')} />;
+                    break;
+                  default:
+                    break;
+                }
+                return component;
+              })
+              :
+              null
+            }
+          </div>
+          <div>
+            <input type="submit" value="Submit" />
+          </div>
         </form>
       </section>
     );
