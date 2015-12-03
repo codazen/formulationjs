@@ -39,36 +39,39 @@ class Form extends React.Component {
   render() {
     var form = this.state.form;
     return (
-      <form onSubmit={this._handleSubmit}>
-        <h3>{form.name}</h3>
-          <div>
-            {
-              form.elements ?
+      <section>
+        <h1>{form.name}</h1>
+        <p>{form.body}</p>
+        <form onSubmit={this._handleSubmit}>
+            <div>
+              {
+                form.elements ?
               form.elements.map((element, index) => {
-                var component;
-                switch (element.type.toLowerCase()) {
-                  case 'textbox':
+                  var component;
+                  switch (element.type.toLowerCase()) {
+                    case 'textbox':
                     component = <Textbox key={index} textbox={element.data} onChange={this._handleChange.bind(this, index, 'value')} />;
-                    break;
-                  case 'checkbox':
+                      break;
+                    case 'checkbox':
                     component = <Checkbox key={index} checkbox={element.data} onClick={this._handleToggle.bind(this, index)} onChange={this._handleChange.bind(this, index, 'checked')} />;
-                    break;
-                  case 'dropdown':
+                      break;
+                    case 'dropdown':
                     component = <Dropdown key={index} dropdown={element.data} onChange={this._handleChange.bind(this, index, 'value')} />;
-                    break;
-                  default:
-                    break;
-                }
-                return component;
-              })
-              :
-              null
-            }
-          </div>
-          <div>
-            <input type="submit" value="Submit" />
-          </div>
-      </form>
+                      break;
+                    default:
+                      break;
+                  }
+                  return component;
+                })
+                :
+                null
+              }
+            </div>
+            <div>
+              <input type="submit" value="Submit" />
+            </div>
+        </form>
+      </section>
     );
   }
 }
