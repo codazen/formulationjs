@@ -21,9 +21,9 @@ class Form extends React.Component {
     var form = this.props.form;
     return (
       <section>
+        <h1>{form.name}</h1>
+        <p>{form.body}</p>
         <form onSubmit={this._handleSubmit}>
-          <h1>{form.name}</h1>
-          <p>{form.body}</p>
             <div>
               {
                 form.elements ?
