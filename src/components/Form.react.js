@@ -22,6 +22,7 @@ class Form extends React.Component {
     return (
       <form onSubmit={this._handleSubmit}>
         <h3>{form.name}</h3>
+        <p>{form.body}</p>
           <div>
             {
               form.elements ?
