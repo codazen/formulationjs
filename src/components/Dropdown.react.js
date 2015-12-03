@@ -9,12 +9,12 @@ class Dropdown extends React.Component {
   }
 
   render() {
-    var options = this.props.options;
+    var { dropdown, onChange } = this.props;
     return (
       <div>
-        <select>
+        <select value={dropdown.value} onChange={onChange}>
           {
-            options.map(function (option, index) {
+            dropdown.options.map(function (option, index) {
               return <option key={index} value={option.value}>{option.name}</option>;
             })
           }

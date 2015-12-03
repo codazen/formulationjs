@@ -9,11 +9,11 @@ class Textbox extends React.Component {
   }
 
   render() {
-    var textbox = this.props.textbox;
+    var { textbox, onChange } = this.props;
     return (
       <div>
         <label htmlFor={textbox.name}>{textbox.label}</label>
-        <input type="text" id={textbox.id} name={textbox.name} defaultValue={textbox.value} />
+        <input type="text" id={textbox.id} name={textbox.name} value={textbox.value} onChange={onChange} />
       </div>
     );
   }

@@ -9,48 +9,67 @@ class Form extends React.Component {
 
   constructor(props) {
     super(props);
+    this.state = {
+      form: this.props.form
+    };
     this._handleSubmit = this._handleSubmit.bind(this);
   }
 
   _handleSubmit(e) {
     e.preventDefault();
-    console.log(this.props.form);
+    console.log(this.state.form);
+  }
+
+  _handleChange(index, type, e) {
+    var form = this.state.form;
+    form.elements[index].data.value = e.target[type];
+    this.setState({
+      form: form
+    });
+  }
+
+  _handleToggle(index) {
+    var form = this.state.form;
+    form.elements[index].data.value = !form.elements[index].data.value;
+    this.setState({
+      form: form
+    });
   }
 
   render() {
-    var form = this.props.form;
+    var form = this.state.form;
     return (
       <section>
         <h1>{form.name}</h1>
         <p>{form.body}</p>
         <form onSubmit={this._handleSubmit}>
-            <div>
-              {
-                form.elements ?
-                form.elements.map(function(element, index) {
-                  var component;
-                  switch (element.type.toLowerCase()) {
-                    case 'textbox':
-                      component = <Textbox key={index} textbox={element.data} />;
-                      break;
-                    case 'checkbox':
-                      component = <Checkbox key={index} checkbox={element.data} />;
-                      break;
-                    case 'dropdown':
-                      component = <Dropdown key={index} options={element.data} />;
-                      break;
-                    default:
-                      break;
-                  }
-                  return component;
-                })
-                :
-                null
-              }
-            </div>
-            <div>
-              <input type="submit" value="Submit" />
-            </div>
+          <div>
+            {
+              form.elements ?
+              form.elements.map((element, index) => {
+                var component;
+                switch (element.type.toLowerCase()) {
+                  case 'textbox':
+                  component = <Textbox key={index} textbox={element.data} onChange={this._handleChange.bind(this, index, 'value')} />;
+                    break;
+                  case 'checkbox':
+                  component = <Checkbox key={index} checkbox={element.data} onClick={this._handleToggle.bind(this, index)} onChange={this._handleChange.bind(this, index, 'checked')} />;
+                    break;
+                  case 'dropdown':
+                  component = <Dropdown key={index} dropdown={element.data} onChange={this._handleChange.bind(this, index, 'value')} />;
+                    break;
+                  default:
+                    break;
+                }
+                return component;
+              })
+              :
+              null
+            }
+          </div>
+          <div>
+            <input type="submit" value="Submit" />
+          </div>
         </form>
       </section>
     );
