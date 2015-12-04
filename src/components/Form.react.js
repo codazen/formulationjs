@@ -36,6 +36,12 @@ class Form extends React.Component {
     });
   }
 
+  componentWillReceiveProps(nextProps) {
+    this.setState({
+      form: nextProps.form
+    });
+  }
+
   render() {
     var form = this.state.form;
     return (
