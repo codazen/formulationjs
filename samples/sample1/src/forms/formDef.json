@@ -22,9 +22,12 @@
           {
             "name": "Option 2",
             "value": 2
+          },
+          {
+            "name": "Please Select...",
+            "default": true
           }
-        ],
-        "value": 1
+        ]
       }
     },
     {

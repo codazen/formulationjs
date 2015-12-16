@@ -15,7 +15,19 @@ class Dropdown extends React.Component {
         <select value={dropdown.value} onChange={onChange}>
           {
             dropdown.options.map(function (option, index) {
-              return <option key={index} value={option.value}>{option.name}</option>;
+              switch (option.default){
+                case false:
+                return <option key={index} value={option.value}>{option.name}</option>;
+                break
+
+                case true:
+                return <option key={index} value={option.value} selected="selected">{option.name}</option>;
+                break
+
+                default:
+                return <option key={index} value={option.value}>{option.name}</option>;
+                break;
+              }
             })
           }
         </select>
