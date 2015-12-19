@@ -13,6 +13,7 @@
     },
     {
       "type": "dropdown",
+      "placeholder":"Select...",
       "data": {
         "options": [
           {
@@ -22,10 +23,6 @@
           {
             "name": "Option 2",
             "value": 2
-          },
-          {
-            "name": "Please Select...",
-            "default": true
           }
         ]
       }
