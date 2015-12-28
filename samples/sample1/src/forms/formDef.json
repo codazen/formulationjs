@@ -29,10 +29,20 @@
     },
     {
       "type": "checkbox",
+      "label": "Label",
+      "name": "Name",
       "data": {
-        "name": "name",
-        "label": "checkbox label",
-        "value": true
+        "options": [
+          {
+            "name": "Option 1",
+            "value": 1
+          },
+          {
+            "name": "Option 2",
+            "value": 2,
+            "default": true
+          }
+        ]
       }
     }
   ]

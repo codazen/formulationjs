@@ -13,7 +13,13 @@ class Checkbox extends React.Component {
     return (
       <div>
         <label htmlFor={checkbox.name} onClick={onClick}>{checkbox.label}</label>
-        <input type="checkbox" checked={checkbox.value} name={checkbox.name} onChange={onChange}/>
+        <form>
+          {
+            dropdown.options.map(function (option, index) {
+              return <input type="checkbox" key={index} value={option.value} checked={option.default} name={option.name} onChange={onChange}/>
+            })
+          }
+        </form>
       </div>
     );
   }
