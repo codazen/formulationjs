@@ -28,9 +28,23 @@ class Form extends React.Component {
     });
   }
 
-  _handleToggle(index) {
+  _handleToggle(index, type, e) {
     var form = this.state.form;
-    form.elements[index].data.value = !form.elements[index].data.value;
+    switch(e.target[type]){
+      case true:
+      form.elements[index].data.value.push(e.target['value']);
+        break
+      case false:
+      for (var i=0; i<form.elements[index].data.value.length; i++){
+        if (form.elements[index].data.value[i] == e.target['value']){
+          form.elements[index].data.value.splice(i, 1)
+        }
+      }
+        break
+      default:
+      break;
+    }
+    //console.log(form.elements[index].data.value);
     this.setState({
       form: form
     });
@@ -59,7 +73,7 @@ class Form extends React.Component {
                   component = <Textbox key={index} textbox={element.data} onChange={this._handleChange.bind(this, index, 'value')} />;
                     break;
                   case 'checkbox':
-                  component = <Checkbox key={index} checkbox={element.data} onClick={this._handleToggle.bind(this, index)} onChange={this._handleChange.bind(this, index, 'checked')} />;
+                  component = <Checkbox key={index} checkbox={element.data} name={element.name} onClick={this._handleToggle.bind(this, index, 'checked')} onChange={this._handleChange.bind(this, index, 'checked')} />;
                     break;
                   case 'dropdown':
                   component = <Dropdown key={index} dropdown={element.data} onChange={this._handleChange.bind(this, index, 'value')} />;

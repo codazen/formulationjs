@@ -32,6 +32,7 @@
       "label": "Label",
       "name": "Name",
       "data": {
+        "value":[],
         "options": [
           {
             "name": "Option 1",
@@ -39,8 +40,7 @@
           },
           {
             "name": "Option 2",
-            "value": 2,
-            "default": true
+            "value": 2
           }
         ]
       }
