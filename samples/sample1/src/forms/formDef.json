@@ -9,11 +9,8 @@
         "name": "Name",
         "value": "",
         "label": "Label",
-<<<<<<< HEAD
-        "required": "required"
-=======
+        "required": "required",
         "maxlength": "10"
->>>>>>> master
       }
     },
     {
