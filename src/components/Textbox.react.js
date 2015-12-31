@@ -13,7 +13,7 @@ class Textbox extends React.Component {
     return (
       <div>
         <label htmlFor={textbox.name}>{textbox.label}</label>
-        <input type="text" id={textbox.id} name={textbox.name} value={textbox.value} onChange={onChange} />
+        <input type="text" id={textbox.id} name={textbox.name} required={textbox.required} value={textbox.value} onChange={onChange} />
       </div>
     );
   }
