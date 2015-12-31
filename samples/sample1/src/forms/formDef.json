@@ -19,6 +19,10 @@
       "data": {
         "options": [
           {
+            "name": "Placeholder",
+            "value": ""
+          },        
+          {
             "name": "Option 1",
             "value": 1
           },
@@ -26,7 +30,9 @@
             "name": "Option 2",
             "value": 2
           }
-        ]
+        ],
+        "value": "",
+        "required": "required"
       }
     },
     {
