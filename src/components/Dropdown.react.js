@@ -12,7 +12,7 @@ class Dropdown extends React.Component {
     var { dropdown, onChange } = this.props;
     return (
       <div>
-        <select value={dropdown.value} onChange={onChange}>
+        <select value={dropdown.value} required={dropdown.required} onChange={onChange}>
           {
             dropdown.options.map(function (option, index) {
               return <option key={index} value={option.value}>{option.name}</option>;
