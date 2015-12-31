@@ -62,7 +62,12 @@ class Form extends React.Component {
                   component = <Checkbox key={index} checkbox={element.data} onClick={this._handleToggle.bind(this, index)} onChange={this._handleChange.bind(this, index, 'checked')} />;
                     break;
                   case 'dropdown':
-                  component = <Dropdown key={index} dropdown={element.data} onChange={this._handleChange.bind(this, index, 'value')} />;
+                    if (element.placeholder){
+                    component = <Dropdown key={index} dropdown={element.data} placeholder={element.placeholder} onChange={this._handleChange.bind(this, index, 'value')} />;
+                  }
+                    else{
+                      component = <Dropdown key={index} dropdown={element.data} onChange={this._handleChange.bind(this, index, 'value')} />;
+                    }
                     break;
                   default:
                     break;

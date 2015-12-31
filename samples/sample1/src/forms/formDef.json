@@ -9,11 +9,16 @@
         "name": "Name",
         "value": "",
         "label": "Label",
+<<<<<<< HEAD
         "required": "required"
+=======
+        "maxlength": "10"
+>>>>>>> master
       }
     },
     {
       "type": "dropdown",
+      "placeholder":"Select...",
       "data": {
         "options": [
           {
@@ -24,8 +29,7 @@
             "name": "Option 2",
             "value": 2
           }
-        ],
-        "value": 1
+        ]
       }
     },
     {
