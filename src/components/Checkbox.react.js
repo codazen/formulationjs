@@ -16,10 +16,9 @@ class Checkbox extends React.Component {
           {
             checkbox.options.map(function (option, index) {
               return  (
-                <label>
+                <div>
                   <input type="checkbox" key={index} name={name} value={option.value} onClick={onClick} />{option.name}
-                  <br />
-                </label>
+                </div>
               );
             })
           }
