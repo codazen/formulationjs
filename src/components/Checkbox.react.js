@@ -9,11 +9,15 @@ class Checkbox extends React.Component {
   }
   
   render() {
-    var { checkbox, onChange, onClick } = this.props;
+    var { checkbox, onChange, onClick, name } = this.props;
     return (
       <div>
         <label htmlFor={checkbox.name} onClick={onClick}>{checkbox.label}</label>
-        <input type="checkbox" checked={checkbox.value} name={checkbox.name} onChange={onChange}/>
+          {
+            checkbox.options.map(function (option, index) {
+              return  <label><input type="checkbox" key={index} name={name} value={option.value} onClick={onClick} />{option.name}</label>
+            })
+          }
       </div>
     );
   }
