@@ -13,6 +13,7 @@ class Dropdown extends React.Component {
     return (
       <div>
         <select value={dropdown.value} required={dropdown.required} onChange={onChange}>
+          <option value="">{placeholder}</option>
           {
             dropdown.options.map(function (option, index) {
               return <option key={index} value={option.value}>{option.name}</option>
