@@ -8,13 +8,39 @@
         "id": "id",
         "name": "Name",
         "value": "",
-        "label": "Label"
+        "label": "Label",
+        "required": "required",
+        "maxlength": "10"
       }
     },
     {
       "type": "dropdown",
       "placeholder":"Select...",
       "data": {
+        "options": [
+          {
+            "name": "Placeholder",
+            "value": ""
+          },        
+          {
+            "name": "Option 1",
+            "value": 1
+          },
+          {
+            "name": "Option 2",
+            "value": 2
+          }
+        ],
+        "value": "",
+        "required": "required"
+      }
+    },
+    {
+      "type": "checkbox",
+      "label": "Label",
+      "name": "Name",
+      "data": {
+        "value":[],
         "options": [
           {
             "name": "Option 1",
@@ -25,14 +51,6 @@
             "value": 2
           }
         ]
-      }
-    },
-    {
-      "type": "checkbox",
-      "data": {
-        "name": "name",
-        "label": "checkbox label",
-        "value": true
       }
     }
   ]
