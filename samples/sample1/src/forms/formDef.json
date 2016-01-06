@@ -37,6 +37,7 @@
       "name": "Name",
       "data": {
         "value":[],
+        "groupLabel": "Checkbox group label",
         "options": [
           {
             "name": "Option 1",
