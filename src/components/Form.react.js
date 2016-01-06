@@ -21,10 +21,7 @@ class Form extends React.Component {
   }
 
   _onClick() { //should this onClick take in a date?
-    //console.log(Date());
-    var currentDate = new Date().toUTCString();
-    var readDate = "Submitted on: " + currentDate;
-    var x = document.getElementById("submitVerification").innerHTML=readDate;
+    console.log("User clicked submit at: " + Date());
   }
 
   _handleChange(index, type, e) {
@@ -101,7 +98,6 @@ class Form extends React.Component {
           </div>
           <div>
             <input type="submit" value="Submit" onClick={this._onClick}/>
-            <p id="submitVerification"></p>
           </div>
         </form>
       </section>
