@@ -19,10 +19,6 @@
       "data": {
         "options": [
           {
-            "name": "Placeholder",
-            "value": ""
-          },        
-          {
             "name": "Option 1",
             "value": 1
           },
