@@ -18,9 +18,6 @@ class Form extends React.Component {
   _handleSubmit(e) {
     e.preventDefault();
     console.log(this.state.form);
-  }
-
-  _onClick() { //should this onClick take in a date?
     console.log("User clicked submit at: " + Date());
   }
 
@@ -97,7 +94,7 @@ class Form extends React.Component {
             }
           </div>
           <div>
-            <input type="submit" value="Submit" onClick={this._onClick}/>
+            <input type="submit" value="Submit" />
           </div>
         </form>
       </section>
