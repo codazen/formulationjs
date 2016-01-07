@@ -1,4 +1,5 @@
 'use strict';
+require('./styles/Textbox.less');
 
 import React from 'react';
 

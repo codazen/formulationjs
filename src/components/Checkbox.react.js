@@ -1,4 +1,5 @@
 'use strict';
+require('./styles/Checkbox.less');
 
 import React from 'react';
 
