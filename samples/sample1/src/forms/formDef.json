@@ -9,7 +9,7 @@
         "name": "Name",
         "value": "",
         "label": "Label",
-        "required": "required",
+        "required": true,
         "maxlength": "10"
       }
     },
@@ -33,7 +33,6 @@
     },
     {
       "type": "checkbox",
-      "label": "Label",
       "name": "Name",
       "data": {
         "value":[],
