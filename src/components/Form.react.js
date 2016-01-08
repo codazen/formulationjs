@@ -10,15 +10,23 @@ class Form extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      form: this.props.form
+      form: this.props.form,
+      initialRender: true
     };
     this._handleSubmit = this._handleSubmit.bind(this);
+    this._handleSubmitClick = this._handleSubmitClick.bind(this);
   }
 
   _handleSubmit(e) {
     e.preventDefault();
     console.log(this.state.form);
     console.log("User clicked submit at: " + Date());
+  }
+
+  _handleSubmitClick(e) {
+    this.setState({
+      initialRender: false
+    })
   }
 
   _handleChange(index, type, e) {
@@ -51,6 +59,11 @@ class Form extends React.Component {
     });
   }
 
+  componentDidMount() {
+    this.setState({
+      initialRender: true
+    })
+  }
   componentWillReceiveProps(nextProps) {
     this.setState({
       form: nextProps.form
@@ -71,7 +84,7 @@ class Form extends React.Component {
                 var component;
                 switch (element.type.toLowerCase()) {
                   case 'textbox':
-                  component = <Textbox key={index} textbox={element.data} onChange={this._handleChange.bind(this, index, 'value')} />;
+                  component = <Textbox key={index} textbox={element.data} onChange={this._handleChange.bind(this, index, 'value')} initialRender={this.state.initialRender}/>;
                     break;
                   case 'checkbox':
                   component = <Checkbox key={index} checkbox={element.data} name={element.name} onClick={this._handleToggle.bind(this, index, 'checked')} onChange={this._handleChange.bind(this, index, 'checked')} />;
@@ -94,7 +107,7 @@ class Form extends React.Component {
             }
           </div>
           <div>
-            <input type="submit" value="Submit" />
+            <input type="submit" value="Submit" onClick={this._handleSubmitClick}/>
           </div>
         </form>
       </section>
