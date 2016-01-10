@@ -61,8 +61,8 @@ class Form extends React.Component {
     var form = this.state.form;
     return (
       <section>
-        <h1>{form.name}</h1>
-        <p>{form.body}</p>
+        <h1 style={{ wordWrap: 'break-word' }}>{form.name}</h1>
+        <p style={{ wordWrap: 'break-word' }}>{form.body}</p>
         <form onSubmit={this._handleSubmit}>
           <div>
             {
