@@ -20,16 +20,16 @@ class Textbox extends React.Component {
     return (
       <div>
         <label htmlFor={textbox.name}>{textbox.label}{star}</label>
-        <input 
-          type="text" 
-          id={textbox.id} 
-          name={textbox.name} 
-          required={textbox.required} 
-          maxLength={textbox.maxlength} 
-          value={textbox.value} 
-          className = {classes}
-          onChange={onChange} 
-        />
+          <input 
+            type="text" 
+            id={textbox.id} 
+            name={textbox.name} 
+            required={textbox.required} 
+            maxLength={textbox.maxlength} 
+            value={textbox.value} 
+            className = {classes}
+            onChange={onChange} 
+          />
       </div>
     );
   }

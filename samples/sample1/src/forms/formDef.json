@@ -17,6 +17,8 @@
       "type": "dropdown",
       "placeholder":"Select...",
       "data": {
+        "label": "Dropdown Label",
+        "name": "Name",
         "options": [
           {
             "name": "Option 1",
@@ -28,7 +30,7 @@
           }
         ],
         "value": "",
-        "required": "required"
+        "required": true
       }
     },
     {

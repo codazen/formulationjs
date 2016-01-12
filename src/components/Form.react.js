@@ -76,7 +76,7 @@ class Form extends React.Component {
       <section>
         <h1>{form.name}</h1>
         <p>{form.body}</p>
-        <form onSubmit={this._handleSubmit}>
+        <form onSubmit={this._handleSubmit} noValidate>
           <div>
             {
               form.elements ?
@@ -91,7 +91,7 @@ class Form extends React.Component {
                     break;
                   case 'dropdown':
                     if (element.placeholder){
-                    component = <Dropdown key={index} dropdown={element.data} placeholder={element.placeholder} onChange={this._handleChange.bind(this, index, 'value')} />;
+                    component = <Dropdown key={index} dropdown={element.data} placeholder={element.placeholder} onChange={this._handleChange.bind(this, index, 'value')} initialRender={this.state.initialRender} />;
                   }
                     else{
                       component = <Dropdown key={index} dropdown={element.data} onChange={this._handleChange.bind(this, index, 'value')} />;
@@ -107,7 +107,7 @@ class Form extends React.Component {
             }
           </div>
           <div>
-            <input type="submit" value="Submit" onClick={this._handleSubmitClick}/>
+            <input type="submit" value="Submit" onClick={this._handleSubmitClick} />
           </div>
         </form>
       </section>

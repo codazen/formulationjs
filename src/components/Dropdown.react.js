@@ -10,8 +10,10 @@ class Dropdown extends React.Component {
 
   render() {
     var {placeholder, dropdown, onChange } = this.props;
+    var star = dropdown.required ? '*' : '';
     return (
       <div>
+        <label htmlFor={dropdown.name}>{dropdown.label}{star}</label>
         <select value={dropdown.value} required={dropdown.required} onChange={onChange}>
           <option value="">{placeholder}</option>
           {
