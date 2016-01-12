@@ -24,7 +24,6 @@ class Textbox extends React.Component {
             type="text" 
             id={textbox.id} 
             name={textbox.name} 
-            required={textbox.required} 
             maxLength={textbox.maxlength} 
             value={textbox.value} 
             className = {classes}
