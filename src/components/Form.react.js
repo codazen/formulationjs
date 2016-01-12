@@ -19,8 +19,10 @@ class Form extends React.Component {
 
   _handleSubmit(e) {
     e.preventDefault();
-    console.log(this.state.form);
-    console.log("User clicked submit at: " + Date());
+    //if(form is valid){
+    //  console.log(this.state.form);
+    //  console.log("User clicked submit at: " + Date());
+    //}
   }
 
   _handleSubmitClick(e) {
@@ -69,7 +71,8 @@ class Form extends React.Component {
       form: nextProps.form
     });
   }
-
+  
+  //Using noValidate will allow the data to be submitted at all times...
   render() {
     var form = this.state.form;
     return (
