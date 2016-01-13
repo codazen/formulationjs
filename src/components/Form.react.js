@@ -14,7 +14,6 @@ class Form extends React.Component {
       initialRender: true
     };
     this._handleSubmit = this._handleSubmit.bind(this);
-    this._handleSubmitClick = this._handleSubmitClick.bind(this);
   }
 
   _handleSubmit(e) {
