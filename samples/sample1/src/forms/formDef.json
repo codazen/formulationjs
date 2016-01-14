@@ -9,7 +9,7 @@
         "name": "Name",
         "value": "",
         "label": "Label",
-        "required": false,
+        "required": true,
         "maxlength": "10"
       }
     },
@@ -30,7 +30,7 @@
           }
         ],
         "value": "",
-        "required": false
+        "required": true
       }
     },
     {
