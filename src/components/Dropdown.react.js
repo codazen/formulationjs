@@ -1,6 +1,8 @@
 'use strict';
+require('./styles/Dropdown.less');
 
 import React from 'react';
+import classNames from 'classnames';
 
 class Dropdown extends React.Component {
 
@@ -9,10 +11,18 @@ class Dropdown extends React.Component {
   }
 
   render() {
-    var {placeholder, dropdown, onChange } = this.props;
+    var {placeholder, dropdown, onChange, initialRender } = this.props;
+    var star = dropdown.required ? '*' : '';
+    var required = dropdown.required ? 'Required Field' : '';
+    var invalid = !dropdown.value && !initialRender && dropdown.required;
+    var classes = classNames({
+      'invalid' : invalid
+    });
+
     return (
       <div>
-        <select value={dropdown.value} required={dropdown.required} onChange={onChange}>
+        <label htmlFor={dropdown.name}>{dropdown.label}{star}</label>
+        <select value={dropdown.value} onChange={onChange} className={classes}>
           <option value="">{placeholder}</option>
           {
             dropdown.options.map(function (option, index) {
@@ -20,6 +30,10 @@ class Dropdown extends React.Component {
             })
           }
         </select>
+        {
+          invalid ?
+          <div className="required">Required Field</div> : null
+        }
       </div>
     );
   }

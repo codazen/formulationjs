@@ -2,6 +2,7 @@
 require('./styles/Textbox.less');
 
 import React from 'react';
+import classNames from 'classnames';
 
 class Textbox extends React.Component {
 
@@ -11,12 +12,29 @@ class Textbox extends React.Component {
 
   
   render() {
-    var { textbox, onChange } = this.props;
+    var { textbox, onChange, initialRender } = this.props;
     var star = textbox.required ? '*' : '';
+    var required = textbox.required ? 'Required Field' : '';
+    var invalid = !textbox.value && !initialRender && textbox.required;
+    var classes = classNames({
+      'invalid' : invalid
+    });
     return (
       <div>
         <label htmlFor={textbox.name}>{textbox.label}{star}</label>
-        <input type="text" id={textbox.id} name={textbox.name} required={textbox.required} maxLength={textbox.maxlength} value={textbox.value} onChange={onChange} />
+          <input 
+            type="text" 
+            id={textbox.id} 
+            name={textbox.name} 
+            maxLength={textbox.maxlength}
+            value={textbox.value} 
+            className={classes}
+            onChange={onChange} 
+          />
+          {
+            invalid ?
+            <div className="required">Required Field</div> : null
+          }
       </div>
     );
   }

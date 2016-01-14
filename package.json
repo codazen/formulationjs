@@ -20,7 +20,8 @@
   "homepage": "https://github.com/codazen/formulationjs#readme",
   "dependencies": {
     "react": "^0.14.2",
-    "react-dom": "^0.14.2"
+    "react-dom": "^0.14.2",
+    "classnames": "^2.2.0"
   },
   "devDependencies": {
     "babel-core": "^5.0.10",
