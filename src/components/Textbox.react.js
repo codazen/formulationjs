@@ -14,8 +14,10 @@ class Textbox extends React.Component {
   render() {
     var { textbox, onChange, initialRender } = this.props;
     var star = textbox.required ? '*' : '';
+    var required = textbox.required ? 'Required Field' : '';
+    var invalid = !textbox.value && !initialRender && textbox.required;
     var classes = classNames({
-      'invalid' : !textbox.value && !initialRender
+      'invalid' : invalid
     });
     return (
       <div>
@@ -24,11 +26,15 @@ class Textbox extends React.Component {
             type="text" 
             id={textbox.id} 
             name={textbox.name} 
-            maxLength={textbox.maxlength} 
+            maxLength={textbox.maxlength}
             value={textbox.value} 
-            className = {classes}
+            className={classes}
             onChange={onChange} 
           />
+          {
+            invalid ?
+            <div className="required">Required Field</div> : null
+          }
       </div>
     );
   }

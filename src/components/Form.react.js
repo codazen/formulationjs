@@ -23,10 +23,30 @@ class Form extends React.Component {
         initialRender: false
       });
     }
-    //if(form is valid){
-    //  console.log(this.state.form);
-    //  console.log("User clicked submit at: " + Date());
-    //}
+    if (this._componentsValid(this.state.form)) { //& the required true
+      console.log(this.state.form);
+      console.log("User clicked submit at: " + Date());
+    }
+  }
+
+  _componentsValid(form) {
+    //if true don't return until end, if false stop right away
+    for(var x in form.elements) {
+      var element = form.elements[x];
+      switch(element.type) {
+        case 'textbox':
+          if (!element.data.value && element.data.required) {
+            return false;
+          }
+          break;
+        case 'dropdown':
+          if (!element.data.value && element.data.required) {
+            return false;
+          }
+          break;
+      }
+    }
+    return true;
   }
 
   _handleChange(index, type, e) {
