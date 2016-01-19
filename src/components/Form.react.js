@@ -86,6 +86,27 @@ class Form extends React.Component {
     });
   }
 
+  //_handleMouseHover() {
+    //if (this._handleMouseEnter) {
+    //  return true;//form.submitHover = true;
+    //} else {
+    //  return false;//form.submitHover = false;
+    //}
+  //  return false;
+    
+  //}
+  
+  _handleMouseEnter(form) {
+    console.log("Entering");
+    form.submitHover = true;//return true;
+  }
+
+  _handleMouseLeave(form) {
+    console.log("Leaving");
+    //console.log(this.form.submit.submitHover);
+    form.submitHover = false;
+  }
+
   componentDidMount() {
     this.setState({
       initialRender: true
@@ -100,6 +121,25 @@ class Form extends React.Component {
   //Using noValidate will allow the data to be submitted at all times...
   render() {
     var form = this.state.form;
+    var enabled = form.submitState;
+    var disabled = form.submitState;
+    switch (form.submitState) {
+      case 'enabled':
+        enabled = true;
+        disabled = false;
+        break;
+      case 'disabled':
+        enabled = false;
+        disabled = true;
+        break;
+      default:
+        break;
+    }
+    var hovered = form.submitHover;//this._handleMouseHover();
+    var classes = classNames({
+      'enabled' : enabled,
+      'hovered': hovered //setting this to true or false allows for the hovered state
+    });
     return (
       <section>
         <h1 style={{ wordWrap: 'break-word' }}>{form.name}</h1>
@@ -135,7 +175,7 @@ class Form extends React.Component {
             }
           </div>
           <div>
-            <input className={form.submitState} type="submit" value="Submit" />
+            <input className={classes} onMouseEnter={this._handleMouseEnter} onMouseLeave={this._handleMouseLeave} type="submit" value="Submit" />
           </div>
         </form>
       </section>

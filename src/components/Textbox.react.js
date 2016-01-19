@@ -33,7 +33,7 @@ class Textbox extends React.Component {
     var classes = classNames({
       'invalid' : invalid,
       'enabled' : enabled,
-      'disabled': disabled,
+      'disabled': disabled
     });
     return (
       <div>
