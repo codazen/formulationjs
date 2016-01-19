@@ -39,6 +39,7 @@
       "data": {
         "value":[],
         "groupLabel": "Checkbox group label",
+        "required": true,
         "options": [
           {
             "name": "Option 1",

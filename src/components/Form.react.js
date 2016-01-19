@@ -44,6 +44,11 @@ class Form extends React.Component {
             return false;
           }
           break;
+        case 'checkbox':
+          if (element.data.value.length == 0 && element.data.required) {
+            return false;
+          }
+          break;
       }
     }
     return true;
@@ -108,7 +113,7 @@ class Form extends React.Component {
                   component = <Textbox key={index} textbox={element.data} onChange={this._handleChange.bind(this, index, 'value')} initialRender={this.state.initialRender}/>;
                     break;
                   case 'checkbox':
-                  component = <Checkbox key={index} checkbox={element.data} name={element.name} onClick={this._handleToggle.bind(this, index, 'checked')} onChange={this._handleChange.bind(this, index, 'checked')} />;
+                  component = <Checkbox key={index} checkbox={element.data} name={element.name} onClick={this._handleToggle.bind(this, index, 'checked')} onChange={this._handleChange.bind(this, index, 'checked')} initialRender={this.state.initialRender} />;
                     break;
                   case 'dropdown':
                     if (element.placeholder){
