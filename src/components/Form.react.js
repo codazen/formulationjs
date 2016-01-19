@@ -86,26 +86,24 @@ class Form extends React.Component {
     });
   }
 
-  //_handleMouseHover() {
-    //if (this._handleMouseEnter) {
-    //  return true;//form.submitHover = true;
-    //} else {
-    //  return false;//form.submitHover = false;
-    //}
-  //  return false;
-    
-  //}
+  _toggleHover() {
+    console.log("Toggle");
+    var hoverState = false;
+    return !hoverState;
+  }
   
-  _handleMouseEnter(form) {
-    console.log("Entering");
-    form.submitHover = true;//return true;
-  }
+  //_handleMouseEnter(form) {
+  //  console.log("Entering");
+  //  form.submitHover = true;//return true;
+  //  return true;
+  //}
 
-  _handleMouseLeave(form) {
-    console.log("Leaving");
+  //_handleMouseLeave(form) {
+  //  console.log("Leaving");
     //console.log(this.form.submit.submitHover);
-    form.submitHover = false;
-  }
+  //  form.submitHover = false;
+  //  return false;
+  //}
 
   componentDidMount() {
     this.setState({
@@ -135,7 +133,7 @@ class Form extends React.Component {
       default:
         break;
     }
-    var hovered = form.submitHover;//this._handleMouseHover();
+    var hovered = this._toggleHover;//this._handleMouseHover();
     var classes = classNames({
       'enabled' : enabled,
       'hovered': hovered //setting this to true or false allows for the hovered state
@@ -175,7 +173,7 @@ class Form extends React.Component {
             }
           </div>
           <div>
-            <input className={classes} onMouseEnter={this._handleMouseEnter} onMouseLeave={this._handleMouseLeave} type="submit" value="Submit" />
+            <input className={classes} onMouseEnter={this._toggleHover} onMouseLeave={this._toggleHover} type="submit" value="Submit" />
           </div>
         </form>
       </section>
