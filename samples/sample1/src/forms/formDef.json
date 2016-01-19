@@ -1,6 +1,7 @@
 {
   "name": "Sample 1 Form",
   "body": "This will be a description of the form.",
+  "submitState": "enabled",
   "elements": [
     {
       "type": "textbox",
@@ -10,7 +11,8 @@
         "value": "",
         "label": "Label",
         "required": true,
-        "maxlength": "10"
+        "maxlength": "10",
+        "textboxState": "enabled"
       }
     },
     {
