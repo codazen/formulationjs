@@ -1,8 +1,7 @@
 {
   "name": "Sample 1 Form",
   "body": "This will be a description of the form.",
-  "submitState": "enabled",
-  "submitHover": false,
+  "submitDisabled": false,
   "elements": [
     {
       "type": "textbox",
