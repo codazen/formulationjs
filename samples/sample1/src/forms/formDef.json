@@ -12,7 +12,7 @@
         "label": "Label",
         "required": true,
         "maxlength": "10",
-        "textboxState": "enabled"
+        "textboxState": true
       }
     },
     {

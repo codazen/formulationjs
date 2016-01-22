@@ -16,24 +16,10 @@ class Textbox extends React.Component {
     var star = textbox.required ? '*' : '';
     var required = textbox.required ? 'Required Field' : '';
     var invalid = !textbox.value && !initialRender && textbox.required;
-    var enabled = textbox.textboxState;
-    var disabled = textbox.textboxState;
-    switch (textbox.textboxState) {
-      case 'enabled':
-        enabled = true;
-        disabled = false;
-        break;
-      case 'disabled':
-        enabled = false;
-        disabled = true;
-        break;
-      default:
-        break;
-    }
+    var disabled = !textbox.textboxState;
     var classes = classNames({
       'invalid' : invalid,
-      'enabled' : enabled,
-      'disabled': disabled
+      'disabled' : disabled
     });
     return (
       <div>
