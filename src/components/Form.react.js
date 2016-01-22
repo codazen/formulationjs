@@ -1,9 +1,11 @@
 'use strict';
+require('./styles/Form.less');
 
 import React from 'react';
 import Checkbox from './Checkbox.react';
 import Textbox from './Textbox.react';
 import Dropdown from './Dropdown.react';
+import classNames from 'classnames';
 
 class Form extends React.Component {
 
@@ -41,6 +43,11 @@ class Form extends React.Component {
           break;
         case 'dropdown':
           if (!element.data.value && element.data.required) {
+            return false;
+          }
+          break;
+        case 'checkbox':
+          if (element.data.value.length == 0 && element.data.required) {
             return false;
           }
           break;
@@ -93,6 +100,10 @@ class Form extends React.Component {
   //Using noValidate will allow the data to be submitted at all times...
   render() {
     var form = this.state.form;
+    var disabled = form.submitDisabled;
+    var classes = classNames({
+      'disabled' : disabled,
+    });
     return (
       <section>
         <h1 style={{ wordWrap: 'break-word' }}>{form.name}</h1>
@@ -105,10 +116,10 @@ class Form extends React.Component {
                 var component;
                 switch (element.type.toLowerCase()) {
                   case 'textbox':
-                  component = <Textbox key={index} textbox={element.data} onChange={this._handleChange.bind(this, index, 'value')} initialRender={this.state.initialRender}/>;
+                  component = <Textbox key={index} textbox={element.data} onChange={this._handleChange.bind(this, index, 'value')} initialRender={this.state.initialRender} />;
                     break;
                   case 'checkbox':
-                  component = <Checkbox key={index} checkbox={element.data} name={element.name} onClick={this._handleToggle.bind(this, index, 'checked')} onChange={this._handleChange.bind(this, index, 'checked')} />;
+                  component = <Checkbox key={index} checkbox={element.data} name={element.name} onClick={this._handleToggle.bind(this, index, 'checked')} onChange={this._handleChange.bind(this, index, 'checked')} initialRender={this.state.initialRender} />;
                     break;
                   case 'dropdown':
                     if (element.placeholder){
@@ -128,7 +139,7 @@ class Form extends React.Component {
             }
           </div>
           <div>
-            <input type="submit" value="Submit" />
+            <input className={classes} type="submit" value="Submit" />
           </div>
         </form>
       </section>

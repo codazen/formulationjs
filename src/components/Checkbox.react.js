@@ -2,6 +2,7 @@
 require('./styles/Checkbox.less');
 
 import React from 'react';
+import classNames from 'classnames';
 
 class Checkbox extends React.Component {
 
@@ -10,10 +11,18 @@ class Checkbox extends React.Component {
   }
   
   render() {
-    var { checkbox, onChange, onClick, name } = this.props;
+    var { checkbox, onChange, onClick, name, initialRender } = this.props;
+    var star = checkbox.required ? '*' : '';
+    var required = checkbox.required ? 'Required Field' : '';
+    var invalid = checkbox.value.length == 0 && !initialRender && checkbox.required;
+    //it is invalid if when you loop through all the checkbox options, it returns nothing
+    //the part you need to change is checkbox.value?
+    var classes = classNames({
+      'invalid' : invalid
+    });
     return (
       <div>
-        {checkbox.groupLabel}
+        {checkbox.groupLabel}{star}
           {
             checkbox.options.map(function (option, index) {
               return  (
@@ -24,6 +33,10 @@ class Checkbox extends React.Component {
                 </div>
               );
             })
+          }
+          {
+            invalid ?
+            <div className="required">Required Field</div> : null
           }
       </div>
     );
