@@ -16,6 +16,18 @@
       }
     },
     {
+      "type": "textarea",
+      "data": {
+        "id": "id",
+        "name": "Name",
+        "value": "",
+        "label": "Label",
+        "required": true,
+        "maxlength": "300",
+        "textareaState": true
+      }
+    },
+    {
       "type": "dropdown",
       "placeholder":"Select...",
       "data": {
