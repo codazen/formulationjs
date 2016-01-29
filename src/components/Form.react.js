@@ -5,6 +5,7 @@ import React from 'react';
 import Checkbox from './Checkbox.react';
 import Textbox from './Textbox.react';
 import Dropdown from './Dropdown.react';
+import Textarea from './Textarea.react';
 import classNames from 'classnames';
 
 class Form extends React.Component {
@@ -117,6 +118,9 @@ class Form extends React.Component {
                 switch (element.type.toLowerCase()) {
                   case 'textbox':
                   component = <Textbox key={index} textbox={element.data} onChange={this._handleChange.bind(this, index, 'value')} initialRender={this.state.initialRender} />;
+                    break;
+                  case 'textarea':
+                  component = <Textarea key={index} textarea={element.data} onChange={this._handleChange.bind(this, index, 'value')} initialRender={this.state.initialRender} />;
                     break;
                   case 'checkbox':
                   component = <Checkbox key={index} checkbox={element.data} name={element.name} onClick={this._handleToggle.bind(this, index, 'checked')} onChange={this._handleChange.bind(this, index, 'checked')} initialRender={this.state.initialRender} />;
