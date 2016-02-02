@@ -42,6 +42,11 @@ class Form extends React.Component {
             return false;
           }
           break;
+        case 'textarea':
+          if (!element.data.value && element.data.required) {
+            return false;
+          }
+          break;
         case 'dropdown':
           if (!element.data.value && element.data.required) {
             return false;
