@@ -6,6 +6,7 @@ import Checkbox from './Checkbox.react';
 import Textbox from './Textbox.react';
 import Dropdown from './Dropdown.react';
 import Textarea from './Textarea.react';
+import DatePicker from './DatePicker.react';
 import classNames from 'classnames';
 
 class Form extends React.Component {
@@ -132,6 +133,9 @@ class Form extends React.Component {
                     else{
                       component = <Dropdown key={index} dropdown={element.data} onChange={this._handleChange.bind(this, index, 'value')} />;
                     }
+                    break;
+                  case 'datepicker':
+                    component = <DatePicker key={index} datepicker={element.data} onChange={this._handleChange.bind(this, index, 'value')} />
                     break;
                   default:
                     break;
