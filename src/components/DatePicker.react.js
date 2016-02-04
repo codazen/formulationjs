@@ -1,8 +1,10 @@
 'use strict';
 
+require('react-datepicker/dist/react-datepicker.css');
+
 import React from 'react';
 import classNames from 'classnames';
-//import DatePicker from 'react-datepicker';
+import ReactDatePicker from 'react-datepicker';
 import moment from 'moment';
 
 class DatePicker extends React.Component {
@@ -11,15 +13,12 @@ class DatePicker extends React.Component {
     super(props);
   }
 
-
-
-  
   render() {
-    var { datepicker, onChange, initialRender } = this.props;    
+    var { datepicker, onChange, initialRender } = this.props;
     var startDate = moment();
     return (
       <div>
-        
+        <ReactDatePicker selected={startDate} onChange={onChange} />
       </div>
     );
   }
