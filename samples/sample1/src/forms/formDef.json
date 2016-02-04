@@ -69,6 +69,10 @@
     {
       "type": "datepicker",
       "data": {
+        "id": "id",
+        "name": "Name",
+        "value": "",
+        "label": "Label"
       }
     }
   ]

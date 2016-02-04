@@ -1,8 +1,9 @@
 'use strict';
-//require('./styles/DatePicker.less');
 
 import React from 'react';
 import classNames from 'classnames';
+//import DatePicker from 'react-datepicker';
+import moment from 'moment';
 
 class DatePicker extends React.Component {
 
@@ -10,17 +11,18 @@ class DatePicker extends React.Component {
     super(props);
   }
 
+
+
   
   render() {
-    var { datepicker, onChange, initialRender } = this.props;
+    var { datepicker, onChange, initialRender } = this.props;    
+    var startDate = moment();
     return (
       <div>
-        <DatePicker
-        selected={this.state.startDate}
-        onChange={onChange} />
+        
       </div>
     );
   }
 }
 
-export default datepicker;
+export default DatePicker;
