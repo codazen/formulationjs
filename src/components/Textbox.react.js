@@ -17,9 +17,9 @@ class Textbox extends React.Component {
     var required = textbox.required ? 'Required Field' : '';
     var invalid = !textbox.value && !initialRender && textbox.required;
 
-    var re = /e/;
+    var re = /^([^.]+[.]?)+[^.]+@([\w]+((.|\-)+[\w])+)+[\w]+$/;
     var emailInvalid = textbox.email && textbox.value && !re.test(textbox.value);
-    console.log(emailInvalid);
+    console.log(re.test(textbox.value));
 
     var disabled = !textbox.textboxState;
     var classes = classNames({

@@ -77,9 +77,9 @@ class Form extends React.Component {
       form: form
     });
 
-    var re = /^\w+[\w-\.]*\@\w+((-\w+)|(\w*))\.[a-z]{2,3}$/;
+    var re = /^([^.]+[.]?)+[^.]+@([\w]+((.|\-)+[\w])+)+[\w]+$/;
     if(!re.test(form.elements[index].data.value)){
-      
+      //make form invalid
     }
 }
 
