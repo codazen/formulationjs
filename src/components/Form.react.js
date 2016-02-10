@@ -18,6 +18,7 @@ class Form extends React.Component {
       initialRender: true
     };
     this._handleSubmit = this._handleSubmit.bind(this);
+    this._handleDateChange = this._handleDateChange.bind(this);
   }
 
   _handleSubmit(e) {
@@ -64,6 +65,15 @@ class Form extends React.Component {
     this.setState({
       form: form
     });
+  }
+
+  _handleDateChange(index, value) {
+    var form = this.state.form;
+    form.elements[index].data.value = value;
+    this.setState({
+      form: form
+    });
+    console.log(form);
   }
 
   _handleToggle(index, type, e) {
@@ -135,7 +145,7 @@ class Form extends React.Component {
                     }
                     break;
                   case 'datepicker':
-                    component = <DatePicker key={index} datepicker={element.data} onChange={this._handleChange.bind(this, index, 'value')} />
+                    component = <DatePicker key={index} index={index} datepicker={element.data} onChange={this._handleDateChange} />
                     break;
                   default:
                     break;

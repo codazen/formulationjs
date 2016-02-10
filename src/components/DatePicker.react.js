@@ -18,20 +18,23 @@ class DatePicker extends React.Component {
     this._handleChange = this._handleChange.bind(this);
   }
 
-  _handleChange(date) {}
+  _handleChange(e) {
+    var { onChange, index } = this.props;
+    onChange(index, e);
+  }
 
   render() {
-    var { datepicker, onChange, initialRender } = this.props;
+    var { datepicker, initialRender } = this.props;
     return (
       <div>
         {datepicker.label}
         <ReactDatePicker 
           selected={this.state.startDate} 
-          onChange={onChange}
-          value={datepicker.value}
+          onChange={this._handleChange}
           dateFormat={datepicker.dateFormat}
           maxLength={datepicker.maxlength}
-          placeholderText={datepicker.placeholderText}/>
+          placeholderText={datepicker.placeholderText}
+        />
       </div>
     );
   }
