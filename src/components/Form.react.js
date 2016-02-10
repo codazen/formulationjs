@@ -134,14 +134,12 @@ class Form extends React.Component {
                 var component;
                 switch (element.type.toLowerCase()) {
                   case 'textbox':
-                  switch(element.email){
-                    case false:
-                    component = <Textbox key={index} textbox={element.data} onChange={this._handleChange.bind(this, index, 'value')} initialRender={this.state.initialRender} />;
-                      break;
-                    case true:
+                  if(element.email){
                     component = <Textbox key={index} textbox={element.data} onChange={this._emailHandleChange.bind(this, index, 'value')} initialRender={this.state.initialRender} />;
-                      break;
+                  } else {
+                    component = <Textbox key={index} textbox={element.data} onChange={this._handleChange.bind(this, index, 'value')} initialRender={this.state.initialRender} />;
                   }
+                  break;
                   case 'textarea':
                   component = <Textarea key={index} textarea={element.data} onChange={this._handleChange.bind(this, index, 'value')} initialRender={this.state.initialRender} />;
                     break;

@@ -43,7 +43,7 @@ class Textbox extends React.Component {
             <div className="required">Required Field</div> : null
           }
           {
-            emailinvalid ?
+            emailInvalid ?
             <div className="required">Invalid Email Format</div> : null
           }
 
