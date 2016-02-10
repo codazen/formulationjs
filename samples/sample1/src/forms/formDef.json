@@ -69,10 +69,13 @@
     {
       "type": "datepicker",
       "data": {
-        "id": "id",
-        "name": "Name",
+        "label": "Please select a due date",
         "value": "",
-        "label": "Label"
+        "dateFormat": "DD/MM/YYYY",
+        "placeholderText": "dd/mm/yyyy",
+        "maxlength": "10",
+        "required": "false",
+        "range": "false"
       }
     }
   ]
