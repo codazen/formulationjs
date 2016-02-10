@@ -38,7 +38,8 @@ class Form extends React.Component {
       var element = form.elements[x];
       switch(element.type) {
         case 'textbox':
-          if (!element.data.value && element.data.required) {
+          var re = /^([^.]+[.]?)+[^.]+@([\w]+((.|\-)+[\w])+)+[\w]+$/;
+          if ((!element.data.value && element.data.required) || (element.data.email && !re.test(element.data.value)) ) {
             return false;
           }
           break;
@@ -69,19 +70,6 @@ class Form extends React.Component {
       form: form
     });
   }
-
-  _emailHandleChange(index, type, e) {
-    var form = this.state.form;
-    form.elements[index].data.value = e.target[type];
-    this.setState({
-      form: form
-    });
-
-    var re = /^([^.]+[.]?)+[^.]+@([\w]+((.|\-)+[\w])+)+[\w]+$/;
-    if(!re.test(form.elements[index].data.value)){
-      //make form invalid
-    }
-}
 
   _handleToggle(index, type, e) {
     var form = this.state.form;
@@ -135,12 +123,8 @@ class Form extends React.Component {
                 var component;
                 switch (element.type.toLowerCase()) {
                   case 'textbox':
-                  if(element.data.email){
-                    component = <Textbox key={index} textbox={element.data} onChange={this._emailHandleChange.bind(this, index, 'value')} initialRender={this.state.initialRender} />;
-                  } else {
-                    component = <Textbox key={index} textbox={element.data} onChange={this._handleChange.bind(this, index, 'value')} initialRender={this.state.initialRender} />;
-                  }
-                  break;
+                  component = <Textbox key={index} textbox={element.data} onChange={this._handleChange.bind(this, index, 'value')} initialRender={this.state.initialRender} />;
+                    break;
                   case 'textarea':
                   component = <Textarea key={index} textarea={element.data} onChange={this._handleChange.bind(this, index, 'value')} initialRender={this.state.initialRender} />;
                     break;
