@@ -70,6 +70,18 @@ class Form extends React.Component {
     });
   }
 
+  _emailHandleChange(index, type, e) {
+    var form = this.state.form;
+
+    var re = /^\w+[\w-\.]*\@\w+((-\w+)|(\w*))\.[a-z]{2,3}$/;
+    if(re.test(form.elements[index].data.value)){
+      form.elements[index].data.value = e.target[type];
+      this.setState({
+        form: form
+      });
+  }
+}
+
   _handleToggle(index, type, e) {
     var form = this.state.form;
     switch(e.target[type]){
@@ -122,8 +134,14 @@ class Form extends React.Component {
                 var component;
                 switch (element.type.toLowerCase()) {
                   case 'textbox':
-                  component = <Textbox key={index} textbox={element.data} onChange={this._handleChange.bind(this, index, 'value')} initialRender={this.state.initialRender} />;
-                    break;
+                  switch(element.email){
+                    case false:
+                    component = <Textbox key={index} textbox={element.data} onChange={this._handleChange.bind(this, index, 'value')} initialRender={this.state.initialRender} />;
+                      break;
+                    case true:
+                    component = <Textbox key={index} textbox={element.data} onChange={this._emailHandleChange.bind(this, index, 'value')} initialRender={this.state.initialRender} />;
+                      break;
+                  }
                   case 'textarea':
                   component = <Textarea key={index} textarea={element.data} onChange={this._handleChange.bind(this, index, 'value')} initialRender={this.state.initialRender} />;
                     break;

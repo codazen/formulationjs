@@ -16,10 +16,14 @@ class Textbox extends React.Component {
     var star = textbox.required ? '*' : '';
     var required = textbox.required ? 'Required Field' : '';
     var invalid = !textbox.value && !initialRender && textbox.required;
+
+    var re = /^\w+[\w-\.]*\@\w+((-\w+)|(\w*))\.[a-z]{2,3}$/;
+    var emailInvalid = textbox.email && !initialRender && textbox.value && re.test(form.elements[index].data.value);
+
     var disabled = !textbox.textboxState;
     var classes = classNames({
       'invalid' : invalid,
-      'disabled' : disabled
+      'disabled' : disabled,
     });
     return (
       <div>
@@ -32,11 +36,17 @@ class Textbox extends React.Component {
             value={textbox.value} 
             className={classes}
             onChange={onChange} 
+            email = {textbox.email}
           />
           {
             invalid ?
             <div className="required">Required Field</div> : null
           }
+          {
+            emailinvalid ?
+            <div className="required">Invalid Email Format</div> : null
+          }
+
       </div>
     );
   }
