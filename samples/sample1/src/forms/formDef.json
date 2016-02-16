@@ -16,6 +16,17 @@
       }
     },
     {
+      "type": "textbox",
+      "data": {
+        "email": true,
+        "id": "id",
+        "name": "Name",
+        "value": "",
+        "label": "Email",
+        "textboxState": true
+      }
+    },
+    {
       "type": "textarea",
       "data": {
         "id": "id",

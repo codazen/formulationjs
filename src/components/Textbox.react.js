@@ -8,6 +8,21 @@ class Textbox extends React.Component {
 
   constructor(props) {
     super(props);
+    this.state = {
+      emailIsValid : true
+    };
+    this._handleBlur = this._handleBlur.bind(this);
+  }
+
+  _handleBlur(e){
+    if(this.props.textbox.email){
+      var value = e.target.value;
+      var re = /^([^.@]+[.]?)+[^.@]+@([\w]+(\.|\-|(\.\-\.)|(\-\.\-)|(\.\-)+|(\-\.)+)\w+)+$/;
+      var emailIsValid = re.test(value)
+      this.setState({
+        emailIsValid : emailIsValid
+      });
+    }
   }
 
   
@@ -16,10 +31,12 @@ class Textbox extends React.Component {
     var star = textbox.required ? '*' : '';
     var required = textbox.required ? 'Required Field' : '';
     var invalid = !textbox.value && !initialRender && textbox.required;
+
     var disabled = !textbox.textboxState;
     var classes = classNames({
       'invalid' : invalid,
-      'disabled' : disabled
+      'disabled' : disabled,
+      'emailInvalid' : !this.state.emailIsValid
     });
     return (
       <div>
@@ -32,11 +49,18 @@ class Textbox extends React.Component {
             value={textbox.value} 
             className={classes}
             onChange={onChange} 
+            onBlur={this._handleBlur}
+            email = {textbox.email}
           />
           {
             invalid ?
             <div className="required">Required Field</div> : null
           }
+          {
+            textbox.email && !this.state.emailIsValid ?
+            <div className="required">Invalid Email Format</div> : null
+          }
+
       </div>
     );
   }
