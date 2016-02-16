@@ -107,6 +107,8 @@ class Form extends React.Component {
   //Using noValidate will allow the data to be submitted at all times...
   render() {
     var form = this.state.form;
+    var verify = !this.state.initialRender && this._componentsValid(this.state.form) ? 'Your form is ready to submit/has been submitted.' : '';
+    var notVerify = !this.state.initialRender && !this._componentsValid(this.state.form) ? 'Did not submit form. Please try again!' : '';
     var disabled = form.submitDisabled;
     var classes = classNames({
       'disabled' : disabled,
@@ -150,6 +152,8 @@ class Form extends React.Component {
           </div>
           <div>
             <input className={classes} type="submit" value="Submit" />
+            <p id = "verify">{verify}</p>
+            <p id = "notVerify">{notVerify}</p>
           </div>
         </form>
       </section>
