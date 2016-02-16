@@ -39,7 +39,7 @@ module.exports = {
         include: path.join(__dirname, 'src', 'forms')
       },
       {
-        test: /\.less$/,
+        test: /\.less$|\.css$/,
         loader: 'style-loader!css-loader!less-loader'
       }
     ]

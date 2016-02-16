@@ -76,6 +76,18 @@
           }
         ]
       }
+    },
+    {
+      "type": "datepicker",
+      "data": {
+        "label": "Please select a due date",
+        "value": "",
+        "dateFormat": "DD/MM/YYYY",
+        "placeholderText": "dd/mm/yyyy",
+        "maxlength": "10",
+        "required": "false",
+        "range": "false"
+      }
     }
   ]
 }

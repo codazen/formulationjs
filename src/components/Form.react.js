@@ -6,6 +6,7 @@ import Checkbox from './Checkbox.react';
 import Textbox from './Textbox.react';
 import Dropdown from './Dropdown.react';
 import Textarea from './Textarea.react';
+import DatePicker from './DatePicker.react';
 import classNames from 'classnames';
 
 class Form extends React.Component {
@@ -17,6 +18,7 @@ class Form extends React.Component {
       initialRender: true
     };
     this._handleSubmit = this._handleSubmit.bind(this);
+    this._handleDateChange = this._handleDateChange.bind(this);
   }
 
   _handleSubmit(e) {
@@ -69,6 +71,15 @@ class Form extends React.Component {
     this.setState({
       form: form
     });
+  }
+
+  _handleDateChange(index, value) {
+    var form = this.state.form;
+    form.elements[index].data.value = value;
+    this.setState({
+      form: form
+    });
+    console.log(form);
   }
 
   _handleToggle(index, type, e) {
@@ -140,6 +151,9 @@ class Form extends React.Component {
                     else{
                       component = <Dropdown key={index} dropdown={element.data} onChange={this._handleChange.bind(this, index, 'value')} />;
                     }
+                    break;
+                  case 'datepicker':
+                    component = <DatePicker key={index} index={index} datepicker={element.data} onChange={this._handleDateChange} />
                     break;
                   default:
                     break;
