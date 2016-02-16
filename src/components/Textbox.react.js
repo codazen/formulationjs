@@ -17,7 +17,7 @@ class Textbox extends React.Component {
   _handleBlur(e){
     if(this.props.textbox.email){
       var value = e.target.value;
-      var re = /^([^.]+[.]?)+[^.]+@([\w]+((.|\-)+[\w])+)+[\w]+$/;
+      var re = /^([^.@]+[.]?)+[^.@]+@([\w]+(\.|\-|(\.\-\.)|(\-\.\-)|(\.\-)+|(\-\.)+)\w+)+$/;
       var emailIsValid = re.test(value)
       this.setState({
         emailIsValid : emailIsValid
