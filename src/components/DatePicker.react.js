@@ -11,10 +11,6 @@ class DatePicker extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = {
-      //datepicker: this.props.DatePicker
-      startDate: null
-    };
     this._handleChange = this._handleChange.bind(this);
   }
 
@@ -29,7 +25,7 @@ class DatePicker extends React.Component {
       <div>
         {datepicker.label}
         <ReactDatePicker 
-          selected={this.state.startDate} 
+          selected={datepicker.value} 
           onChange={this._handleChange}
           dateFormat={datepicker.dateFormat}
           maxLength={datepicker.maxlength}

@@ -81,7 +81,7 @@
       "type": "datepicker",
       "data": {
         "label": "Please select a due date",
-        "value": "",
+        "value": null,
         "dateFormat": "DD/MM/YYYY",
         "placeholderText": "dd/mm/yyyy",
         "maxlength": "10",
