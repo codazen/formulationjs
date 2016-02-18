@@ -21,15 +21,16 @@ class Dropdown extends React.Component {
 
     return (
       <div>
-        <label htmlFor={dropdown.name}>{dropdown.label}{star}</label>
-        <select value={dropdown.value} onChange={onChange} className={classes}>
-          <option value="">{placeholder}</option>
-          {
-            dropdown.options.map(function (option, index) {
-              return <option key={index} value={option.value}>{option.name}</option>
-            })
-          }
-        </select>
+        <label htmlFor={dropdown.name}>{dropdown.label}{star}
+          <select value={dropdown.value} onChange={onChange} className={classes}>
+            <option value="">{placeholder}</option>
+            {
+              dropdown.options.map(function (option, index) {
+                return <option key={index} value={option.value}>{option.name}</option>
+              })
+            }
+          </select>
+        </label>
         {
           invalid ?
           <div className="required">Required Field</div> : null

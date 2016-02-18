@@ -79,7 +79,6 @@ class Form extends React.Component {
     this.setState({
       form: form
     });
-    console.log(form);
   }
 
   _handleToggle(index, type, e) {

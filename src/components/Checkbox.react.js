@@ -22,18 +22,19 @@ class Checkbox extends React.Component {
     });
     return (
       <div>
-        {checkbox.groupLabel}{star}
+        <label>{checkbox.groupLabel}{star}
           {
             checkbox.options.map(function (option, index) {
               return  (
                 <div key={index}>
-                  <label>
-                    <input type="checkbox" name={name} value={option.value} onClick={onClick} />{option.name}
-                  </label>
+                    <label className="checkboxAlignment">
+                      <input type="checkbox" name={name} value={option.value} onClick={onClick} />{option.name}
+                    <label/>
                 </div>
               );
             })
           }
+        </label>
           {
             invalid ?
             <div className="required">Required Field</div> : null
