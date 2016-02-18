@@ -1,6 +1,9 @@
 # FormulationJS
 Form library for data collection
 
+##UTF-8
+In order for all symbols to load correctly, ensure that your html page allows for UTF-8 characters by putting the tag <meta charset="UTF-8"> in the <head> tags.
+
 ##Development
 Pull the latest on github
 ```
