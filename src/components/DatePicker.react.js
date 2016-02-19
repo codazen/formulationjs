@@ -27,8 +27,8 @@ class DatePicker extends React.Component {
         <ReactDatePicker 
           selected={datepicker.value} 
           onChange={this._handleChange}
+          showYearDropdown
           dateFormat={datepicker.dateFormat}
-          maxLength={datepicker.maxlength}
           placeholderText={datepicker.placeholderText}
         />
       </div>
