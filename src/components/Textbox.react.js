@@ -40,7 +40,7 @@ class Textbox extends React.Component {
     });
     return (
       <div>
-        <label htmlFor={textbox.name}>{textbox.label}{star}</label>
+        <label htmlFor={textbox.name}>{textbox.label}{star}
           <input 
             type="text" 
             id={textbox.id} 
@@ -52,6 +52,7 @@ class Textbox extends React.Component {
             onBlur={this._handleBlur}
             email = {textbox.email}
           />
+        </label>
           {
             invalid ?
             <div className="required">Required Field</div> : null
