@@ -41,7 +41,7 @@ class Form extends React.Component {
       switch(element.type) {
         case 'textbox':
           var re = /^([^.@]+[.]?)+[^.@]+@([\w]+(\.|\-|(\.\-\.)|(\-\.\-)|(\.\-)+|(\-\.)+)\w+)+$/;
-          if (!element.data.value && element.data.required) {
+          if ((!element.data.value && element.data.required) || (element.data.email && element.data.value && !re.test(element.data.value))) {
             return false;
           }
           break;

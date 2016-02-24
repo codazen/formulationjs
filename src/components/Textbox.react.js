@@ -36,7 +36,7 @@ class Textbox extends React.Component {
     var classes = classNames({
       'invalid' : invalid,
       'disabled' : disabled,
-      'emailInvalid' : !this.state.emailIsValid
+      'emailInvalid' : !this.state.emailIsValid && textbox.value
     });
     return (
       <div>
@@ -57,7 +57,7 @@ class Textbox extends React.Component {
             <div className="required">Required Field</div> : null
           }
           {
-            textbox.email && !this.state.emailIsValid ?
+            textbox.email && !this.state.emailIsValid && textbox.value ?
             <div className="required">Invalid Email Format</div> : null
           }
 
