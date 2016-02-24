@@ -1,7 +1,8 @@
 'use strict';
 
-require('react-datepicker/dist/react-datepicker.css');
 
+require('react-datepicker/dist/react-datepicker.css');
+require('./styles/DatePicker.less');
 import React from 'react';
 import classNames from 'classnames';
 import ReactDatePicker from 'react-datepicker';
