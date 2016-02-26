@@ -28,8 +28,18 @@ class Form extends React.Component {
         initialRender: false
       });
     }
+
+    var sanitizedForm = new Object();
+    sanitizedForm = JSON.parse(JSON.stringify(this.state.form));
+    for (var x in sanitizedForm.elements){
+      var element = sanitizedForm.elements[x];  
+      if(element.type == 'textbox' || element.type == 'textarea'){
+        element.data.value = this.removeTags(element.data.value);
+      }
+    }
+
     if (this._componentsValid(this.state.form)) { //& the required true
-      console.log(this.state.form);
+      console.log(sanitizedForm);
       console.log("User clicked submit at: " + Date());
     }
   }
@@ -63,6 +73,30 @@ class Form extends React.Component {
       }
     }
     return true;
+  }
+
+  removeTags(html) {
+    var tagBody = '(?:[^"\'>]|"[^"]*"|\'[^\']*\')*';
+
+    var tagOrComment = new RegExp(
+      '<(?:'
+      // Comment body.
+      + '!--(?:(?:-*[^->])*--+|-?)'
+      // Special "raw text" elements whose content should be elided.
+      + '|script\\b' + tagBody + '>[\\s\\S]*?</script\\s*'
+      + '|style\\b' + tagBody + '>[\\s\\S]*?</style\\s*'
+      // Regular name
+      + '|/?[a-z]'
+      + tagBody
+      + ')>',
+      'gi');
+
+    var oldHtml;
+    do {
+      oldHtml = html;
+      html = html.replace(tagOrComment, '');
+    } while (html !== oldHtml);
+    return html.replace(/</g, '&lt;');
   }
 
   _handleChange(index, type, e) {
