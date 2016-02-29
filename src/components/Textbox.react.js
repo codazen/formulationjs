@@ -24,7 +24,6 @@ class Textbox extends React.Component {
       });
     }
   }
-
   
   render() {
     var { textbox, onChange, initialRender } = this.props;
