@@ -1,5 +1,6 @@
 'use strict';
 require('./styles/Textbox.less');
+global.jQuery = require('jquery');
 require('bootstrap');
 
 import React from 'react';
@@ -26,7 +27,7 @@ class Textbox extends React.Component {
     }
   }
 
-  
+
   render() {
     var { textbox, onChange, initialRender } = this.props;
     var star = textbox.required ? '*' : '';
@@ -42,14 +43,14 @@ class Textbox extends React.Component {
     return (
       <div>
         <label htmlFor={textbox.name}>{textbox.label}{star}
-          <input 
-            type="text" 
-            id={textbox.id} 
-            name={textbox.name} 
+          <input
+            type="text"
+            id={textbox.id}
+            name={textbox.name}
             maxLength={textbox.maxlength}
-            value={textbox.value} 
+            value={textbox.value}
             className={classes}
-            onChange={onChange} 
+            onChange={onChange}
             onBlur={this._handleBlur}
             email = {textbox.email}
           />

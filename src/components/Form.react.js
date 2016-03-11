@@ -1,5 +1,6 @@
 'use strict';
 require('./styles/Form.less');
+global.jQuery = require('jquery');
 require('bootstrap');
 
 import React from 'react';
@@ -114,7 +115,7 @@ class Form extends React.Component {
       form: nextProps.form
     });
   }
-  
+
   //Using noValidate will allow the data to be submitted at all times...
   render() {
     var form = this.state.form;
