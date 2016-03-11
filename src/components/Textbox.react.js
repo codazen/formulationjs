@@ -41,8 +41,9 @@ class Textbox extends React.Component {
       'emailInvalid' : !this.state.emailIsValid
     });
     return (
-      <div>
-        <label htmlFor={textbox.name}>{textbox.label}{star}
+      <div className="row">
+        <div className="col-md-6"><label htmlFor={textbox.name}>{textbox.label}{star}</label></div>
+        <div className="col-md-6">
           <input
             type="text"
             id={textbox.id}
@@ -54,7 +55,7 @@ class Textbox extends React.Component {
             onBlur={this._handleBlur}
             email = {textbox.email}
           />
-        </label>
+        </div>
           {
             invalid ?
             <div className="required">Required Field</div> : null
