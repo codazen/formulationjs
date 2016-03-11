@@ -1,5 +1,6 @@
 'use strict';
 require('./styles/Form.less');
+require('bootstrap');
 
 import React from 'react';
 import Checkbox from './Checkbox.react';

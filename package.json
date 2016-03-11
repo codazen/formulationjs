@@ -19,7 +19,9 @@
   },
   "homepage": "https://github.com/codazen/formulationjs#readme",
   "dependencies": {
+    "bootstrap": "^3.3.6",
     "classnames": "^2.2.0",
+    "jQuery": "^1.7.4",
     "moment": "^2.11.2",
     "react": "^0.14.2",
     "react-datepicker": "^0.20.0",

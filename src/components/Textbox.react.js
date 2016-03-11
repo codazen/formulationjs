@@ -1,5 +1,6 @@
 'use strict';
 require('./styles/Textbox.less');
+require('bootstrap');
 
 import React from 'react';
 import classNames from 'classnames';
