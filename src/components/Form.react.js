@@ -76,27 +76,14 @@ class Form extends React.Component {
   }
 
   removeTags(html) {
-    var tagBody = '(?:[^"\'>]|"[^"]*"|\'[^\']*\')*';
+    var sanitizedHtml;
+    sanitizedHtml = html.replace(/</g, '&lt;');
+    sanitizedHtml = sanitizedHtml.replace(/>/g, '&rt;');
+    sanitizedHtml = sanitizedHtml.replace(/&/g, '&amp;');
+    sanitizedHtml = sanitizedHtml.replace(/"/g, '&quot;');
+    sanitizedHtml = sanitizedHtml.replace(/'&'/g, '&#39;');
 
-    var tagOrComment = new RegExp(
-      '<(?:'
-      // Comment body.
-      + '!--(?:(?:-*[^->])*--+|-?)'
-      // Special "raw text" elements whose content should be elided.
-      + '|script\\b' + tagBody + '>[\\s\\S]*?</script\\s*'
-      + '|style\\b' + tagBody + '>[\\s\\S]*?</style\\s*'
-      // Regular name
-      + '|/?[a-z]'
-      + tagBody
-      + ')>',
-      'gi');
-
-    var oldHtml;
-    do {
-      oldHtml = html;
-      html = html.replace(tagOrComment, '');
-    } while (html !== oldHtml);
-    return html.replace(/</g, '&lt;');
+    return sanitizedHtml;
   }
 
   _handleChange(index, type, e) {
