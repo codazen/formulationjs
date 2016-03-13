@@ -22,8 +22,9 @@ class Textarea extends React.Component {
       'disabled' : disabled
     });
     return (
-      <div>
-        <label htmlFor={textarea.name}>{textarea.label}{star}
+      <div className="row">
+        <div className="col-md-4"><label htmlFor={textarea.name}>{textarea.label}{star}</label></div>
+        <div className="col-md-8">
           <textarea 
             type="textarea" 
             id={textarea.id} 
@@ -33,7 +34,7 @@ class Textarea extends React.Component {
             className={classes}
             onChange={onChange} 
           />
-        </label>
+        </div>
           {
             invalid ?
             <div className="required">Required Field</div> : null

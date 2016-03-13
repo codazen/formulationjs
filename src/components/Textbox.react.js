@@ -1,7 +1,5 @@
 'use strict';
 require('./styles/Textbox.less');
-global.jQuery = require('jquery');
-require('bootstrap');
 
 import React from 'react';
 import classNames from 'classnames';
@@ -42,8 +40,8 @@ class Textbox extends React.Component {
     });
     return (
       <div className="row">
-        <div className="col-md-6"><label htmlFor={textbox.name}>{textbox.label}{star}</label></div>
-        <div className="col-md-6">
+        <div className="col-md-4"><label htmlFor={textbox.name}>{textbox.label}{star}</label></div>
+        <div className="col-md-8">
           <input
             type="text"
             id={textbox.id}
