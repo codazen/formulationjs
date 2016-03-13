@@ -1,5 +1,7 @@
 'use strict';
 require('./styles/Form.less');
+global.jQuery = require('jquery');
+require('bootstrap');
 
 import React from 'react';
 import Checkbox from './Checkbox.react';
@@ -147,7 +149,7 @@ class Form extends React.Component {
       form: nextProps.form
     });
   }
-  
+
   //Using noValidate will allow the data to be submitted at all times...
   render() {
     var form = this.state.form;
@@ -197,7 +199,7 @@ class Form extends React.Component {
               null
             }
           </div>
-          <div>
+          <div id="formSubmit">
             <input className={classes} type="submit" value="Submit" />
             <p id = "verify">{verify}</p>
             <p id = "notVerify">{notVerify}</p>

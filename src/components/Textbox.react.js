@@ -24,7 +24,7 @@ class Textbox extends React.Component {
       });
     }
   }
-  
+
   render() {
     var { textbox, onChange, initialRender } = this.props;
     var star = textbox.required ? '*' : '';
@@ -38,20 +38,21 @@ class Textbox extends React.Component {
       'emailInvalid' : !this.state.emailIsValid && textbox.value
     });
     return (
-      <div>
-        <label htmlFor={textbox.name}>{textbox.label}{star}
-          <input 
-            type="text" 
-            id={textbox.id} 
-            name={textbox.name} 
+      <div className="row">
+        <div className="col-md-4"><label htmlFor={textbox.name}>{textbox.label}{star}</label></div>
+        <div className="col-md-8">
+          <input
+            type="text"
+            id={textbox.id}
+            name={textbox.name}
             maxLength={textbox.maxlength}
-            value={textbox.value} 
+            value={textbox.value}
             className={classes}
-            onChange={onChange} 
+            onChange={onChange}
             onBlur={this._handleBlur}
             email = {textbox.email}
           />
-        </label>
+        </div>
           {
             invalid ?
             <div className="required">Required Field</div> : null

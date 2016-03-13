@@ -21,9 +21,9 @@ class Checkbox extends React.Component {
       'invalid' : invalid
     });
     return (
-      <div>
-        {checkbox.groupLabel}{star}
-          {
+      <div className="row">
+        <div className="col-md-4">{checkbox.groupLabel}{star}</div>
+        <div className="col-md-8">  {
             checkbox.options.map(function (option, index) {
               return  (
                 <div key={index}>
@@ -34,6 +34,7 @@ class Checkbox extends React.Component {
               );
             })
           }
+        </div>
           {
             invalid ?
             <div className="required">Required Field</div> : null

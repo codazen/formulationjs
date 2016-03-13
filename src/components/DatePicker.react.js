@@ -22,15 +22,17 @@ class DatePicker extends React.Component {
   render() {
     var { datepicker, initialRender } = this.props;
     return (
-      <div>
-        {datepicker.label}
-        <ReactDatePicker 
-          selected={datepicker.value} 
-          onChange={this._handleChange}
-          showYearDropdown
-          dateFormat={datepicker.dateFormat}
-          placeholderText={datepicker.placeholderText}
-        />
+      <div className="row">
+        <div className="col-md-4">{datepicker.label}</div>
+        <div className="col-md-8">
+          <ReactDatePicker 
+            selected={datepicker.value} 
+            onChange={this._handleChange}
+            showYearDropdown
+            dateFormat={datepicker.dateFormat}
+            placeholderText={datepicker.placeholderText}
+          />
+        </div>
       </div>
     );
   }
