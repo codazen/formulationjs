@@ -157,7 +157,7 @@ class Form extends React.Component {
     var form = this.state.form;
     var notVerify = !this._componentsValid(this.state.form) && !this.state.initialRender ? 'Did not submit form. Please try again!' : '';
     //var notVerify = !this._componentsValid(this.state.form) && !this.state.verifyTrue ? 'Did not submit form. Please try again!' : '';
-    var verify = this._componentsValid(this.state.form) && !this.state.initialRender ? 'Your form is ready to submit/has been submitted' : '';
+    var verify = this._componentsValid(this.state.form) && !this.state.initialRender ? 'Your form is ready to submit.' : '';
     //var verify = this._componentsValid(this.state.form) && !this.state.verifyTrue ? 'Your form has been submitted. Thank you!' : '';
     var disabled = form.submitDisabled;
     var classes = classNames({
@@ -203,10 +203,12 @@ class Form extends React.Component {
               null
             }
           </div>
-          <div id="formSubmit">
-            <input className={classes} type="submit" value="Submit" />
-            <p id = "verify">{verify}</p>
-            <p id = "notVerify">{notVerify}</p>
+          <div>
+            <input id="formSubmit" className={classes} type="submit" value="Submit" />
+            <div>
+              <p id = "verify">{verify}</p>
+              <p id = "notVerify">{notVerify}</p>
+            </div>
           </div>
         </form>
       </section>

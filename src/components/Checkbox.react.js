@@ -34,11 +34,12 @@ class Checkbox extends React.Component {
               );
             })
           }
-        </div>
           {
             invalid ?
             <div className="required">Required Field</div> : null
           }
+        </div>
+
       </div>
     );
   }

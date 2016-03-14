@@ -34,11 +34,11 @@ class Textarea extends React.Component {
             className={classes}
             onChange={onChange} 
           />
-        </div>
           {
             invalid ?
             <div className="required">Required Field</div> : null
           }
+        </div>
       </div>
     );
   }
