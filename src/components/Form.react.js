@@ -15,7 +15,8 @@ class Form extends React.Component {
     super(props);
     this.state = {
       form: this.props.form,
-      initialRender: true
+      initialRender: true,
+      verifyTrue: true
     };
     this._handleSubmit = this._handleSubmit.bind(this);
     this._handleDateChange = this._handleDateChange.bind(this);
@@ -23,11 +24,6 @@ class Form extends React.Component {
 
   _handleSubmit(e) {
     e.preventDefault();
-    if (this.state.initialRender) {
-      this.setState({
-        initialRender: false
-      });
-    }
 
     var sanitizedForm = new Object();
     sanitizedForm = JSON.parse(JSON.stringify(this.state.form));
@@ -42,6 +38,14 @@ class Form extends React.Component {
       console.log(sanitizedForm);
       console.log("User clicked submit at: " + Date());
     }
+    
+    // this.setState({
+    //   initialRender: false,
+    //   verifyTrue: false
+    // });
+    this.setState({
+      initialRender: false
+    });
   }
 
   _componentsValid(form) {
@@ -92,6 +96,10 @@ class Form extends React.Component {
     this.setState({
       form: form
     });
+    // this.setState({
+    //   form: form,
+    //   verifyTrue: true
+    // });
   }
 
   _handleDateChange(index, value) {
@@ -100,6 +108,10 @@ class Form extends React.Component {
     this.setState({
       form: form
     });
+    // this.setState({
+    //   form: form,
+    //   verifyTrue: true
+    // });
   }
 
   _handleToggle(index, type, e) {
@@ -122,24 +134,29 @@ class Form extends React.Component {
     this.setState({
       form: form
     });
+    // this.setState({
+    //   form: form,
+    //   verifyTrue: true
+    // });
   }
 
-  componentDidMount() {
-    this.setState({
-      initialRender: true
-    })
-  }
   componentWillReceiveProps(nextProps) {
     this.setState({
       form: nextProps.form
     });
+    // this.setState({
+    //   form: nextProps.form,
+    //   verifyTrue: true
+    // });
   }
   
   //Using noValidate will allow the data to be submitted at all times...
   render() {
     var form = this.state.form;
-    var verify = !this.state.initialRender && this._componentsValid(this.state.form) ? 'Your form is ready to submit/has been submitted.' : '';
-    var notVerify = !this.state.initialRender && !this._componentsValid(this.state.form) ? 'Did not submit form. Please try again!' : '';
+    var notVerify = !this._componentsValid(this.state.form) && !this.state.initialRender ? 'Did not submit form. Please try again!' : '';
+    //var notVerify = !this._componentsValid(this.state.form) && !this.state.verifyTrue ? 'Did not submit form. Please try again!' : '';
+    var verify = this._componentsValid(this.state.form) && !this.state.initialRender ? 'Your form is ready to submit/has been submitted' : '';
+    //var verify = this._componentsValid(this.state.form) && !this.state.verifyTrue ? 'Your form has been submitted. Thank you!' : '';
     var disabled = form.submitDisabled;
     var classes = classNames({
       'disabled' : disabled,
