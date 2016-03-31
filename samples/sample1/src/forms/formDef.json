@@ -34,7 +34,7 @@
         "value": "",
         "label": "Label",
         "required": true,
-        "maxlength": "300",
+        "maxlength": "50",
         "textareaState": true
       }
     },

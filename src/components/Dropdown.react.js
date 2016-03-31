@@ -31,11 +31,11 @@ class Dropdown extends React.Component {
               })
             }
           </select>
+          {
+            invalid ?
+            <div className="required">Required Field</div> : null
+          }
         </div>
-        {
-          invalid ?
-          <div className="required">Required Field</div> : null
-        }
       </div>
     );
   }

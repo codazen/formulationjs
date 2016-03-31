@@ -53,11 +53,12 @@ class Textbox extends React.Component {
             onBlur={this._handleBlur}
             email = {textbox.email}
           />
-        </div>
           {
             invalid ?
             <div className="required">Required Field</div> : null
           }
+        </div>
+
           {
             textbox.email && !this.state.emailIsValid && textbox.value ?
             <div className="required">Invalid Email Format</div> : null
