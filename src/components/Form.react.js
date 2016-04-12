@@ -51,9 +51,6 @@ class Form extends React.Component {
        initialRender: false,
        verifyTrue: false
      });
-    //this.setState({
-    //  initialRender: false
-    //});
   }
 
   _componentsValid(form) {
@@ -101,9 +98,6 @@ class Form extends React.Component {
   _handleChange(index, type, e) {
     var form = this.state.form;
     form.elements[index].data.value = e.target[type];
-    //this.setState({
-    //  form: form
-    //});
      this.setState({
        form: form,
        verifyTrue: true
@@ -113,9 +107,6 @@ class Form extends React.Component {
   _handleDateChange(index, value) {
     var form = this.state.form;
     form.elements[index].data.value = value;
-    //this.setState({
-    //  form: form
-    //});
      this.setState({
        form: form,
        verifyTrue: true
@@ -138,10 +129,6 @@ class Form extends React.Component {
       default:
       break;
     }
-    //console.log(form.elements[index].data.value);
-    //this.setState({
-    //  form: form
-    //});
      this.setState({
        form: form,
        verifyTrue: true
@@ -149,9 +136,6 @@ class Form extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    //this.setState({
-    //  form: nextProps.form
-    //});
      this.setState({
        form: nextProps.form,
        verifyTrue: true
