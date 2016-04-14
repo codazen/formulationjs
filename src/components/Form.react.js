@@ -152,13 +152,14 @@ class Form extends React.Component {
     var disabled = form.submitDisabled;
     var classes = classNames({
       'disabled' : disabled,
+      'form-style' : true
     });
     return (
       <section>
-        <h1 style={{ wordWrap: 'break-word' }}>{form.name}</h1>
-        <p style={{ wordWrap: 'break-word' }}>{form.body}</p>
+        <h1 className="form-style">{form.name}</h1>
+        <p className="form-style">{form.body}</p>
         <form onSubmit={this._handleSubmit}>
-          <div>
+          <div className="form-group">
             {
               form.elements ?
               form.elements.map((element, index) => {
