@@ -28,13 +28,13 @@ class Checkbox extends React.Component {
     });
     return (
       <div className="row">
-        <div className="col-md-4">{checkbox.groupLabel}{star}</div>
+        <div className="col-md-4 form-style">{checkbox.groupLabel}{star}</div>
         <div className="col-md-8">  {
             checkbox.options.map(function (option, index) {
               return  (
                 <div key={index}>
-                  <label className="checkboxAlignment">
-                    <input type="checkbox" name={name} value={option.value} onClick={onClick} />{option.name}
+                  <label className="checkboxAlignment form-style">
+                    <input type="checkbox" name={name} value={option.value} onClick={onClick} /> {option.name}
                   </label>
                 </div>
               );

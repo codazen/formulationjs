@@ -27,7 +27,7 @@ class Dropdown extends React.Component {
 
     return (
       <div className="row">
-        <div className="col-md-4"><label htmlFor={dropdown.name}>{dropdown.label}{star}</label></div>
+        <div className="col-md-4 form-style"><label htmlFor={dropdown.name}>{dropdown.label}{star}</label></div>
         <div className="col-md-8">
           <select value={dropdown.value} onChange={onChange} className={classes}>
             <option value="">{placeholder}</option>
