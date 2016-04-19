@@ -194,7 +194,9 @@ class Form extends React.Component {
               null
             }
           </div>
-          <input id="formSubmit" className={classes} type="submit" value="Submit" /><br />
+          <input id="formSubmit" className={classes} type="submit" value="Submit" />
+          <br />
+          <br />
           <p id = "verify">{verify}</p>
           <p id = "notVerify">{notVerify}</p>
         </form>
