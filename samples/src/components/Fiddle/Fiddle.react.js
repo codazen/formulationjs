@@ -31,9 +31,9 @@ class Fiddle extends React.Component {
     var pretty = JSON.stringify(json, null, 2);
     return (
       <div>
-        <form onSubmit={this._handleSubmit} className="form">
-          <textarea value={pretty} onChange={this._handleChange} />
-          <input type="submit" value="Change!" />
+        <form onSubmit={this._handleSubmit}>
+          <textarea value={pretty} onChange={this._handleChange} className="fiddle" />
+          <input type="submit" value="Change!" className="formChange"/>
         </form>
       </div>
     );

@@ -7,7 +7,7 @@ No part of FormulationJS, including this file, may be copied, modified, propagat
 select {
 	border-style: solid;
 	border-radius: 4px;
-  border-color: #333333;
+	border-color: #333333;
 	font-family: sans-serif;
 	font-color: #333333;
 	font-size: 14px;
@@ -16,9 +16,19 @@ select {
 }
 
 select.invalid {
-  border-color: #c32323;
+	border-color: #c32323;
 }
 
-label,select {
+select.enabled {
+	background-color: #ffffff;
+}
+
+select.disabled {
+	background-color: #dcdfe3;
+	border-color: #bec2c7;
+	font-color: #bec2c7;
+}
+
+label, select {
 	display:inline-block;
 }
