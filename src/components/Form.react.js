@@ -195,10 +195,8 @@ class Form extends React.Component {
             }
           </div>
             <input id="formSubmit" className={classes} type="submit" value="Submit" />
-            <br />
-            <br />
-            <p id = "verify">{verify}</p>
-            <p id = "notVerify">{notVerify}</p>
+            <span id = {"verify" + (verify ? "" : " hide-message")}>{verify}</span>
+            <span id = {"notVerify" + (notVerify ? "" : " hide-message")}>{notVerify}</span>
         </form>
       </section>
     );
