@@ -29,7 +29,7 @@ class Textarea extends React.Component {
     });
     return (
       <div className="row">
-        <div className="col-md-4"><label htmlFor={textarea.name}>{textarea.label}{star}</label></div>
+        <div className="col-md-4 form-style"><label htmlFor={textarea.name}>{textarea.label}{star}</label></div>
         <div className="col-md-8">
           <textarea 
             type="textarea" 

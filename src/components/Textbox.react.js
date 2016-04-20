@@ -42,11 +42,12 @@ class Textbox extends React.Component {
     var classes = classNames({
       'invalid' : invalid,
       'disabled' : disabled,
-      'emailInvalid' : !this.state.emailIsValid && textbox.value
+      'emailInvalid' : !this.state.emailIsValid && textbox.value,
+      'form-control' : true
     });
     return (
       <div className="row">
-        <div className="col-md-4"><label htmlFor={textbox.name}>{textbox.label}{star}</label></div>
+        <div className="col-md-4 form-style"><label htmlFor={textbox.name}>{textbox.label}{star}</label></div>
         <div className="col-md-8">
           <input
             type="text"
@@ -63,13 +64,11 @@ class Textbox extends React.Component {
             invalid ?
             <div className="required">Required Field</div> : null
           }
-        </div>
-
           {
             textbox.email && !this.state.emailIsValid && textbox.value ?
             <div className="required">Invalid Email Format</div> : null
           }
-
+        </div>
       </div>
     );
   }

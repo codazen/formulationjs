@@ -7,17 +7,28 @@ No part of FormulationJS, including this file, may be copied, modified, propagat
 select {
 	border-style: solid;
 	border-radius: 4px;
-	font-family: 'Museo Sans';
+	border-color: #333333;
+	font-family: sans-serif;
 	font-color: #333333;
 	font-size: 14px;
-	height: 20px;
+	height: 25px;
 	width: 160px;
 }
 
 select.invalid {
-  border-color: #c32323;
+	border-color: #c32323;
 }
 
-label,select {
+select.enabled {
+	background-color: #ffffff;
+}
+
+select.disabled {
+	background-color: #dcdfe3;
+	border-color: #bec2c7;
+	font-color: #bec2c7;
+}
+
+label, select {
 	display:inline-block;
 }

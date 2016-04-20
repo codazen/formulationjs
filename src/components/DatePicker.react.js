@@ -29,7 +29,7 @@ class DatePicker extends React.Component {
     var { datepicker, initialRender } = this.props;
     return (
       <div className="row">
-        <div className="col-md-4">{datepicker.label}</div>
+        <div className="col-md-4 form-style">{datepicker.label}</div>
         <div className="col-md-8">
           <ReactDatePicker 
             selected={datepicker.value} 
