@@ -35,7 +35,7 @@ class Textarea extends React.Component {
             type="textarea" 
             id={textarea.id} 
             name={textarea.name} 
-            maxLength={textarea.maxlength}
+            maxLength={textarea.maxlength || 10000}
             value={textarea.value} 
             className={classes}
             onChange={onChange} 
