@@ -33,7 +33,7 @@ class Checkbox extends React.Component {
             checkbox.options.map(function (option, index) {
               return  (
                 <div key={index}>
-                  <label className="checkboxAlignment form-style">
+                  <label className="checkboxAlignment">
                     <input type="checkbox" name={name} value={option.value} onClick={onClick} /> {option.name}
                   </label>
                 </div>
