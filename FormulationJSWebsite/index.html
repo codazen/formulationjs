@@ -1,0 +1,710 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>FormulationJS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="./bootstrap.css" media="screen">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="../assets/css/custom.min.css">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="../bower_components/html5shiv/dist/html5shiv.js"></script>
+      <script src="../bower_components/respond/dest/respond.min.js"></script>
+    <![endif]-->
+    <script type="text/javascript" async="" src="https://ssl.google-analytics.com/ga.js"></script><script>
+
+     var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-23019901-1']);
+      _gaq.push(['_setDomainName', "bootswatch.com"]);
+        _gaq.push(['_setAllowLinker', true]);
+      _gaq.push(['_trackPageview']);
+
+     (function() {
+       var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+       ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+     })();
+
+    </script>
+    <style type="text/css"></style>
+  </head>
+  <body>
+    <div class="navbar navbar-default navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a href="index.html" class="navbar-brand">FormulationJs</a>
+          <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div class="navbar-collapse collapse" id="navbar-main">
+          <ul class="nav navbar-nav">
+            <li class="active">
+              <a href="index.html">Docs</a>
+            </li>
+            <li>
+              <a href="support.html">Support</a>
+            </li>
+            <li>
+              <a href="download.html">Download</a>
+            </li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="https://github.com/codazen/" target="_blank">GitHub</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="page-header" id="banner">
+        <div class="jumbotron">
+          <div class="text-center">
+            <h1>{FormulationJS}</h1>
+            <p>A simple React based form builder that utilizes JSON objects.</p>
+            <p><a href="../index.html">Try it out!</a></p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-3 col-md-3 col-sm-4">
+            <h3 class="lead">Getting Started</h3>
+            <div class="list-group table-of-contents">
+              <a class="list-group-item" href="#setup">Setting Up</a>
+              <a class="list-group-item" href="#formdef">Form Definition</a>
+            </div>
+            <h3 class="lead">Components</h3>
+            <div class="list-group table-of-contents">
+              <a class="list-group-item" href="#textbox">Textbox</a>
+              <a class="list-group-item" href="#textarea">Textarea</a>
+              <a class="list-group-item" href="#checkbox">Checkbox</a>
+              <a class="list-group-item" href="#dropdown">Dropdown Lists</a>
+              <a class="list-group-item" href="#datepicker">Datepicker</a>
+            </div>
+          </div>
+          <div class="col-lg-9 col-md-9 col-sm-8">
+            <h3 id="setup">Installation</h3>
+            <p>We are in the middle of rapid development at the moment so the best way to stay on top of all our updates is to pull or download straight from our git repository!<p>
+            <div class="panel panel-default">
+              <div class="panel-heading">Cloning Git Repository Using SSH</div>
+              <div class="panel-body">
+                <ol>
+                <li>git clone git@github.com:codazen/formulationjs.git</li>
+                <li>npm install</li>
+                <li>npm run build-sample1</li>
+                <li>Create a new tab in console</li>
+                <li>npm start</li>
+                <li>Navigate to formulationjs/samples/sample1/public/index.html</li>
+                <li>Enjoy!</li>
+                </ol>
+              </div>
+            </div>
+            <div class="panel panel-default">
+              <div class="panel-heading">Download the ZIP</div>
+              <div class="panel-body">
+                <p>Here is a <a href="https://github.com/stovin/FormulationJSWebsite/archive/master.zip">download</a> link so you can have it locally on your computer.</p>
+              </div>
+            </div>
+            <hr />
+            <h3 id="formdef">Form Definition</h3>
+            <p>Build your forms using JSON! Refer to formulationjs/samples/sample1/src/forms/formDef.json</p>
+            <div class="panel panel-default">
+              <div class="panel-heading">formDef.json</div>
+              <div class="panel-body">
+                <table class="table table-bordered">
+                  <thead>
+                    <tr>
+                      <th colspan="3">Form</th>
+                    </tr>
+                    <tr>
+                      <th>Field Name</th>
+                      <th>Field Type</th>
+                      <th>Description</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>name</td>
+                      <td><i>string</i></td>
+                      <td>The name of the form. Displays at the top of the form.</td>
+                    </tr>
+                    <tr>
+                      <td>body</td>
+                      <td><i>string</i></td>
+                      <td>The description of the form. Renders below the form name.</td>
+                    </tr>
+                    <tr>
+                      <td>submitDisabled</td>
+                      <td><i>boolean</i></td>
+                      <td>Allows users to disable the submit button.</td>
+                    </tr>
+                    <tr>
+                      <td>elements</td>
+                      <td><i>Object Array</i></td>
+                      <td>List of form elements that will be rendered in the form.</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <table class="table table-bordered">
+                  <thead>
+                    <tr>
+                      <th colspan="3">Element Object. Some objects have other fields specific to their component.</th>
+                    </tr>
+                    <tr>
+                      <th>Field Name</th>
+                      <th>Field Type</th>
+                      <th>Description</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>type</td>
+                      <td><i>string</i></td>
+                      <td>The type of form element we want to render. Currently supports 'textbox', 'checkbox', or 'dropdown'.</td>
+                    </tr>
+                    <tr>
+                      <td>data</td>
+                      <td><i>Object</i></td>
+                      <td>Attributes to render our form element. Object will vary depending on the element type.</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <table class="table table-bordered">
+                  <thead>
+                    <tr>
+                      <th colspan="3">Textbox Data Object</th>
+                    </tr>
+                    <tr>
+                      <th>Field Name</th>
+                      <th>Field Type</th>
+                      <th>Description</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>id</td>
+                      <td><i>string</i></td>
+                      <td>A unique id for the text input.</td>
+                    </tr>
+                    <tr>
+                      <td>name</td>
+                      <td><i>string</i></td>
+                      <td>Name attribute for the text input.</td>
+                    </tr>
+                    <tr>
+                      <td>value</td>
+                      <td><i>string</i></td>
+                      <td>The initial value of the text input.</td>
+                    </tr>
+                    <tr>
+                      <td>label</td>
+                      <td><i>string</i></td>
+                      <td>A label rendered adjacent to the text input.</td>
+                    </tr>
+                    <tr>
+                      <td>required</td>
+                      <td><i>boolean</i></td>
+                      <td>A user must fill out this component in order to submit the form.</td>
+                    </tr>
+                    <tr>
+                      <td>maxlength</td>
+                      <td><i>string</i></td>
+                      <td>Maximum characters allowed in the component. Should represent an integer value.</td>
+                    </tr>
+                    <tr>
+                      <td>textboxState</td>
+                      <td><i>boolean</i></td>
+                      <td>Disables the textbox from being used.</td>
+                    </tr>
+                    <tr>
+                      <td>email</td>
+                      <td><i>boolean</i></td>
+                      <td>Users must enter valid email addresses.</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <table class="table table-bordered">
+                  <thead>
+                    <tr>
+                      <th colspan="3">Textarea Data Object</th>
+                    </tr>
+                    <tr>
+                      <th>Field Name</th>
+                      <th>Field Type</th>
+                      <th>Description</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>id</td>
+                      <td><i>string</i></td>
+                      <td>A unique id for the text input.</td>
+                    </tr>
+                    <tr>
+                      <td>name</td>
+                      <td><i>string</i></td>
+                      <td>Name attribute for the text input.</td>
+                    </tr>
+                    <tr>
+                      <td>value</td>
+                      <td><i>string</i></td>
+                      <td>The initial value of the text input.</td>
+                    </tr>
+                    <tr>
+                      <td>label</td>
+                      <td><i>string</i></td>
+                      <td>A label rendered adjacent to the text input.</td>
+                    </tr>
+                    <tr>
+                      <td>required</td>
+                      <td><i>boolean</i></td>
+                      <td>A user must fill out this component in order to submit the form.</td>
+                    </tr>
+                    <tr>
+                      <td>maxlength</td>
+                      <td><i>string</i></td>
+                      <td>Maximum characters allowed in the component. Should represent an integer value.</td>
+                    </tr>
+                    <tr>
+                      <td>textareaState</td>
+                      <td><i>boolean</i></td>
+                      <td>Disables the textbox from being used.</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <table class="table table-bordered">
+                  <thead>
+                    <tr>
+                      <th colspan="3">Checkbox Data Object</th>
+                    </tr>
+                    <tr>
+                      <th>Field Name</th>
+                      <th>Field Type</th>
+                      <th>Description</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>name</td>
+                      <td><i>string</i></td>
+                      <td>Name attribute for the checkbox input.</td>
+                    </tr>
+                    <tr>
+                      <td>value</td>
+                      <td><i>boolean</i></td>
+                      <td>The initial value of the checkbox input.</td>
+                    </tr>
+                    <tr>
+                      <td>label</td>
+                      <td><i>string</i></td>
+                      <td>A label rendered adjacent to the checkbox input.</td>
+                    </tr>
+                    <tr>
+                      <td>required</td>
+                      <td><i>boolean</i></td>
+                      <td>A user must fill out this component in order to submit the form.</td>
+                    </tr>
+                      <td>options</td>
+                      <td><i>Object Array</i></td>
+                      <td>An array of the different options in the checkbox element.</td>
+                    </tr>                  
+                  </tbody>
+                </table>
+                <table class="table table-bordered">
+                  <thead>
+                    <tr>
+                      <th colspan="3">Checkbox Options Object</th>
+                    </tr>
+                    <tr>
+                      <th>Field Name</th>
+                      <th>Field Type</th>
+                      <th>Description</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>name</td>
+                      <td><i>string</i></td>
+                      <td>Text that will be displayed for a checkbox option.</td>
+                    </tr>
+                    <tr>
+                      <td>value</td>
+                      <td><i>string | int</i></td>
+                      <td>The actual value passed when selecting this option.</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <table class="table table-bordered">
+                  <thead>
+                    <tr>
+                      <th colspan="3">Dropdown Data Object</th>
+                    </tr>
+                    <tr>
+                      <th>Field Name</th>
+                      <th>Field Type</th>
+                      <th>Description</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>options</td>
+                      <td><i>Object Array</i></td>
+                      <td>An array of the different options in the dropdown element.</td>
+                    </tr>
+                    <tr>
+                      <td>required</td>
+                      <td><i>boolean</i></td>
+                      <td>A user must fill out this component in order to submit the form.</td>
+                    </tr>
+                    <tr>
+                      <td>value</td>
+                      <td><i>string | int</i></td>
+                      <td>The initial value of the dropdown element. Any option that matches this value will be selected by default when the dropdown renders.</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <table class="table table-bordered">
+                  <thead>
+                    <tr>
+                      <th colspan="3">Dropdown Options Object</th>
+                    </tr>
+                    <tr>
+                      <th>Field Name</th>
+                      <th>Field Type</th>
+                      <th>Description</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>name</td>
+                      <td><i>string</i></td>
+                      <td>Text that will be displayed for a dropdown option.</td>
+                    </tr>
+                    <tr>
+                      <td>value</td>
+                      <td><i>string | int</i></td>
+                      <td>The actual value passed when selecting this option.</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <table class="table table-bordered">
+                  <thead>
+                    <tr>
+                      <th colspan="3">Datepicker Data Object</th>
+                    </tr>
+                    <tr>
+                      <td>label</td>
+                      <td><i>string</i></td>
+                      <td>A label rendered adjacent to the checkbox input.</td>
+                    </tr>
+                    <tr>
+                      <td>value</td>
+                      <td><i>boolean</i></td>
+                      <td>The initial value of the datepicker input.</td>
+                    </tr>
+                    <tr>
+                      <td>dateFormat</td>
+                      <td><i>string</i></td>
+                      <td>Allows user to setup specific date format.</td>
+                    </tr>
+                    <tr>
+                      <td>required</td>
+                      <td><i>boolean</i></td>
+                      <td>A user must fill out this component in order to submit the form.</td>
+                    </tr>
+                    <tr>
+                      <td>options</td>
+                      <td><i>Object Array</i></td>
+                      <td>An array of the different options in the checkbox element.</td>
+                    </tr>  
+                  </tbody>
+                </table>
+<pre><xemp>Example JSON Form
+
+{
+  "name": "Sample 1 Form",
+  "body": "This will be a description of the form.",
+  "submitDisabled": false,
+  "elements": [
+    {
+      "type": "textbox",
+      "data": {
+        "id": "id",
+        "name": "Name",
+        "value": "",
+        "label": "Label",
+        "required": true,
+        "maxlength": "10",
+        "textboxState": true
+      }
+    },
+    {
+      "type": "textbox",
+      "data": {
+        "email": true,
+        "id": "id",
+        "name": "Name",
+        "value": "",
+        "label": "Email",
+        "textboxState": true
+      }
+    },
+    {
+      "type": "textarea",
+      "data": {
+        "id": "id",
+        "name": "Name",
+        "value": "",
+        "label": "Label",
+        "required": true,
+        "maxlength": "300",
+        "textareaState": true
+      }
+    },
+    {
+      "type": "dropdown",
+      "placeholder":"Select...",
+      "data": {
+        "label": "Dropdown Label",
+        "name": "Name",
+        "options": [
+          {
+            "name": "Option 1",
+            "value": 1
+          },
+          {
+            "name": "Option 2",
+            "value": 2
+          }
+        ],
+        "value": "",
+        "required": true
+      }
+    },
+    {
+      "type": "checkbox",
+      "name": "Name",
+      "data": {
+        "value":[],
+        "groupLabel": "Checkbox group label",
+        "required": true,
+        "options": [
+          {
+            "name": "Option 1",
+            "value": 1
+          },
+          {
+            "name": "Option 2",
+            "value": 2
+          }
+        ]
+      }
+    },
+    {
+      "type": "datepicker",
+      "data": {
+        "label": "Please select a due date",
+        "value": null,
+        "dateFormat": "DD/MM/YYYY",
+        "placeholderText": "dd/mm/yyyy",
+        "maxlength": "10",
+        "required": "false",
+        "range": "false"
+      }
+    }
+  ]
+}</xemp></pre>
+              </div>
+            </div>
+            <hr />
+            <h3 id="textbox">Textbox</h3>
+            <p>Render a textbox that will allow a user to type in an answer.</p>
+            <br />
+            <div class="panel panel-primary">
+              <div class="panel-heading">
+                <h3 class="panel-title">Code</h3>
+              </div>
+              <div class="panel-body">
+<pre><xmp>{
+  "type": "textbox",
+  "data": {
+    "id": "id",
+    "name": "Name",
+    "value": "",
+    "label": "Label",
+    "required": true,
+    "maxlength": "10",
+    "email": true,
+    "textboxState": true
+  }
+}</xmp></pre>
+              </div>
+            </div>
+            <div class="panel panel-primary">
+              <div class="panel-heading">
+                <h3 class="panel-title">Rendered Component</h3>
+              </div>
+              <div class="panel-body">
+                <label>Textbox</label>
+                <input type="text" />
+              </div>
+            </div>
+            <hr />
+            <h3 id="textarea">Textarea</h3>
+            <p>Render a textbox that will allow a user to type in an answer.</p>
+            <br />
+            <div class="panel panel-primary">
+              <div class="panel-heading">
+                <h3 class="panel-title">Code</h3>
+              </div>
+              <div class="panel-body">
+<pre><xmp>{
+  "type": "textarea",
+  "data": {
+    "id": "id",
+    "name": "Name",
+    "value": "",
+    "label": "Label",
+    "required": true,
+    "maxlength": "300",
+    "textareaState": true
+  }
+}</xmp></pre>
+              </div>
+            </div>
+            <div class="panel panel-primary">
+              <div class="panel-heading">
+                <h3 class="panel-title">Rendered Component</h3>
+              </div>
+              <div class="panel-body">
+                <label>Textarea</label>
+                <textarea type="text"></textarea>
+              </div>
+            </div>
+            <hr />
+            <h3 id="checkbox">Checkbox</h3>
+            <p>Allow for multiple answers to a questions using checkboxes.</p>
+            <br />
+            <div class="panel panel-primary">
+              <div class="panel-heading">
+                <h3 class="panel-title">Code</h3>
+              </div>
+              <div class="panel-body">
+<pre><xmp>{
+  "type": "checkbox",
+  "name": "Name",
+  "data": {
+    "value": [
+      
+    ],
+    "groupLabel": "Checkbox group label",
+    "required": true,
+    "options": [
+      {
+        "name": "Option 1",
+        "value": 1
+      },
+      {
+        "name": "Option 2",
+        "value": 2
+      }
+    ]
+  }
+}</xmp></pre>
+              </div>
+            </div>
+            <div class="panel panel-primary">
+              <div class="panel-heading">
+                <h3 class="panel-title">Rendered Component</h3>
+              </div>
+              <div class="panel-body">
+                <label>Checkedbox</label>
+                <input type="checkbox" checked />
+                <br />
+                <label>Uncheckedbox</label>
+                <input type="checkbox" />
+              </div>
+            </div>
+            <hr />
+            <h3 id="dropdown">Dropdown List</h3>
+            <p>Provide a long list of options to choose from.</p>
+            <br />
+            <div class="panel panel-primary">
+              <div class="panel-heading">
+                <h3 class="panel-title">Code</h3>
+              </div>
+              <div class="panel-body">
+<pre><xmp>{
+  "type": "dropdown",
+  "placeholder": "Select...",
+  "data": {
+    "label": "Dropdown Label",
+    "name": "Name",
+    "options": [
+      {
+        "name": "Option 1",
+        "value": 1
+      },
+      {
+        "name": "Option 2",
+        "value": 2
+      }
+    ],
+    "value": "",
+    "required": true
+  }
+}</xmp></pre>
+              </div>
+            </div>
+            <div class="panel panel-primary">
+              <div class="panel-heading">
+                <h3 class="panel-title">Rendered Component</h3>
+              </div>
+              <div class="panel-body">
+                <select>
+                  <option>Option 1</option>
+                  <option>Option 2</option>
+                  <option>Option 3</option>
+                </select>
+              </div>
+            </div>
+            <hr />
+            <h3 id="datepicker">Datepicker</h3>
+            <p>Render a datepicker that allows the user to choose a specific date.</p>
+            <br />
+            <div class="panel panel-primary">
+              <div class="panel-heading">
+                <h3 class="panel-title">Code</h3>
+              </div>
+              <div class="panel-body">
+<pre><xmp>{
+  "type": "datepicker",
+  "data": {
+    "label": "Please select a due date",
+    "value": null,
+    "dateFormat": "DD/MM/YYYY",
+    "placeholderText": "dd/mm/yyyy",
+    "maxlength": "10",
+    "required": "false",
+    "range": "false"
+  }
+}</xmp></pre>
+              </div>
+            </div>
+            <div class="panel panel-primary">
+              <div class="panel-heading">
+                <h3 class="panel-title">Rendered Component</h3>
+              </div>
+              <div class="panel-body">
+                <label>Datepicker</label>
+                <span>Can be seen <a href="http://hacker0x01.github.io/react-datepicker/">here!</a></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+      </div>
+      </div>
+    </body>
