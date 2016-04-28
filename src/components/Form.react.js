@@ -37,7 +37,7 @@ class Form extends React.Component {
     sanitizedForm = JSON.parse(JSON.stringify(this.state.form));
     for (var x in sanitizedForm.elements){
       var element = sanitizedForm.elements[x];  
-      if(element.type == 'textbox' || element.type == 'textarea'){
+      if(element.type == 'textbox' || element.type == 'textarea' || element.type === "datepicker"){
         element.data.value = this.removeTags(element.data.value);
       }
     }
@@ -78,6 +78,10 @@ class Form extends React.Component {
           if (element.data.value.length == 0 && element.data.required) {
             return false;
           }
+        case 'datepicker':
+          if (!element.data.value && element.data.required) {
+            return false;
+          }
           break;
       }
     }
@@ -85,14 +89,16 @@ class Form extends React.Component {
   }
 
   removeTags(html) {
-    var sanitizedHtml;
-    sanitizedHtml = html.replace(/</g, '&lt;');
-    sanitizedHtml = sanitizedHtml.replace(/>/g, '&rt;');
-    sanitizedHtml = sanitizedHtml.replace(/&/g, '&amp;');
-    sanitizedHtml = sanitizedHtml.replace(/"/g, '&quot;');
-    sanitizedHtml = sanitizedHtml.replace(/'&'/g, '&#39;');
+    if(html !== null) {
+      var sanitizedHtml;
+      sanitizedHtml = html.replace(/</g, '&lt;');
+      sanitizedHtml = sanitizedHtml.replace(/>/g, '&rt;');
+      sanitizedHtml = sanitizedHtml.replace(/&/g, '&amp;');
+      sanitizedHtml = sanitizedHtml.replace(/"/g, '&quot;');
+      sanitizedHtml = sanitizedHtml.replace(/'&'/g, '&#39;');
 
-    return sanitizedHtml;
+      return sanitizedHtml;
+    }
   }
 
   _handleChange(index, type, e) {
@@ -183,7 +189,7 @@ class Form extends React.Component {
                     }
                     break;
                   case 'datepicker':
-                    component = <DatePicker key={index} index={index} datepicker={element.data} onChange={this._handleDateChange} />
+                    component = <DatePicker key={index} index={index} datepicker={element.data} onChange={this._handleDateChange} initialRender={this.state.initialRender} />
                     break;
                   default:
                     break;

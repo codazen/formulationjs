@@ -85,7 +85,7 @@
         "dateFormat": "DD/MM/YYYY",
         "placeholderText": "dd/mm/yyyy",
         "maxlength": "10",
-        "required": "false",
+        "required": true,
         "range": "false"
       }
     }

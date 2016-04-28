@@ -26,18 +26,27 @@ class DatePicker extends React.Component {
   }
 
   render() {
-    var { datepicker, initialRender } = this.props;
+    const { datepicker, initialRender } = this.props;
+    const star = datepicker.required ? '*' : '';
+    var invalid = !datepicker.value && !initialRender && datepicker.required;
+    var classes = classNames({
+      'invalid' : invalid
+    });
     return (
       <div className="row">
-        <div className="col-md-4 form-style">{datepicker.label}</div>
+        <div className="col-md-4 form-style">{datepicker.label + star}</div>
         <div className="col-md-8">
           <ReactDatePicker 
             selected={datepicker.value} 
             onChange={this._handleChange}
+            className={classes}
             showYearDropdown
             dateFormat={datepicker.dateFormat}
             placeholderText={datepicker.placeholderText}
           />
+          {
+            invalid ? <div className="required">Required Field</div> : null
+          }
         </div>
       </div>
     );

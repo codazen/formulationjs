@@ -37,7 +37,6 @@ class Textbox extends React.Component {
     var required = textbox.required ? 'Required Field' : '';
     var invalid = !textbox.value && !initialRender && textbox.required;
     var maximumLength = textbox.maxlength ? textbox.maxlength : 10000;
-
     var disabled = !textbox.textboxState;
     var classes = classNames({
       'invalid' : invalid,
