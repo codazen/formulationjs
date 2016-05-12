@@ -21,7 +21,7 @@ class Textarea extends React.Component {
     var { textarea, onChange, initialRender } = this.props;
     var star = textarea.required ? '*' : '';
     var required = textarea.required ? 'Required Field' : '';
-    var invalid = !textarea.value && !initialRender && textarea.required;
+    var invalid = !textarea.value && !initialRender && textarea.required && textarea.textareaState;
     var disabled = !textarea.textareaState;
     var classes = classNames({
       'invalid' : invalid,
@@ -39,6 +39,7 @@ class Textarea extends React.Component {
             value={textarea.value} 
             className={classes}
             onChange={onChange} 
+            disabled={disabled}
           />
           {
             invalid ?
