@@ -17,7 +17,7 @@ class Checkbox extends React.Component {
   }
   
   render() {
-    var { checkbox, onChange, onClick, name, initialRender } = this.props;
+    var { checkbox, onChange, onClick, initialRender } = this.props;
     var star = checkbox.required ? '*' : '';
     var required = checkbox.required ? 'Required Field' : '';
     var invalid = checkbox.value.length == 0 && !initialRender && checkbox.required;
@@ -34,7 +34,7 @@ class Checkbox extends React.Component {
               return  (
                 <div key={index}>
                   <label className="checkboxAlignment">
-                    <input type="checkbox" name={name} value={option.value} onClick={onClick} /> {option.name}
+                    <input type="checkbox" value={option.value} onClick={onClick} /> {option.name}
                   </label>
                 </div>
               );
