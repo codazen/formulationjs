@@ -35,7 +35,7 @@ class Textbox extends React.Component {
     var { textbox, onChange, initialRender } = this.props;
     var star = textbox.required ? '*' : '';
     var required = textbox.required ? 'Required Field' : '';
-    var invalid = !textbox.value && !initialRender && textbox.required;
+    var invalid = !textbox.value && !initialRender && textbox.required && textbox.textboxState;
     var maximumLength = textbox.maxlength ? textbox.maxlength : 10000;
     var disabled = !textbox.textboxState;
     var classes = classNames({
@@ -58,6 +58,7 @@ class Textbox extends React.Component {
             onChange={onChange}
             onBlur={this._handleBlur}
             email = {textbox.email}
+            disabled={disabled}
           />
           {
             invalid ?
