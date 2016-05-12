@@ -50,8 +50,6 @@ class Textbox extends React.Component {
         <div className="col-md-8">
           <input
             type="text"
-            id={textbox.id}
-            name={textbox.name}
             maxLength={maximumLength}
             value={textbox.value}
             className={classes}

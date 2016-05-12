@@ -6,8 +6,6 @@
     {
       "type": "textbox",
       "data": {
-        "id": "id",
-        "name": "Name",
         "value": "",
         "label": "Label",
         "required": true,
@@ -19,8 +17,6 @@
       "type": "textbox",
       "data": {
         "email": true,
-        "id": "id",
-        "name": "Name",
         "value": "",
         "label": "Email",
         "textboxState": true
@@ -29,8 +25,6 @@
     {
       "type": "textarea",
       "data": {
-        "id": "id",
-        "name": "Name",
         "value": "",
         "label": "Label",
         "required": true,
@@ -43,7 +37,6 @@
       "placeholder":"Select...",
       "data": {
         "label": "Dropdown Label",
-        "name": "Name",
         "options": [
           {
             "name": "Option 1",
@@ -60,7 +53,6 @@
     },
     {
       "type": "checkbox",
-      "name": "Name",
       "data": {
         "value":[],
         "groupLabel": "Checkbox group label",

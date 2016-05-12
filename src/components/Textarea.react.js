@@ -33,8 +33,6 @@ class Textarea extends React.Component {
         <div className="col-md-8">
           <textarea 
             type="textarea" 
-            id={textarea.id} 
-            name={textarea.name} 
             maxLength={textarea.maxlength || 10000}
             value={textarea.value} 
             className={classes}
