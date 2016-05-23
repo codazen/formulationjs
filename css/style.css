@@ -1,0 +1,43 @@
+.page-header {
+	margin: 0px;
+}
+
+.scroll-box {
+  height: 270px;
+}
+
+.on-scroll {
+  position: fixed;
+  top: 2%;
+}
+
+.content {
+  float: right;
+}
+
+.thumbnail {
+  height: 220px;
+  width: 200px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.thumbnail-container {
+  margin-right: auto;
+  margin-left: auto;
+  width: 260px;
+  display: inline-block;
+  text-align: center;
+}
+
+.dropdown-img {
+  display: block;
+}
+
+.cell-width {
+  width: 120px;
+}
+
+.left-nav {
+  max-width: 220px;
+}
