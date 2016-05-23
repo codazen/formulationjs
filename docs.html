@@ -1,0 +1,773 @@
+---
+layout: docs
+title: Docs
+permalink: /docs/
+---
+
+<div class="col-lg-9 col-md-9 col-sm-8 content">
+  <div id="introduction">
+    <h3 id="setup">Introduction</h3>
+    <p>This project was created to allow developers to save time and complexity out of building forms. With FormulationJS, anyone can quickly build submission forms using JSON objects, which is then rendered in React. The generated forms can be integrated with third-party applications for desktops and mobile browsers. In the future, we would like to build a more comprehensive set of inputs and other functional form features along with a UI to build the forms and API's to get, update, or save the submitted data.</p>
+  </div>
+
+  <hr />
+
+  <h3 id="setup">Setting Up</h3>
+  <div class="panel panel-default">
+    <div class="panel-heading">Download the Repository</div>
+    <div class="panel-body">
+      <p><strong>Option 1 - Cloning Git Repository Using HTTPs</strong></p>
+      <ol>
+        <li>git clone git@github.com:codazen/formulationjs.git</li>
+      </ol>
+      <hr />
+      <p><strong>Option 2 - Download the ZIP</strong></p>
+      <ol>
+        <li>Visit our <a href="https://github.com/codazen/formulationjs" target="_blank">GitHub Repository</a> and click the "Download ZIP" button.</li>
+        <li>Unzip the folder.</li>
+      </ol>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading">Installation</div>
+    <div class="panel-body">
+      <p>To install and run a demo version of the project...</p>
+      <ol>
+        <li>Install node if you don't already have it - <a href="https://docs.npmjs.com/getting-started/installing-node" target="_blank">https://docs.npmjs.com/getting-started/installing-node</a></li>
+        <li>
+          In your terminal, go to the downloaded formulationjs directory and run the following commands:
+{% highlight bash %}
+npm install
+npm run build-sample1
+{% endhighlight %}
+        </li>
+        <li>
+          Open a new terminal window in the same directory and run the following command:
+{% highlight bash %}
+npm start
+{% endhighlight %}
+        <li>The project has been installed and is now running.</li>
+        <li>To view the demo, go to <a href="http://localhost:3000/sample1/">http://localhost:3000/sample1/</a> in your browser.</li>
+      </ol>
+    </div>
+  </div>
+  <hr />
+  <h3 id="formdef">Form Definition</h3>
+  <p>Build a new form using the following properties. <br />Every form can hold their own set of elements, allowing users to input values to submit through the Form. <br />Please note that all field names defined are case sensitive.</p>
+  <br />
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <h3 class="panel-title">Form Properties</h3>
+    </div>
+    <div class="panel-body">
+      <table class="table table-bordered">
+        <thead>
+        <tr>
+          <th>Field Name</th>
+          <th class="cell-width">Field Type</th>
+          <th class="cell-width">Description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>name</td>
+          <td><i>string</i></td>
+          <td>This value is displayed as the name or title of the form.</td>
+        </tr>
+        <tr>
+          <td>body</td>
+          <td><i>string</i></td>
+          <td>This value is displayed as the form's description text.</td>
+        </tr>
+        <tr>
+          <td>submitDisabled</td>
+          <td><i>boolean</i></td>
+          <td>Allows users to disable the submit button. By default, the submit button is enabled.</td>
+        </tr>
+        <tr>
+          <td>elements</td>
+          <td><i>object array</i></td>
+          <td>This property will hold a list of form elements that will be rendered as input fields in the form. See definitions of the form elements below.</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <h3 class="panel-title">Element Properties</h3>
+    </div>
+    <div class="panel-body">
+      <table class="table table-bordered">
+        <thead>
+        <tr>
+          <th class="cell-width">Field Name</th>
+          <th class="cell-width">Field Type</th>
+          <th class="cell-width">Description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>type</td>
+          <td><i>string</i></td>
+          <td>The type of form element we want to render. Currently supports 'textbox', 'textarea', 'checkbox', 'dropdown', and 'datepicker'.</td>
+        </tr>
+        <tr>
+          <td>data</td>
+          <td><i>Object</i></td>
+          <td>This object holds a list of parameters to render a form element. The available parameters will vary depending on the element type. See the different form element object definitions below.</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <h3 class="panel-title">Code</h3>
+    </div>
+    <div class="panel-body">
+      <pre class="scroll-box">
+{% highlight json %}
+Example JSON Form
+
+{
+  "name": "Sample 1 Form",
+  "body": "This will be a description of the form.",
+  "submitDisabled": false,
+  "elements": [
+    {
+      "type": "textbox",
+      "data": {
+        "value": "",
+        "label": "Label",
+        "required": true,
+        "maxlength": "10",
+        "textboxState": true
+      }
+    },
+    {
+      "type": "textarea",
+      "data": {
+        "value": "",
+        "label": "Label",
+        "required": true,
+        "maxlength": "300",
+        "textareaState": true
+      }
+    },
+    {
+      "type": "dropdown",
+      "placeholder":"Select...",
+      "data": {
+        "label": "Dropdown Label",
+        "options": [
+          {
+            "name": "Option 1",
+            "value": 1
+          },
+          {
+            "name": "Option 2",
+            "value": 2
+          }
+        ],
+        "value": "",
+        "required": true
+      }
+    },
+    {
+      "type": "checkbox",
+      "data": {
+        "value": [],
+        "groupLabel": "Checkbox group label",
+        "required": true,
+        "options": [
+          {
+            "name": "Option 1",
+            "value": 1
+          },
+          {
+            "name": "Option 2",
+            "value": 2
+          }
+        ]
+      }
+    },
+    {
+      "type": "datepicker",
+      "data": {
+        "label": "Please select a due date",
+        "value": null,
+        "dateFormat": "DD/MM/YYYY",
+        "placeholderText": "dd/mm/yyyy",
+        "maxlength": "10",
+        "required": "false",
+        "range": "false"
+      }
+    }
+  ]
+}
+{% endhighlight %}
+      </pre>
+    </div>
+  </div>
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <h3 class="panel-title">Rendered Form</h3>
+    </div>
+    <div class="panel-body">
+      <div class="thumbnail-container">
+        <a href="/images/form.png" target="_open"><img class="thumbnail" src="/images/form.png"></a>
+        <p style="font-size: 13px;">All fields required before submission</p>
+      </div>
+      <div class="thumbnail-container">
+        <a href="/images/invalid-form.png" target="_open"><img class="thumbnail" src="/images/invalid-form.png"></a>
+        <p style="font-size: 13px;">All fields empty after submission</p>
+      </div>
+      <div class="thumbnail-container">
+        <a href="/images/valid-form.png" target="_open"><img class="thumbnail" src="/images/valid-form.png"></a>
+        <p style="font-size: 13px;">All fields entered after submission</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="col-lg-9 col-md-9 col-sm-8 content">
+  <hr />
+  <h3 id="textbox">Textbox</h3>
+  <p>Render a single-line textbox field.</p>
+  <br />
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <h3 class="panel-title">Properties</h3>
+    </div>
+    <div class="panel-body">
+      <table class="table table-bordered">
+        <thead>
+        <tr>
+          <th colspan="3">Textbox Data Object</th>
+        </tr>
+        <tr>
+          <th class="cell-width">Field Name</th>
+          <th class="cell-width">Field Type</th>
+          <th class="cell-width">Description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>label</td>
+          <td><i>string</i></td>
+          <td>This value is displayed as the label for the textbox.</td>
+        </tr>
+        <tr>
+          <td>value</td>
+          <td><i>string</i></td>
+          <td>This value is pre-populated in the text input when the form is loaded.</td>
+        </tr>
+        <tr>
+          <td>required</td>
+          <td><i>boolean</i></td>
+          <td>Determines whether or not a user must fill out this component in order to submit the form.</td>
+        </tr>
+        <tr>
+          <td>maxlength</td>
+          <td><i>string</i></td>
+          <td>This value represents the maximum character limit for the component.</td>
+        </tr>
+        <tr>
+          <td>textboxState</td>
+          <td><i>boolean</i></td>
+          <td>If false, disables the input textbox.</td>
+        </tr>
+        <tr>
+          <td>email</td>
+          <td><i>boolean</i></td>
+          <td>Adds email format validation to the input textbox.</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <h3 class="panel-title">Code</h3>
+    </div>
+    <div class="panel-body">
+                <pre class="scroll-box">
+{% highlight json %}
+{
+  "type": "textbox",
+  "data": {
+    "value": "",
+    "label": "Label",
+    "required": true,
+    "maxlength": "10",
+    "email": true,
+    "textboxState": true
+  }
+}
+{% endhighlight %}
+      </pre>
+    </div>
+  </div>
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <h3 class="panel-title">Rendered Element</h3>
+    </div>
+    <div class="panel-body">
+      <img src="/images/textbox.png">
+    </div>
+  </div>
+</div>
+<div class="col-lg-9 col-md-9 col-sm-8 content">
+  <hr />
+  <h3 id="textarea">Textarea</h3>
+  <p>Render a multi-line textbox field.</p>
+  <br />
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <h3 class="panel-title">Properties</h3>
+    </div>
+    <div class="panel-body">
+      <table class="table table-bordered">
+        <thead>
+        <tr>
+          <th colspan="3">Textarea Data Object</th>
+        </tr>
+        <tr>
+          <th class="cell-width">Field Name</th>
+          <th class="cell-width">Field Type</th>
+          <th class="cell-width">Description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>label</td>
+          <td><i>string</i></td>
+          <td>This value is displayed as the label for the textbox.</td>
+        </tr>
+        <tr>
+          <td>value</td>
+          <td><i>string</i></td>
+          <td>This value is pre-populated in the text input when the form is loaded.</td>
+        </tr>
+        <tr>
+          <td>required</td>
+          <td><i>boolean</i></td>
+          <td>Determines whether or not a user must fill out this component in order to submit the form.</td>
+        </tr>
+        <tr>
+          <td>maxlength</td>
+          <td><i>string</i></td>
+          <td>This value represents the maximum character limit for the component. Should represent an integer value.</td>
+        </tr>
+        <tr>
+          <td>textareaState</td>
+          <td><i>boolean</i></td>
+          <td> If false, disables the input textarea. </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <h3 class="panel-title">Code</h3>
+    </div>
+    <div class="panel-body">
+      <pre class="scroll-box">
+{% highlight json %}
+{
+  "type": "textarea",
+  "data": {
+    "value": "",
+    "label": "Label",
+    "required": true,
+    "maxlength": "300",
+    "textareaState": true
+  }
+}
+{% endhighlight %}
+      </pre>
+    </div>
+  </div>
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <h3 class="panel-title">Rendered Element</h3>
+    </div>
+    <div class="panel-body">
+      <img src="/images/textarea.png">
+    </div>
+  </div>
+</div>
+<div class="col-lg-9 col-md-9 col-sm-8 content">
+  <hr />
+  <h3 id="checkbox">Checkbox List</h3>
+  <p>Render a checkbox list field.</p>
+  <br />
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <h3 class="panel-title">Properties</h3>
+    </div>
+    <div class="panel-body">
+      <table class="table table-bordered">
+        <thead>
+        <tr>
+          <th colspan="3">Checkbox List Data Object</th>
+        </tr>
+        <tr>
+          <th class="cell-width">Field Name</th>
+          <th class="cell-width">Field Type</th>
+          <th class="cell-width">Description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>label</td>
+          <td><i>string</i></td>
+          <td>This value is displayed as the label for the checkbox list.</td>
+        </tr>
+        <tr>
+          <td>value</td>
+          <td><i>array</i></td>
+          <td>An array that contains the initial check box values that are checked.</td>
+        </tr>
+        <tr>
+          <td>required</td>
+          <td><i>boolean</i></td>
+          <td>Determines whether or not a user must check at least one of the items in the checkbox list in order to submit the form.</td>
+        </tr>
+        <td>options</td>
+        <td><i>object array</i></td>
+        <td>An array to define the list of checkbox options.</td>
+        </tr>
+        </tbody>
+      </table>
+      <table class="table table-bordered">
+        <thead>
+        <tr>
+          <th colspan="3">Checkbox List Options Object</th>
+        </tr>
+        <tr>
+          <th>Field Name</th>
+          <th>Field Type</th>
+          <th>Description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>name</td>
+          <td><i>string</i></td>
+          <td>Text that will be displayed as the checkbox option.</td>
+        </tr>
+        <tr>
+          <td>value</td>
+          <td><i>string | int</i></td>
+          <td>The actual value submitted if the option is checked.</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <h3 class="panel-title">Code</h3>
+    </div>
+    <div class="panel-body">
+      <pre class="scroll-box">
+{% highlight json %}          
+{
+  "type": "checkbox",
+  "data": {
+    "value": ["1"],
+    "groupLabel": "Checkbox group label",
+    "required": true,
+    "options": [
+      {
+        "name": "Option 1",
+        "value": 1
+      },
+      {
+        "name": "Option 2",
+        "value": 2
+      }
+    ]
+  }
+}
+{% endhighlight %}
+      </pre>
+    </div>
+  </div>
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <h3 class="panel-title">Rendered Element</h3>
+    </div>
+    <div class="panel-body">
+      <img src="/images/checkbox.png">
+    </div>
+  </div>
+</div>
+<div class="col-lg-9 col-md-9 col-sm-8 content">
+  <hr />
+  <h3 id="dropdown">Dropdown List</h3>
+  <p>Render a dropdown list field.</p>
+  <br />
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <h3 class="panel-title">Properties</h3>
+    </div>
+    <div class="panel-body">
+      <table class="table table-bordered">
+        <thead>
+        <tr>
+          <th colspan="3">Dropdown List Data Object</th>
+        </tr>
+        <tr>
+          <th class="cell-width">Field Name</th>
+          <th class="cell-width">Field Type</th>
+          <th class="cell-width">Description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>label</td>
+          <td><i>string</i></td>
+          <td>This value is displayed as the label for the dropdown list.</td>
+        </tr>
+        <tr>
+          <td>value</td>
+          <td><i>string</i></td>
+          <td>Should match the "value" of a dropdown option to indicate the default selected option. If no value is specified here, the placeholder will be selected by default.</td>
+        </tr>
+        <tr>
+          <td>required</td>
+          <td><i>boolean</i></td>
+          <td>Determines whether or not a dropdown selection must be made in order to submit the form.</td>
+        </tr>
+        <tr>
+          <td>placeholder</td>
+          <td><i>string</i></td>
+          <td>This value is displayed as the first default selection of the drop down list. The placeholder is not considered a valid selection for the required field validation.</td>
+        </tr>
+        <tr>
+          <td>options</td>
+          <td><i>object array</i></td>
+          <td>An array to define the list of dropdown options.</td>
+        </tr>
+        </tbody>
+      </table>
+      <table class="table table-bordered">
+        <thead>
+        <tr>
+          <th colspan="3">Dropdown List Options Object</th>
+        </tr>
+        <tr>
+          <th>Field Name</th>
+          <th>Field Type</th>
+          <th>Description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>name</td>
+          <td><i>string</i></td>
+          <td>Text that will be displayed as a dropdown option.</td>
+        </tr>
+        <tr>
+          <td>value</td>
+          <td><i>string | int</i></td>
+          <td>The actual value submitted if the option is selected.</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <h3 class="panel-title">Code</h3>
+    </div>
+    <div class="panel-body">
+      <pre class="scroll-box">
+{% highlight json %}
+{
+  "type": "dropdown",
+  "placeholder": "Select...",
+  "data": {
+    "label": "Dropdown Label",
+    "options": [
+      {
+        "name": "Option 1",
+        "value": 1
+      },
+      {
+        "name": "Option 2",
+        "value": 2
+      }
+    ],
+    "value": "",
+    "required": true
+  }
+}
+{% endhighlight %}
+      </pre>
+    </div>
+  </div>
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <h3 class="panel-title">Rendered Element</h3>
+    </div>
+    <div class="panel-body">
+      <img class="dropdown-img" src="/images/dropdown2.png">
+      <img class="dropdown-img" src="/images/dropdown1.png">
+    </div>
+  </div>
+</div>
+<div class="col-lg-9 col-md-9 col-sm-8 content">
+  <hr />
+  <h3 id="datepicker">Datepicker</h3>
+  <p>Render a datepicker that allows the user to choose a specific date. <br/>This datepicker utilizes the ReactJS Datepicker library - <a href="http://hacker0x01.github.io/react-datepicker" target="_blank">http://hacker0x01.github.io/react-datepicker/</a>.</p>
+  <br />
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <h3 class="panel-title">Properties</h3>
+    </div>
+    <div class="panel-body">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th colspan="3">Datepicker Data Object</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>label</td>
+            <td><i>string</i></td>
+            <td>A label rendered adjacent to the checkbox input.</td>
+          </tr>
+          <tr>
+            <td>value</td>
+            <td><i>boolean</i></td>
+            <td>The initial value of the datepicker input.</td>
+          </tr>
+          <tr>
+            <td>required</td>
+            <td><i>boolean</i></td>
+            <td>A user must fill out this component in order to submit the form.</td>
+          </tr>
+          <tr>
+            <td>maxlength</td>
+            <td><i>string</i></td>
+            <td>This value represents the maximum character limit for the component.</td>
+          </tr>
+          <tr>
+            <td>range</td>
+            <td><i>boolean</i></td>
+            <td>This functionality is not yet available.</td>
+          </tr>
+          <tr>
+            <td>placeholderText</td>
+            <td><i>string</i></td>
+            <td>
+              This value is displayed as placeholder text in the text area.
+            </td>
+          </tr>
+          <tr>
+            <td>dateFormat</td>
+            <td><i>string</i></td>
+            <td>
+              <ul>
+                <li>Allows user to setup specific date format.</li>
+                <li>Separator symbols are customize-able and optional.</li>
+                <li>Days, Months, and Years can be used with any combination of the valid dateFormat symbols (shown below).</li>
+              </ul>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th colspan="2">Valid dateFormat Symbols</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>YY</td>
+            <td>Last 2 digits of year.</td>
+          </tr>
+          <tr>
+            <td>YYYY</td>
+            <td>4 digit year.</td>
+          </tr>
+          <tr>
+            <td>M</td>
+            <td>Number representative of month.</td>
+          </tr>
+          <tr>
+            <td>MM</td>
+            <td>Two digit number representative of month.</td>
+          </tr>
+          <tr>
+            <td>MMM</td>
+            <td>First three letters of spelled out name of month.</td>
+          </tr>
+          <tr>
+            <td>MMMM</td>
+            <td>Spelled out name of month.</td>
+          </tr>
+          <tr>
+            <td>D</td>
+            <td>Number representative of day of month.</td>
+          </tr>
+          <tr>
+            <td>DD</td>
+            <td>Two digit number representative of day of month.</td>
+          </tr>
+          <tr>
+            <td>dd</td>
+            <td>First two letters of the spelled out name of day.</td>
+          </tr>
+          <tr>
+            <td>ddd</td>
+            <td>First three letters of the spelled out name of day.</td>
+          </tr>
+          <tr>
+            <td>dddd</td>
+            <td>Spelled out name of day.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <h3 class="panel-title">Code</h3>
+    </div>
+    <div class="panel-body">
+      <pre class="scroll-box">
+{% highlight json %}
+{
+  "type": "datepicker",
+  "data": {
+    "label": "Please select a due date",
+    "value": null,
+    "dateFormat": "DD/MM/YYYY",
+    "placeholderText": "dd/mm/yyyy",
+    "maxlength": "10",
+    "required": "false",
+    "range": "false"
+  }
+}
+{% endhighlight %}
+      </pre>
+    </div>
+  </div>
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <h3 class="panel-title">Rendered Element</h3>
+    </div>
+    <div class="panel-body">
+      <img src="/images/datepicker.png">
+    </div>
+  </div>
+</div>
