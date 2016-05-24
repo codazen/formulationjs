@@ -216,15 +216,15 @@ Example JSON Form
     </div>
     <div class="panel-body">
       <div class="thumbnail-container">
-        <a href="/images/form.png" target="_open"><img class="thumbnail" src="/images/form.png"></a>
+        <a href="{{"/images/form.png" | prepend: site.baseurl }}" target="_open"><img class="thumbnail" src="{{"/images/form.png" | prepend: site.baseurl }}"></a>
         <p style="font-size: 13px;">All fields required before submission</p>
       </div>
       <div class="thumbnail-container">
-        <a href="/images/invalid-form.png" target="_open"><img class="thumbnail" src="/images/invalid-form.png"></a>
+        <a href="{{"/images/invalid-form.png" | prepend: site.baseurl }} target="_open"><img class="thumbnail" src="{{"/images/invalid-form.png" | prepend: site.baseurl }}"></a>
         <p style="font-size: 13px;">All fields empty after submission</p>
       </div>
       <div class="thumbnail-container">
-        <a href="/images/valid-form.png" target="_open"><img class="thumbnail" src="/images/valid-form.png"></a>
+        <a href="{{"/images/valid-form.png" | prepend: site.baseurl }} target="_open"><img class="thumbnail" src="{{"/images/valid-form.png" | prepend: site.baseurl }}"></a>
         <p style="font-size: 13px;">All fields entered after submission</p>
       </div>
     </div>
@@ -315,7 +315,7 @@ Example JSON Form
       <h3 class="panel-title">Rendered Element</h3>
     </div>
     <div class="panel-body">
-      <img src="/images/textbox.png">
+      <img src="{{"/images/textbox.png" | prepend: site.baseurl }}">
     </div>
   </div>
 </div>
@@ -396,7 +396,7 @@ Example JSON Form
       <h3 class="panel-title">Rendered Element</h3>
     </div>
     <div class="panel-body">
-      <img src="/images/textarea.png">
+      <img src="{{"/images/textarea.png" | prepend: site.baseurl }}">
     </div>
   </div>
 </div>
@@ -503,7 +503,7 @@ Example JSON Form
       <h3 class="panel-title">Rendered Element</h3>
     </div>
     <div class="panel-body">
-      <img src="/images/checkbox.png">
+      <img src="{{"/images/checkbox.png" | prepend: site.baseurl }}">
     </div>
   </div>
 </div>
@@ -617,8 +617,8 @@ Example JSON Form
       <h3 class="panel-title">Rendered Element</h3>
     </div>
     <div class="panel-body">
-      <img class="dropdown-img" src="/images/dropdown2.png">
-      <img class="dropdown-img" src="/images/dropdown1.png">
+      <img class="dropdown-img" src="{{"/images/dropdown2.png" | prepend: site.baseurl }}">
+      <img class="dropdown-img" src="{{"/images/dropdown1.png" | prepend: site.baseurl }}">
     </div>
   </div>
 </div>
@@ -767,7 +767,7 @@ Example JSON Form
       <h3 class="panel-title">Rendered Element</h3>
     </div>
     <div class="panel-body">
-      <img src="/images/datepicker.png">
+      <img src="{{"/images/datepicker.png" | prepend: site.baseurl }}">
     </div>
   </div>
 </div>
