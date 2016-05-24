@@ -16,7 +16,7 @@ description: > # this means to ignore newlines until "baseurl:"
   browsers. In the future, we would like to build a more comprehensive set of
   inputs and other functional form features along with a UI to build the forms 
   and API's to get, update, or save the submitted data.
-baseurl: "/formulationjs" # the subpath of your site, e.g. /blog
+baseurl: "/" # the subpath of your site, e.g. /blog
 url: "http://yourdomain.com" # the base hostname & protocol for your site
 twitter_username: codazen
 github_username:  codazen
