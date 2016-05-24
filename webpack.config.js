@@ -1,16 +1,20 @@
 const path = require('path');
 const webpack = require('webpack');
+const pack_json = require('./package.json');
 
 const nodeModulesPath = path.join(__dirname, 'node_modules');
 
+const version = pack_json.version;
+const file_name = 'formulation-' + version + '.js';
 module.exports = {
   entry: [
     './src/index.js'
   ],
   output: {
     path: path.join(__dirname, 'dist'),
-    filename: 'formulation-0.1.0.js',
-    publicPath: '/'
+    filename: file_name,
+    publicPath: '/',
+    version: version
   },
   plugins: [
     new webpack.NoErrorsPlugin()
