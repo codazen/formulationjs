@@ -5,7 +5,6 @@ No part of FormulationJS, including this file, may be copied, modified, propagat
 */
 
 'use strict';
-require('./styles/Checkbox.less');
 
 import React from 'react';
 import classNames from 'classnames';

@@ -5,9 +5,7 @@ No part of FormulationJS, including this file, may be copied, modified, propagat
 */
 
 'use strict';
-require('./styles/Form.less');
 global.jQuery = require('jquery');
-require('bootstrap');
 
 import React from 'react';
 import Checkbox from './Checkbox.react';
@@ -162,8 +160,6 @@ class Form extends React.Component {
     });
     return (
       <section>
-        <h1 className="form-style">{form.name}</h1>
-        <p className="form-style">{form.body}</p>
         <form onSubmit={this._handleSubmit}>
           <div className="form-group">
             {
@@ -200,9 +196,6 @@ class Form extends React.Component {
               null
             }
           </div>
-            <input id="formSubmit" className={classes} type="submit" value="Submit" />
-            <span id = {"verify" + (verify ? "" : " hide-message")}>{verify}</span>
-            <span id = {"notVerify" + (notVerify ? "" : " hide-message")}>{notVerify}</span>
         </form>
       </section>
     );
