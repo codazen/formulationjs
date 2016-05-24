@@ -5,8 +5,6 @@ No part of FormulationJS, including this file, may be copied, modified, propagat
 */
 
 'use strict';
-require('react-datepicker/dist/react-datepicker.css');
-require('./styles/DatePicker.less');
 
 import React from 'react';
 import classNames from 'classnames';

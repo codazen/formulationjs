@@ -9,15 +9,15 @@ No part of FormulationJS, including this file, may be copied, modified, propagat
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Form from './components/Form.react';
+import $ from 'jquery';
 
-class Formulation {
+class renderForm {
 
   constructor(formDef) {
     this.formDef = formDef;
   }
 
   render(mountId) {
-
     ReactDOM.render(
       <Form form={this.formDef} />,
       document.getElementById(mountId)
@@ -25,4 +25,16 @@ class Formulation {
   }
 }
 
-export default Formulation;
+Formulation = function (data, element) {
+  if(typeof data === "object") {
+    let form = new renderForm(data);
+    form.render(element);
+  }
+  else if(typeof data === "string") {
+    $.getJSON(data, function(data) {
+      let form = new renderForm(data);
+      form.render(element);
+    });
+  }
+}
+
