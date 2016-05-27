@@ -21,6 +21,7 @@
   "dependencies": {
     "bootstrap": "^3.3.6",
     "classnames": "^2.2.0",
+    "extract-text-webpack-plugin": "^1.0.1",
     "jquery": "^2.2.1",
     "moment": "^2.11.2",
     "react": "^0.14.2",

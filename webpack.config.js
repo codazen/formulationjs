@@ -1,14 +1,24 @@
 const path = require('path');
 const webpack = require('webpack');
 const pack_json = require('./package.json');
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 const nodeModulesPath = path.join(__dirname, 'node_modules');
 
 const version = pack_json.version;
 const file_name = 'formulation-' + version + '.js';
+const css_fn = 'formulation-' + version + '.css';
+const STYLES_PATH = './src/components/styles/';
+
 module.exports = {
   entry: [
-    './src/index.js'
+    './src/index.js',
+    STYLES_PATH + 'Checkbox.less',
+    STYLES_PATH + 'DatePicker.less',
+    STYLES_PATH + 'Dropdown.less',
+    STYLES_PATH + 'Form.less',
+    STYLES_PATH + 'Textarea.less',
+    STYLES_PATH + 'Textbox.less'
   ],
   output: {
     path: path.join(__dirname, 'dist'),
@@ -43,9 +53,12 @@ module.exports = {
         include: path.join(__dirname, 'src', 'forms')
       },
       {
-        test: /\.less$|\.css$/,
-        loader: 'style-loader!css-loader!less-loader'
+          test: /\.less$/,
+          loader: ExtractTextPlugin.extract("style-loader", "css-loader!less-loader")
       }
     ]
-  }
+  },
+  plugins: [
+    new ExtractTextPlugin(css_fn, {allChunks: true})
+  ]
 };
