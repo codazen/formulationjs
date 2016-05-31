@@ -1,5 +1,5 @@
 $(document).ready(function() {
-
+  console.log(Formulation);
   var stickyElement = $('.scroll');
 
   if (stickyElement && stickyElement.length > 0) {
