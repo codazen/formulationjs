@@ -1,5 +1,19 @@
+let textbox = {
+  "type": "textbox",
+  "data": {
+    "value": "",
+    "label": "Label",
+    "required": true,
+    "maxlength": "10",
+    "email": true,
+    "textboxState": true
+  }
+};
+console.log(textbox);
+Formulation(textbox, "textbox");
+
+
 $(document).ready(function() {
-  console.log(Formulation);
   var stickyElement = $('.scroll');
 
   if (stickyElement && stickyElement.length > 0) {
@@ -22,3 +36,5 @@ $(document).ready(function() {
     });
   }
 });
+
+
