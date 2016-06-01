@@ -214,20 +214,7 @@ Example JSON Form
     <div class="panel-heading">
       <h3 class="panel-title">Rendered Form</h3>
     </div>
-    <div class="panel-body">
-      <div class="thumbnail-container">
-        <a href="{{"/images/form.png" | prepend: site.baseurl }}" target="_open"><img class="thumbnail" src="{{"/images/form.png" | prepend: site.baseurl }}"></a>
-        <p style="font-size: 13px;">All fields required before submission</p>
-      </div>
-      <div class="thumbnail-container">
-        <a href="{{"/images/invalid-form.png" | prepend: site.baseurl }} target="_open"><img class="thumbnail" src="{{"/images/invalid-form.png" | prepend: site.baseurl }}"></a>
-        <p style="font-size: 13px;">All fields empty after submission</p>
-      </div>
-      <div class="thumbnail-container">
-        <a href="{{"/images/valid-form.png" | prepend: site.baseurl }} target="_open"><img class="thumbnail" src="{{"/images/valid-form.png" | prepend: site.baseurl }}"></a>
-        <p style="font-size: 13px;">All fields entered after submission</p>
-      </div>
-    </div>
+    <div class="panel-body" id="sample-form"></div>
   </div>
 </div>
 

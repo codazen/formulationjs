@@ -1,3 +1,80 @@
+let sampleForm = {
+  "elements": [
+    {
+      "type": "textbox",
+      "data": {
+        "value": "",
+        "label": "Label",
+        "required": true,
+        "maxlength": "10",
+        "textboxState": true
+      }
+    },
+    {
+      "type": "textarea",
+      "data": {
+        "value": "",
+        "label": "Label",
+        "required": true,
+        "maxlength": "300",
+        "textareaState": true
+      }
+    },
+    {
+      "type": "dropdown",
+      "placeholder":"Select...",
+      "data": {
+        "label": "Dropdown Label",
+        "options": [
+          {
+            "name": "Option 1",
+            "value": 1
+          },
+          {
+            "name": "Option 2",
+            "value": 2
+          }
+        ],
+        "value": "",
+        "required": true
+      }
+    },
+    {
+      "type": "checkbox",
+      "data": {
+        "value": [],
+        "groupLabel": "Checkbox group label",
+        "required": true,
+        "options": [
+          {
+            "name": "Option 1",
+            "value": 1
+          },
+          {
+            "name": "Option 2",
+            "value": 2
+          }
+        ]
+      }
+    },
+    {
+      "type": "datepicker",
+      "data": {
+        "label": "Please select a due date",
+        "value": null,
+        "dateFormat": "DD/MM/YYYY",
+        "placeholderText": "dd/mm/yyyy",
+        "maxlength": "10",
+        "required": "false",
+        "range": "false"
+      }
+    }
+  ]
+}
+
+let form = new Render(sampleForm);
+form.render("sample-form");
+
 let textbox = {
   "elements": [
     {

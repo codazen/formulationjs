@@ -41,3 +41,8 @@
 .left-nav {
   max-width: 220px;
 }
+
+#setup {
+  padding-top: 21px;
+  padding-bottom: 11px;
+}
