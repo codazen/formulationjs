@@ -11,7 +11,7 @@ import ReactDOM from 'react-dom';
 import Form from './components/Form.react';
 import $ from 'jquery';
 
-class renderForm {
+class Formulation {
 
   constructor(formDef) {
     this.formDef = formDef;
@@ -25,16 +25,7 @@ class renderForm {
   }
 }
 
-Formulation = function (data, element) {
-  if(typeof data === "object") {
-    let form = new renderForm(data);
-    form.render(element);
-  }
-  else if(typeof data === "string") {
-    $.getJSON(data, function(data) {
-      let form = new renderForm(data);
-      form.render(element);
-    });
-  }
-}
+Render = Formulation;
+
+export default Formulation;
 

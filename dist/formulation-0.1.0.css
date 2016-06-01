@@ -1,35 +1,42 @@
-.checkboxAlignment{
+/*
+Copyright (c) 2016 Codazen. 
+This file is subject to the license terms in the LICENSE file in the top-level directory of this distribution and at https://github.com/codazen/formulationjs/blob/master/LICENSE.  
+No part of FormulationJS, including this file, may be copied, modified, propagated, or distributed except according to the terms contained in the LICENSE file.
+*/
+.checkboxAlignment {
   margin-bottom: .25rem;
 }
-
-.datepicker__day--selected, .datepicker__day--in-range {
+/*
+Copyright (c) 2016 Codazen. 
+This file is subject to the license terms in the LICENSE file in the top-level directory of this distribution and at https://github.com/codazen/formulationjs/blob/master/LICENSE.  
+No part of FormulationJS, including this file, may be copied, modified, propagated, or distributed except according to the terms contained in the LICENSE file.
+*/
+.datepicker__day--selected,
+.datepicker__day--in-range {
   background-color: #64c2f3;
 }
-
 .datepicker__navigation--previous {
   border-right-color: #333333;
 }
-
 .datepicker__navigation--next {
   border-left-color: #333333;
 }
-
 .datepicker__year-read-view--down-arrow {
   border-top-color: #333333;
 }
-
-.datepicker__day {
-  &:hover {
-    background-color: #e7edf6;
-  }
+.datepicker__day:hover {
+  background-color: #e7edf6;
 }
-
 .datepicker__input {
   font-family: sans-serif;
   font-size: 14px;
   padding: .375rem .75rem;
 }
-
+/*
+Copyright (c) 2016 Codazen. 
+This file is subject to the license terms in the LICENSE file in the top-level directory of this distribution and at https://github.com/codazen/formulationjs/blob/master/LICENSE.  
+No part of FormulationJS, including this file, may be copied, modified, propagated, or distributed except according to the terms contained in the LICENSE file.
+*/
 select {
   font-family: sans-serif;
   border: 1px solid rgba(0, 0, 0, 0.15);
@@ -41,25 +48,26 @@ select {
   border-radius: 4px;
   border-color: #333333;
 }
-
 select.invalid {
   border-color: #c32323;
 }
-
 select.enabled {
   background-color: #ffffff;
 }
-
 select.disabled {
   background-color: #dcdfe3;
   border-color: #bec2c7;
   font-color: #bec2c7;
 }
-
-label, select {
-  display:inline-block;
+label,
+select {
+  display: inline-block;
 }
-
+/*
+Copyright (c) 2016 Codazen. 
+This file is subject to the license terms in the LICENSE file in the top-level directory of this distribution and at https://github.com/codazen/formulationjs/blob/master/LICENSE.  
+No part of FormulationJS, including this file, may be copied, modified, propagated, or distributed except according to the terms contained in the LICENSE file.
+*/
 input[type="submit"] {
   padding: 4px 5px 4px 5px;
   border-radius: 4px;
@@ -70,22 +78,18 @@ input[type="submit"] {
   background-color: #1166b4;
   color: #ffffff;
 }
-
 input[type="submit"].disabled {
   background-color: #abb2b8;
   color: #767f87;
 }
-
 input[type="submit"]:hover {
   background-color: lightblue;
   color: #ffffff;
 }
-
 div.required {
   margin-top: 5px;
   color: #c32323;
-};
-
+}
 section {
   font-family: sans-serif;
   font-size: 14px;
@@ -93,7 +97,6 @@ section {
   font-weight: normal;
   color: #333333;
 }
-
 h1 {
   font-family: sans-serif;
   font-size: 26px;
@@ -102,12 +105,10 @@ h1 {
   color: #333333;
   margin-bottom: 20px;
 }
-
 p {
   margin-bottom: 20px;
 }
-
-#verify{
+#verify {
   background-color: #ffffff;
   border: none;
   font-family: sans-serif;
@@ -117,8 +118,7 @@ p {
   display: block;
   padding: 0px;
 }
-
-#notVerify{
+#notVerify {
   background-color: #ffffff;
   border: none;
   font-family: sans-serif;
@@ -128,48 +128,50 @@ p {
   display: block;
   padding: 0px;
 }
-
 #hide-message {
   display: none;
 }
-
 #formSubmit {
   margin-bottom: 7px;
 }
-
 .form-style {
   word-wrap: break-word;
   font-family: sans-serif;
 }
-
 .row {
   margin-bottom: 15px;
-  line-height:100%
+  line-height: 100%;
 }
-
+/*
+Copyright (c) 2016 Codazen. 
+This file is subject to the license terms in the LICENSE file in the top-level directory of this distribution and at https://github.com/codazen/formulationjs/blob/master/LICENSE.  
+No part of FormulationJS, including this file, may be copied, modified, propagated, or distributed except according to the terms contained in the LICENSE file.
+*/
 textarea[type="textarea"] {
-    height: 135px;
-    width: 160px;
-    padding: .375rem .75rem;
-    line-height: 120%;
-    background-color: #ffffff;
-    border: 1px solid rgba(0, 0, 0, 0.15);
-    color: #55595c;
-    font-family: sans-serif;
-    font-size: 14px;
-    border-color: #333333;
-    border-radius: 4px;
+  height: 135px;
+  width: 160px;
+  padding: .375rem .75rem;
+  line-height: 120%;
+  background-color: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  color: #55595c;
+  font-family: sans-serif;
+  font-size: 14px;
+  border-color: #333333;
+  border-radius: 4px;
 }
-
 textarea[type="textarea"].disabled {
-    background-color: #dcdfe3;
-    border-color: #bec2c7;
+  background-color: #dcdfe3;
+  border-color: #bec2c7;
 }
-
 textarea[type="textarea"].invalid {
   border-color: #c32323;
-};
-
+}
+/*
+Copyright (c) 2016 Codazen. 
+This file is subject to the license terms in the LICENSE file in the top-level directory of this distribution and at https://github.com/codazen/formulationjs/blob/master/LICENSE.  
+No part of FormulationJS, including this file, may be copied, modified, propagated, or distributed except according to the terms contained in the LICENSE file.
+*/
 input[type="text"] {
   height: 25px;
   width: 160px;
@@ -179,16 +181,13 @@ input[type="text"] {
   font-family: sans-serif;
   font-size: 14px;
 }
-
 input[type="text"].disabled {
   background-color: #dcdfe3;
   border-color: #bec2c7;
 }
-
 input[type="text"].invalid {
   border-color: #c32323;
-};
-
+}
 input[type="text"].emailInvalid {
   border-color: #c32323;
-};
+}
