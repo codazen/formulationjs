@@ -1,4 +1,5 @@
 let sampleForm = {
+  "submitDisabled": false,
   "elements": [
     {
       "type": "textbox",
@@ -76,6 +77,7 @@ let form = new Render(sampleForm);
 form.render("sample-form");
 
 let textbox = {
+  "submitDisabled": true,
   "elements": [
     {
       "type": "textbox",
@@ -94,6 +96,7 @@ let obj1 = new Render(textbox);
 obj1.render("example1");
 
 let textarea = {
+  "submitDisabled": true,
   "elements": [
     {
       "type": "textarea",
@@ -112,6 +115,7 @@ let obj2 = new Render(textarea);
 obj2.render("example2");
 
 let checkbox = {
+  "submitDisabled": true,
   "elements": [
     {
       "type": "checkbox",
@@ -138,6 +142,7 @@ let obj3 = new Render(checkbox);
 obj3.render("example3");
 
 let dropdown = {
+  "submitDisabled": true,
   "elements": [
     {
       "type": "dropdown",
@@ -165,6 +170,7 @@ let obj4 = new Render(dropdown);
 obj4.render("example4");
 
 let datepicker = {
+  "submitDisabled": true,
   "elements": [
     {
       "type": "datepicker",
