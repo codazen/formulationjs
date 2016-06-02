@@ -131,6 +131,9 @@ p {
 #hide-message {
   display: none;
 }
+.hide {
+  display: none;
+}
 #formSubmit {
   margin-bottom: 7px;
 }
