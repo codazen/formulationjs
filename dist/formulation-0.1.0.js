@@ -19934,7 +19934,8 @@ let Render;
 	      var disabled = form.submitDisabled;
 	      var classes = (0, _classnames2['default'])({
 	        'disabled': disabled,
-	        'form-style': true
+	        'form-style': true,
+	        'hide': disabled
 	      });
 	      return _react2['default'].createElement(
 	        'section',
@@ -19972,6 +19973,17 @@ let Render;
 	              }
 	              return component;
 	            }) : null
+	          ),
+	          _react2['default'].createElement('input', { id: 'formSubmit', className: classes, type: 'submit', value: 'Submit' }),
+	          _react2['default'].createElement(
+	            'span',
+	            { id: "verify" + (verify ? "" : " hide-message") },
+	            verify
+	          ),
+	          _react2['default'].createElement(
+	            'span',
+	            { id: "notVerify" + (notVerify ? "" : " hide-message") },
+	            notVerify
 	          )
 	        )
 	      );
