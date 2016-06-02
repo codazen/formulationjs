@@ -1,4 +1,5 @@
 let sampleForm = {
+  "submitDisabled": true,
   "elements": [
     {
       "type": "textbox",

@@ -19972,6 +19972,17 @@ let Render;
 	              }
 	              return component;
 	            }) : null
+	          ),
+	          _react2['default'].createElement('input', { id: 'formSubmit', className: classes, type: 'submit', value: 'Submit' }),
+	          _react2['default'].createElement(
+	            'span',
+	            { id: "verify" + (verify ? "" : " hide-message") },
+	            verify
+	          ),
+	          _react2['default'].createElement(
+	            'span',
+	            { id: "notVerify" + (notVerify ? "" : " hide-message") },
+	            notVerify
 	          )
 	        )
 	      );
