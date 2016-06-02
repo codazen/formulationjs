@@ -156,7 +156,8 @@ class Form extends React.Component {
     var disabled = form.submitDisabled;
     var classes = classNames({
       'disabled' : disabled,
-      'form-style' : true
+      'form-style' : true,
+      'hide': disabled
     });
     return (
       <section>
