@@ -19934,7 +19934,8 @@ let Render;
 	      var disabled = form.submitDisabled;
 	      var classes = (0, _classnames2['default'])({
 	        'disabled': disabled,
-	        'form-style': true
+	        'form-style': true,
+	        'hide': disabled
 	      });
 	      return _react2['default'].createElement(
 	        'section',
