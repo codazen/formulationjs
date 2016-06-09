@@ -1,5 +1,5 @@
 /*
-Copyright (c) 2016 Codazen. 
+Copyright (c) 2016 Codazen.
 This file is subject to the license terms in the LICENSE file in the top-level directory of this distribution and at https://github.com/codazen/formulationjs/blob/master/LICENSE.  
 No part of FormulationJS, including this file, may be copied, modified, propagated, or distributed except according to the terms contained in the LICENSE file.
 */
@@ -34,17 +34,16 @@ class Form extends React.Component {
     var sanitizedForm = new Object();
     sanitizedForm = JSON.parse(JSON.stringify(this.state.form));
     for (var x in sanitizedForm.elements){
-      var element = sanitizedForm.elements[x];  
+      var element = sanitizedForm.elements[x];
       if(element.type == 'textbox' || element.type == 'textarea' || element.type === "datepicker"){
         element.data.value = this.removeTags(element.data.value);
       }
     }
 
     if (this._componentsValid(this.state.form)) { //& the required true
-      console.log(sanitizedForm);
-      console.log("User clicked submit at: " + Date());
+      this.props.callback(sanitizedForm);
     }
-    
+
      this.setState({
        initialRender: false,
        verifyTrue: false

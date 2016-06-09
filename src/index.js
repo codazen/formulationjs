@@ -1,5 +1,5 @@
 /*
-Copyright (c) 2016 Codazen. 
+Copyright (c) 2016 Codazen.
 This file is subject to the license terms in the LICENSE file in the top-level directory of this distribution and at https://github.com/codazen/formulationjs/blob/master/LICENSE.  
 No part of FormulationJS, including this file, may be copied, modified, propagated, or distributed except according to the terms contained in the LICENSE file.
 */
@@ -17,9 +17,9 @@ class Formulation {
     this.formDef = formDef;
   }
 
-  render(mountId) {
+  render(mountId, callback) {
     ReactDOM.render(
-      <Form form={this.formDef} />,
+      <Form form={this.formDef} callback={callback} />,
       document.getElementById(mountId)
     );
   }
@@ -28,4 +28,3 @@ class Formulation {
 // Render = Formulation;
 
 export default Formulation;
-
