@@ -59,7 +59,7 @@ let Render;
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
-	Copyright (c) 2016 Codazen. 
+	Copyright (c) 2016 Codazen.
 	This file is subject to the license terms in the LICENSE file in the top-level directory of this distribution and at https://github.com/codazen/formulationjs/blob/master/LICENSE.  
 	No part of FormulationJS, including this file, may be copied, modified, propagated, or distributed except according to the terms contained in the LICENSE file.
 	*/
@@ -101,8 +101,8 @@ let Render;
 
 	  _createClass(Formulation, [{
 	    key: 'render',
-	    value: function render(mountId) {
-	      _reactDom2['default'].render(_react2['default'].createElement(_componentsFormReact2['default'], { form: this.formDef }), document.getElementById(mountId));
+	    value: function render(mountId, callback) {
+	      _reactDom2['default'].render(_react2['default'].createElement(_componentsFormReact2['default'], { form: this.formDef, callback: callback }), document.getElementById(mountId));
 	    }
 	  }]);
 
@@ -14680,7 +14680,7 @@ let Render;
 	 *
 	 * @providesModule shallowEqual
 	 * @typechecks
-	 * 
+	 *
 	 */
 
 	'use strict';
@@ -19727,7 +19727,7 @@ let Render;
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {/*
-	Copyright (c) 2016 Codazen. 
+	Copyright (c) 2016 Codazen.
 	This file is subject to the license terms in the LICENSE file in the top-level directory of this distribution and at https://github.com/codazen/formulationjs/blob/master/LICENSE.  
 	No part of FormulationJS, including this file, may be copied, modified, propagated, or distributed except according to the terms contained in the LICENSE file.
 	*/
@@ -19809,8 +19809,7 @@ let Render;
 
 	      if (this._componentsValid(this.state.form)) {
 	        //& the required true
-	        console.log(sanitizedForm);
-	        console.log("User clicked submit at: " + Date());
+	        this.props.callback(sanitizedForm);
 	      }
 
 	      this.setState({
@@ -20002,7 +20001,7 @@ let Render;
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
-	Copyright (c) 2016 Codazen. 
+	Copyright (c) 2016 Codazen.
 	This file is subject to the license terms in the LICENSE file in the top-level directory of this distribution and at https://github.com/codazen/formulationjs/blob/master/LICENSE.  
 	No part of FormulationJS, including this file, may be copied, modified, propagated, or distributed except according to the terms contained in the LICENSE file.
 	*/
@@ -20158,7 +20157,7 @@ let Render;
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
-	Copyright (c) 2016 Codazen. 
+	Copyright (c) 2016 Codazen.
 	This file is subject to the license terms in the LICENSE file in the top-level directory of this distribution and at https://github.com/codazen/formulationjs/blob/master/LICENSE.  
 	No part of FormulationJS, including this file, may be copied, modified, propagated, or distributed except according to the terms contained in the LICENSE file.
 	*/
@@ -20283,7 +20282,7 @@ let Render;
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
-	Copyright (c) 2016 Codazen. 
+	Copyright (c) 2016 Codazen.
 	This file is subject to the license terms in the LICENSE file in the top-level directory of this distribution and at https://github.com/codazen/formulationjs/blob/master/LICENSE.  
 	No part of FormulationJS, including this file, may be copied, modified, propagated, or distributed except according to the terms contained in the LICENSE file.
 	*/
@@ -20390,7 +20389,7 @@ let Render;
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
-	Copyright (c) 2016 Codazen. 
+	Copyright (c) 2016 Codazen.
 	This file is subject to the license terms in the LICENSE file in the top-level directory of this distribution and at https://github.com/codazen/formulationjs/blob/master/LICENSE.  
 	No part of FormulationJS, including this file, may be copied, modified, propagated, or distributed except according to the terms contained in the LICENSE file.
 	*/
@@ -20489,7 +20488,7 @@ let Render;
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
-	Copyright (c) 2016 Codazen. 
+	Copyright (c) 2016 Codazen.
 	This file is subject to the license terms in the LICENSE file in the top-level directory of this distribution and at https://github.com/codazen/formulationjs/blob/master/LICENSE.  
 	No part of FormulationJS, including this file, may be copied, modified, propagated, or distributed except according to the terms contained in the LICENSE file.
 	*/
