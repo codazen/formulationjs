@@ -25,6 +25,6 @@ class Formulation {
   }
 }
 
-Render = Formulation;
+//Render = Formulation;
 
 export default Formulation;
