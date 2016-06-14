@@ -8,18 +8,14 @@
 # Site settings
 title: FormulationJS
 email: info@codazen.com
+sponsor: Codazen
 description: > # this means to ignore newlines until "baseurl:"
-  This project was created to allow developers to save time and complexity out
-  of building forms. With FormulationJS, anyone can quickly build submission 
-  forms using JSON objects, which is then rendered in React. The generated 
-  forms can be integrated with third-party applications for desktops and mobile
-  browsers. In the future, we would like to build a more comprehensive set of
-  inputs and other functional form features along with a UI to build the forms 
-  and API's to get, update, or save the submitted data.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://yourdomain.com" # the base hostname & protocol for your site
+url: "http://www.codazen.com/" # the base hostname & protocol for your site
 twitter_username: codazen
 github_username:  codazen
+facebook_username: codazen.inc
+linkedin_username: codazen
 
 # Build settings
 markdown: kramdown
