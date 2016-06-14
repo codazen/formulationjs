@@ -14,23 +14,24 @@
 
       <div class="footer-col footer-col-2">
         <ul class="social-media-list">
-          {% if site.github_username %}
+          <li>Sponsored By <a href="{{ site.url }}">{{ site.sponsor }}</a></li>
           <li>
-            {% include icon-github.html username=site.github_username %}
+            {% if site.github_username %}
+              {% include icon-github.html username=site.github_username %}&nbsp;
+            {% endif %}
+            {% if site.linkedin_username %}
+              {% include icon-linkedin.html username=site.linkedin_username %}&nbsp;
+            {% endif %}
+            {% if site.twitter_username %}
+              {% include icon-twitter.html username=site.twitter_username %}&nbsp;
+            {% endif %}
+            {% if site.facebook_username %}
+              {% include icon-facebook.html username=site.facebook_username %}&nbsp;
+            {% endif %}
           </li>
-          {% endif %}
-
-          {% if site.twitter_username %}
-          <li>
-            {% include icon-twitter.html username=site.twitter_username %}
-          </li>
-          {% endif %}
         </ul>
       </div>
 
-      <div class="footer-col footer-col-3">
-        <p>{{ site.description }}</p>
-      </div>
     </div>
 
   </div>
