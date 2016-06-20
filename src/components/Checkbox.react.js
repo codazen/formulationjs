@@ -8,28 +8,40 @@ No part of FormulationJS, including this file, may be copied, modified, propagat
 
 import React from 'react';
 import classNames from 'classnames';
+import FormElement from './FormElement.react';
 
-class Checkbox extends React.Component {
+class Checkbox extends FormElement {
 
   constructor(props) {
     super(props);
   }
-  
+
+  // TODO Standardize event handlers (in FormElement) and initialize in a better way
+  static getComponentInstance(index, element, onClick, onChange, initialRender) {
+    return <Checkbox key={index}
+      config={element.data}
+      name={element.name}
+      onClick={onClick}
+      onChange={onChange}
+      initialRender={initialRender}
+    />;
+  }
+
   render() {
-    var { checkbox, onChange, onClick, initialRender } = this.props;
-    var star = checkbox.required ? '*' : '';
-    var required = checkbox.required ? 'Required Field' : '';
-    var invalid = checkbox.value.length == 0 && !initialRender && checkbox.required;
+    var { config, onChange, onClick, initialRender } = this.props;
+    var star = config.required ? '*' : '';
+    var required = config.required ? 'Required Field' : '';
+    var invalid = config.value.length == 0 && !initialRender && config.required;
     //it is invalid if when you loop through all the checkbox options, it returns nothing
-    //the part you need to change is checkbox.value?
+    //the part you need to change is config.value?
     var classes = classNames({
       'invalid' : invalid
     });
     return (
       <div className="row">
-        <div className="col-md-4 form-style">{checkbox.groupLabel}{star}</div>
+        <div className="col-md-4 form-style">{config.groupLabel}{star}</div>
         <div className="col-md-8">  {
-            checkbox.options.map(function (option, index) {
+            config.options.map(function (option, index) {
               return  (
                 <div key={index}>
                   <label className="checkboxAlignment">

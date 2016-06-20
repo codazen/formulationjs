@@ -8,22 +8,22 @@ No part of FormulationJS, including this file, may be copied, modified, propagat
 global.jQuery = require('jquery');
 
 import React from 'react';
+
+// TODO Register components instead hard-coding dependencies
 import Checkbox from './Checkbox.react';
 import Textbox from './Textbox.react';
 import Dropdown from './Dropdown.react';
 import Textarea from './Textarea.react';
 import DatePicker from './DatePicker.react';
+import Container from './Container.react';
+
 import classNames from 'classnames';
 
-class Form extends React.Component {
+class Form extends Container {
 
   constructor(props) {
     super(props);
-    this.state = {
-      form: this.props.form,
-      initialRender: true,
-      verifyTrue: true
-    };
+    
     this._handleSubmit = this._handleSubmit.bind(this);
     this._handleDateChange = this._handleDateChange.bind(this);
   }
@@ -50,88 +50,9 @@ class Form extends React.Component {
      });
   }
 
-  _componentsValid(form) {
-    //if true don't return until end, if false stop right away
-    for(var x in form.elements) {
-      var element = form.elements[x];
-      switch(element.type) {
-        case 'textbox':
-          var re = /^([^.@]+[.]?)+[^.@]+@([\w]+(\.|\-|(\.\-\.)|(\-\.\-)|(\.\-)+|(\-\.)+)\w+)+$/;
-          if ((!element.data.value && element.data.required && element.data.textboxState) || (element.data.email && element.data.value && !re.test(element.data.value))) {
-            return false;
-          }
-          break;
-        case 'textarea':
-          if (!element.data.value && element.data.required && element.data.textareaState) {
-            return false;
-          }
-          break;
-        case 'dropdown':
-          if (!element.data.value && element.data.required) {
-            return false;
-          }
-          break;
-        case 'checkbox':
-          if (element.data.value.length == 0 && element.data.required) {
-            return false;
-          }
-        case 'datepicker':
-          if (!element.data.value && element.data.required) {
-            return false;
-          }
-          break;
-      }
-    }
-    return true;
-  }
-
-  removeTags(html) {
-    if(html !== null) {
-      var sanitizedHtml;
-      sanitizedHtml = html.replace(/</g, '&lt;');
-      sanitizedHtml = sanitizedHtml.replace(/>/g, '&rt;');
-      sanitizedHtml = sanitizedHtml.replace(/&/g, '&amp;');
-      sanitizedHtml = sanitizedHtml.replace(/"/g, '&quot;');
-      sanitizedHtml = sanitizedHtml.replace(/'&'/g, '&#39;');
-
-      return sanitizedHtml;
-    }
-  }
-
   _handleChange(index, type, e) {
     var form = this.state.form;
     form.elements[index].data.value = e.target[type];
-     this.setState({
-       form: form,
-       verifyTrue: true
-     });
-  }
-
-  _handleDateChange(index, value) {
-    var form = this.state.form;
-    form.elements[index].data.value = value;
-     this.setState({
-       form: form,
-       verifyTrue: true
-     });
-  }
-
-  _handleToggle(index, type, e) {
-    var form = this.state.form;
-    switch(e.target[type]){
-      case true:
-      form.elements[index].data.value.push(e.target['value']);
-        break
-      case false:
-      for (var i=0; i<form.elements[index].data.value.length; i++){
-        if (form.elements[index].data.value[i] == e.target['value']){
-          form.elements[index].data.value.splice(i, 1)
-        }
-      }
-        break
-      default:
-      break;
-    }
      this.setState({
        form: form,
        verifyTrue: true
@@ -163,37 +84,7 @@ class Form extends React.Component {
         <form onSubmit={this._handleSubmit}>
           <div className="form-group">
             {
-              form.elements ?
-              form.elements.map((element, index) => {
-                var component;
-                switch (element.type.toLowerCase()) {
-                  case 'textbox':
-                  component = <Textbox key={index} textbox={element.data} onChange={this._handleChange.bind(this, index, 'value')} initialRender={this.state.initialRender} />;
-                    break;
-                  case 'textarea':
-                  component = <Textarea key={index} textarea={element.data} onChange={this._handleChange.bind(this, index, 'value')} initialRender={this.state.initialRender} />;
-                    break;
-                  case 'checkbox':
-                  component = <Checkbox key={index} checkbox={element.data} name={element.name} onClick={this._handleToggle.bind(this, index, 'checked')} onChange={this._handleChange.bind(this, index, 'checked')} initialRender={this.state.initialRender} />;
-                    break;
-                  case 'dropdown':
-                    if (element.placeholder){
-                      component = <Dropdown key={index} dropdown={element.data} placeholder={element.placeholder} onChange={this._handleChange.bind(this, index, 'value')} initialRender={this.state.initialRender} />;
-                    }
-                    else{
-                      component = <Dropdown key={index} dropdown={element.data} onChange={this._handleChange.bind(this, index, 'value')} />;
-                    }
-                    break;
-                  case 'datepicker':
-                    component = <DatePicker key={index} index={index} datepicker={element.data} onChange={this._handleDateChange} initialRender={this.state.initialRender} />
-                    break;
-                  default:
-                    break;
-                }
-                return component;
-              })
-              :
-              null
+              super.renderChildren(form.elements)
             }
           </div>
           <input id="formSubmit" className={classes} type="submit" value="Submit" />

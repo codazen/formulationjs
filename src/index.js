@@ -14,6 +14,8 @@ import $ from 'jquery';
 class Formulation {
 
   constructor(formDef) {
+    // FIXME elements[].data in template is not a great name. Data sounds more like the form values.
+    // 'config' might be better?
     this.formDef = formDef;
   }
 

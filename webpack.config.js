@@ -14,6 +14,7 @@ module.exports = {
   entry: [
     './src/index.js',
     STYLES_PATH + 'Checkbox.less',
+    STYLES_PATH + 'Container.less',
     STYLES_PATH + 'DatePicker.less',
     STYLES_PATH + 'Dropdown.less',
     STYLES_PATH + 'Form.less',
@@ -27,7 +28,8 @@ module.exports = {
     version: version
   },
   plugins: [
-    new webpack.NoErrorsPlugin()
+    new webpack.NoErrorsPlugin(),
+    new ExtractTextPlugin(css_fn, {allChunks: true})
   ],
   resolve: {
     root: [nodeModulesPath],
@@ -57,8 +59,5 @@ module.exports = {
           loader: ExtractTextPlugin.extract("style-loader", "css-loader!less-loader")
       }
     ]
-  },
-  plugins: [
-    new ExtractTextPlugin(css_fn, {allChunks: true})
-  ]
+  }
 };

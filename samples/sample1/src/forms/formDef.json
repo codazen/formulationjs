@@ -4,14 +4,33 @@
   "submitDisabled": false,
   "elements": [
     {
-      "type": "textbox",
+      "type": "container",
       "data": {
-        "value": "",
-        "label": "Label",
-        "required": true,
-        "maxlength": "10",
-        "textboxState": true
-      }
+        "layout": "horizontal"
+      },
+      "children": [
+        {
+          "type": "textbox",
+          "data": {
+            "value": "",
+            "label": "Label",
+            "required": true,
+            "maxlength": "10",
+            "textboxState": true
+          },
+          "children": [
+          ]
+        },
+        {
+          "type": "textbox",
+          "data": {
+            "email": true,
+            "value": "",
+            "label": "Email",
+            "textboxState": true
+          }
+        }
+      ]
     },
     {
       "type": "textbox",
@@ -34,7 +53,7 @@
     },
     {
       "type": "dropdown",
-      "placeholder":"Select...",
+      "placeholder": "Select...",
       "data": {
         "label": "Dropdown Label",
         "options": [
@@ -54,7 +73,7 @@
     {
       "type": "checkbox",
       "data": {
-        "value":[],
+        "value": [],
         "groupLabel": "Checkbox group label",
         "required": true,
         "options": [
