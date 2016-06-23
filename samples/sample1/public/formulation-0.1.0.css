@@ -1,5 +1,5 @@
 /*
-Copyright (c) 2016 Codazen. 
+Copyright (c) 2016 Codazen.
 This file is subject to the license terms in the LICENSE file in the top-level directory of this distribution and at https://github.com/codazen/formulationjs/blob/master/LICENSE.  
 No part of FormulationJS, including this file, may be copied, modified, propagated, or distributed except according to the terms contained in the LICENSE file.
 */
@@ -7,7 +7,7 @@ No part of FormulationJS, including this file, may be copied, modified, propagat
   margin-bottom: .25rem;
 }
 /*
-Copyright (c) 2016 Codazen. 
+Copyright (c) 2016 Codazen.
 This file is subject to the license terms in the LICENSE file in the top-level directory of this distribution and at https://github.com/codazen/formulationjs/blob/master/LICENSE.  
 No part of FormulationJS, including this file, may be copied, modified, propagated, or distributed except according to the terms contained in the LICENSE file.
 */
@@ -33,7 +33,7 @@ No part of FormulationJS, including this file, may be copied, modified, propagat
   padding: .375rem .75rem;
 }
 /*
-Copyright (c) 2016 Codazen. 
+Copyright (c) 2016 Codazen.
 This file is subject to the license terms in the LICENSE file in the top-level directory of this distribution and at https://github.com/codazen/formulationjs/blob/master/LICENSE.  
 No part of FormulationJS, including this file, may be copied, modified, propagated, or distributed except according to the terms contained in the LICENSE file.
 */
@@ -64,7 +64,7 @@ select {
   display: inline-block;
 }
 /*
-Copyright (c) 2016 Codazen. 
+Copyright (c) 2016 Codazen.
 This file is subject to the license terms in the LICENSE file in the top-level directory of this distribution and at https://github.com/codazen/formulationjs/blob/master/LICENSE.  
 No part of FormulationJS, including this file, may be copied, modified, propagated, or distributed except according to the terms contained in the LICENSE file.
 */
@@ -143,7 +143,7 @@ p {
   line-height: 100%;
 }
 /*
-Copyright (c) 2016 Codazen. 
+Copyright (c) 2016 Codazen.
 This file is subject to the license terms in the LICENSE file in the top-level directory of this distribution and at https://github.com/codazen/formulationjs/blob/master/LICENSE.  
 No part of FormulationJS, including this file, may be copied, modified, propagated, or distributed except according to the terms contained in the LICENSE file.
 */
@@ -168,7 +168,7 @@ textarea[type="textarea"].invalid {
   border-color: #c32323;
 }
 /*
-Copyright (c) 2016 Codazen. 
+Copyright (c) 2016 Codazen.
 This file is subject to the license terms in the LICENSE file in the top-level directory of this distribution and at https://github.com/codazen/formulationjs/blob/master/LICENSE.  
 No part of FormulationJS, including this file, may be copied, modified, propagated, or distributed except according to the terms contained in the LICENSE file.
 */
@@ -190,4 +190,8 @@ input[type="text"].invalid {
 }
 input[type="text"].emailInvalid {
   border-color: #c32323;
+}
+
+.display-inline {
+  display: inline-block;
 }

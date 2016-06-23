@@ -39,11 +39,12 @@ class Textbox extends FormElement {
       onClick={onClick}
       onChange={onChange}
       initialRender={initialRender}
+      parent={element.parent}
     />;
   }
 
   render() {
-    var { config, onChange, initialRender } = this.props;
+    var { config, onChange, initialRender, parent } = this.props;
     var star = config.required ? '*' : '';
     var required = config.required ? 'Required Field' : '';
     var invalid = !config.value && !initialRender && config.required && config.textboxState;
@@ -55,8 +56,9 @@ class Textbox extends FormElement {
       'emailInvalid': !this.state.emailIsValid && config.value,
       'form-control': true
     });
+    console.log(parent);
     return (
-      <div className="row">
+      <div className={"row" + (parent === "container" ? " display-inline" : "")}>
         <div className="col-md-4 form-style"><label htmlFor={config.name}>{config.label}{star}</label></div>
         <div className="col-md-8">
           <input

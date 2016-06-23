@@ -42,6 +42,12 @@ class Container extends React.Component {
   }
 
   static getComponentInstance(index, element, onClick, onChange, initialRender) {
+    for(let i = 0; i < element.children.length; i++) {
+      let children = element.children[i];
+      if(children.type !== "container") {
+        children.parent = "container";
+      }
+    }
     return <Container
       key={index}
       config={element.data}

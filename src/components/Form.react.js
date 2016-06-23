@@ -23,7 +23,7 @@ class Form extends Container {
 
   constructor(props) {
     super(props);
-    
+
     this._handleSubmit = this._handleSubmit.bind(this);
     this._handleDateChange = this._handleDateChange.bind(this);
   }
